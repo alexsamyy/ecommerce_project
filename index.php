@@ -7,11 +7,7 @@
 
 <body>
 <h1>
-    <a href="/ariane/login.htm">Connexion</a>
-    <hr/>
-    <a href="/ariane/newuser.htm">Nouvel utilisateur</a>
-    <hr/>
-    <a href="/ariane/admin.php">Administration</a>
+    TEST GITHUB
 </h1>
 </body>
 
