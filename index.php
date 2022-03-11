@@ -7,7 +7,7 @@
 
 <body>
 <h1>
-    <a href="Login.php">Connexion</a>
+    <a href="login.htm">Connexion</a>
     <hr/>
     <a href="newuser.htm">Nouvel utilisateur</a>
     <hr/>
