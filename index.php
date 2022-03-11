@@ -10,8 +10,6 @@
     <a href="/ariane/login.htm">Connexion</a>
     <hr/>
     <a href="/ariane/newuser.htm">Nouvel utilisateur</a>
-    <hr/>
-    <a href="/ariane/admin.php">Administration</a>
 </h1>
 </body>
 
