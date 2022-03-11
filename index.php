@@ -2,13 +2,14 @@
 <html>
 
 <head>
-    <title>Ariane</title>
+    <title>FoneMarket</title>
 </head>
 
 <body>
 <h1>
-    TEST GITHUB
+    FoneMarket
 </h1>
+<<<<<<< HEAD
 <h2>
     arwind EFFECTUE UN TEST 
     j'ai faim
@@ -22,6 +23,8 @@
 <h5>
     YEAGER
 </h5>
+=======
+>>>>>>> 31366458d1fd6735c8e1368530651d15ae0cd7c3
 </body>
 
 </html>
