@@ -2,16 +2,16 @@
 <html>
 
 <head>
-    <title>Ariane</title>
+    <title>FoneMarket</title>
 </head>
 
 <body>
 <h1>
-    <a href="/ariane/login.htm">Connexion</a>
+    <a href="login.htm">Connexion</a>
     <hr/>
-    <a href="/ariane/newuser.htm">Nouvel utilisateur</a>
+    <a href="newuser.htm">Nouvel utilisateur</a>
     <hr/>
-    <a href="/ariane/admin.php">Administration</a>
+    <a href="admin.php">Administration</a>
 </h1>
 </body>
 
