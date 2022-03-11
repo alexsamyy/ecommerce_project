@@ -11,7 +11,7 @@
     <hr/>
     <a href="newuser.htm">Nouvel utilisateur</a>
     <hr/>
-    <a href="admin.php">Administration</a>
+    <a href="admin.php">Administrateur</a>
 </h1>
 </body>
 
