@@ -5,6 +5,11 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
+
+        <?php
+        include "home.php";
+        ?>
+        
         <div id="container">
             <!-- zone de connexion -->
             
@@ -30,5 +35,10 @@
                 ?>
             </form>
         </div>
+
+        <?php
+        include "home.php";
+        ?>
+
     </body>
 </html>
