@@ -11,7 +11,7 @@
     <div id="container">
         <!-- zone de connexion -->
 
-        <form action="verification.php" method="POST">
+        <form action="verification_login.php" method="POST">
             <h1>Connexion</h1>
 
             <label><b>G-mail</b></label><br />
