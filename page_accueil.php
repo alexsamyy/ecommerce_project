@@ -19,7 +19,7 @@ if (isset($_SESSION['iduser']) == true) {
         <div id="content">
             <!-- tester si l'utilisateur est connecté -->
         <?= $message; ?>
-            <a href="verification.php?logout=true">deconnexion</a>            
+            <a href="verification_login.php?logout=true">deconnexion</a>            
         </div>
     </body>
 </html>
