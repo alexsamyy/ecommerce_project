@@ -1,14 +1,12 @@
-<html><!--supportppe-->
-    <head>
-       <meta charset="utf-8">
+
+ <?php
+    include "header.php";
+?>
+
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
-
-        <?php
-        include "home.php";
-        ?>
         
         <div id="container">
             <!-- zone de connexion -->
@@ -37,7 +35,7 @@
         </div>
 
         <?php
-        include "home.php";
+        include "footer.php";
         ?>
 
     </body>
