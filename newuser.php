@@ -9,7 +9,7 @@
             <!-- zone de connexion -->
             
             <form action="verification.php" method="POST">
-                <h1>Create your account</h1>
+                <h1>Newuser</h1>
                 
                 <label><b>Prénom</b></label><br/>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/>
@@ -29,7 +29,7 @@
                 <label><b>Confirmer votre mot de passe</b></label>
                 <input type="password" placeholder="Confirmer votre mot de passe" name="password" required>
                 
-                <p style="color: green;">S'inscrire en tant que:</p>
+                <p style="color: green;">S'inscrire en tantque:</p>
 
 <div>
   <input type="radio" id="acheteur" name="role" value="acheteur"
