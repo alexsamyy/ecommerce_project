@@ -1,16 +1,12 @@
 <?php
 session_start();
-
+// connexion à la base de données
+require_once "db.php";
+?>
+<?php
 if(isset($_POST['mail']) && isset($_POST['password']))
 {
-    // connexion à la base de données
-    $db_username = 'root';
-    $db_password = '';
-    $db_name     = 'fonemarket';
-    $db_host     = 'localhost';
-    $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
-           or die('could not connect to database');
-    
+
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
     // pour éliminer toute attaque de type injection SQL et XSS
     $mail = mysqli_real_escape_string($db,htmlspecialchars($_POST['mail'])); 
@@ -29,7 +25,7 @@ if(isset($_POST['mail']) && isset($_POST['password']))
         if($count > 0) // nom d'utilisateur et mot de passe correctes
         {
            $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];  
-           header('Location: page_accueil.php');
+           header('Location: home.php');
         }
         else
         {
