@@ -11,14 +11,14 @@
         <div id="container">
             <!-- zone de connexion -->
             
-            <form action="verification.php" method="POST">
+            <form action="verification_login.php" method="POST">
                 <h1>Connexion</h1>
 
                 <label><b>E-mail</b></label><br/>
                 <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 
                 <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer votre mot de passe" name="password" required>
+                <input type="text" placeholder="Entrer votre mot de passe" name="password" required>
 
                 <input type="submit" id='submit' value='Login' >
                 <label><input type="checkbox"> Se rappeler de moi </label>

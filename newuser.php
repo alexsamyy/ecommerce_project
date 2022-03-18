@@ -18,14 +18,14 @@
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/>
 
                 <label><b>Nom</b></label><br/>
-                <input type="text" placeholder="Entrer votre Nom" name="nom" required><br/>
+                <input type="text" placeholder="Entrer votre nom" name="nom" required><br/>
 
                 <label><b>Date de naissance</b></label><br/>
-                <input type="text" placeholder="Entrer votre Date de naissance" name="date_naissance" required><br/>
+                <input type="text" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/>
 
 
                 <label><b>E-mail</b></label><br/>
-                <input type="text" placeholder="Entrer votre adresse G-mail" name="mail" required><br/><br/>
+                <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 
                 <label><b>Mot de passe</b></label>
                 <input type="password" placeholder="Entrer votre mot de passe" name="password" required>

@@ -25,7 +25,7 @@ if(isset($_POST['mail']) && isset($_POST['password']))
         if($count > 0) // nom d'utilisateur et mot de passe correctes
         {
            $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];  
-           header('Location: home.php');
+           header('Location: authentification_verif.php');
         }
         else
         {
