@@ -8,9 +8,9 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
         <script>
              function test(){
-                 var role = document.getElementByname("role");
-                 if (role[1].checked] == true)
-                  alert ("acheteur")
+                var role = document.getElementByname("role");
+                if (role[0].checked == true)
+                    alert ("acheteur");
                 return true;
              }
         </script>
@@ -20,7 +20,7 @@
             <!-- zone de connexion -->
         
             
-            <form action="traitement_newuser.php" method="GET" onsubmit="return test()">
+            <form action="traitement_newuser.php" method="GET" onsubmit="test()">
                 <h1>Nouvel utilisateur</h1>
                 
                 <label><b>Prénom</b></label><br/>
@@ -37,7 +37,7 @@
                 <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 
                 <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer votre mot de passe" name="password" required>
+                <input type="text" placeholder="Entrer votre mot de passe" name="password" required>
                 
                 <p style="color: green;">S'inscrire en tant que :</p>
 
