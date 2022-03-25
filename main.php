@@ -26,6 +26,8 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="index.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="header.css" media="screen" type="text/css" />
+
 
 
 <meta charset="utf-8">

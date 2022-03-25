@@ -6,12 +6,21 @@
     <head>
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <script>
+             function test(){
+                 var role = document.getElementByname("role");
+                 if (role[1].checked] == true)
+                  alert ("acheteur")
+                return true;
+             }
+        </script>
     </head>
     <body>
         <div id="container">
             <!-- zone de connexion -->
+        
             
-            <form action="verification.php" method="POST">
+            <form action="traitement_newuser.php" method="GET" onsubmit="return test()">
                 <h1>Nouvel utilisateur</h1>
                 
                 <label><b>Prénom</b></label><br/>
@@ -21,7 +30,7 @@
                 <input type="text" placeholder="Entrer votre nom" name="nom" required><br/>
 
                 <label><b>Date de naissance</b></label><br/>
-                <input type="text" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/>
+                <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/>
 
 
                 <label><b>E-mail</b></label><br/>
@@ -29,31 +38,21 @@
 
                 <label><b>Mot de passe</b></label>
                 <input type="password" placeholder="Entrer votre mot de passe" name="password" required>
-                <label><b>Confirmer votre mot de passe</b></label>
-                <input type="password" placeholder="Confirmer votre mot de passe" name="password" required>
                 
                 <p style="color: green;">S'inscrire en tant que :</p>
 
 <div>
-  <input type="radio" id="acheteur" name="role" value="acheteur"
-         checked>
+  <input type="radio" id="acheteur" name="role" value="acheteur" checked>
   <label for="acheteur">Client acheteur</label>
-</div><br/>
+<br/>
 
-<div>
   <input type="radio" id="vendeur" name="role" value="vendeur">
   <label for="vendeur">Vendeur</label>
 </div><br/>
 
                 <input type="submit" id='submit' value='Enregistrer' >
 
-                <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?>
+        
             </form>
         </div>
     </body>

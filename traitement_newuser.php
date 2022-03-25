@@ -3,25 +3,20 @@ require_once "db.php";
 ?>
 
 <?php
-    $nom = $_GET["nom"];
-    $pwd = $_GET["pwd"];
-    $taille = $_GET["taille"];
     $prenom = $_GET["prenom"];
-    $nf =  $_GET["nf"];
-    $adresse =  $_GET["adresse"];
-    $CP =  $_GET["CP"];
-    $ville =  $_GET["ville"];
-    $sexe =  $_GET["sexe"];
+    $nom = $_GET["nom"];
+    $date_naissance = $_GET["date_naissance"];
+    $mail = $_GET["mail"];
+    $mdp =  $_GET["mdb"];
+    $role= $_GET["role"];
+
+     $sql = "insert into utilisateurs " . 
+     "values(NULL, '" . $role. "','" . $prenom . "'," . $nom . 
+     ",'" . $mail .  "','" . $date_naissance . "','" . $mdp . "')";
+
+     mysqli_query($db, $sql);
 
 
-    $sql = "insert into utilisateurs " . 
-     "values(NULL, '" . $nom . "','" . $pwd . "'," . $taille . 
-     ",'" . $prenom .  "','" . $nf . "','" . $adresse . "','" . $CP . "','" 
-     . $ville . "','" . $sexe . "')";
-
-     mysqli_query($mysqli, $sql);
-
-
-     header("Location: /ariane/index.htm");
+     header("Location: /ecommerce_project/index.php");
 
      ?>

@@ -9,7 +9,7 @@ include "header.php";
 
 
 $message ="";
-if (isset($_SESSION['iduser']) == true) {
+if (isset($_SESSION['iduser']) == true) {   
     $sql = "SELECT 'PRENOM' FROM 'utilisateur' WHERE ID_UTILISATEUR = 'iduser'";
     $result = mysqli_query($db,$sql);
     // afficher un message

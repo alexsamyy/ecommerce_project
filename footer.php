@@ -34,7 +34,8 @@ include "main.php";
     <section class="mb-4">
       <p>
         FoneMarket est un site de vente en ligne de smartphones. Nous vendons les derniers modèles des principales marques.
-        Vous voulez vendre votre smartphone ? <br> Rejoignez-nous en tant que vendeur et vendez dès que possible !
+        Vous voulez vendre votre smartphone ? <br> Rejoignez-nous en tant que vendeur et vendez dès que possible sur notre
+        <a data-mdb-toggle="tooltip" title="Clique ici !" href=marketplace.php style="color : white; font-weight : bold;">marketplace</a> !
       </p>
     </section>
     <!-- Section: Text -->
