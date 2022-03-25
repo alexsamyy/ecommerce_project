@@ -17,6 +17,5 @@ require_once "db.php";
      mysqli_query($db, $sql);
 
 
-     header("Location: /ecommerce_project/index.php");
-
+     header("Location: /ecommerce_project/index.php"); 
      ?>

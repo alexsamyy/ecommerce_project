@@ -51,7 +51,7 @@ include "main.php";
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white">Revendre votre appareil</a>
+              <a href="sell.php" class="text-white">Revendre votre appareil</a>
             </li>
             <li>
               <a href="#!" class="text-white">Offre étudiante</a>

@@ -8,9 +8,9 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
         <script>
              function test(){
-                var role = document.getElementByname("role");
+                var role = document.getElementsByName("role");
                 if (role[0].checked == true)
-                    alert ("acheteur");
+                    alert("acheteur");
                 return true;
              }
         </script>
@@ -20,7 +20,7 @@
             <!-- zone de connexion -->
         
             
-            <form action="traitement_newuser.php" method="GET" onsubmit="test()">
+            <form action="traitement_newuser.php" method="GET" onsubmit="return test()">
                 <h1>Nouvel utilisateur</h1>
                 
                 <label><b>Prénom</b></label><br/>
@@ -41,14 +41,14 @@
                 
                 <p style="color: green;">S'inscrire en tant que :</p>
 
-<div>
-  <input type="radio" id="acheteur" name="role" value="acheteur" checked>
-  <label for="acheteur">Client acheteur</label>
-<br/>
+                <div>
+                <input type="radio" id="acheteur" name="role" value="acheteur" checked>
+                <label for="acheteur">Client acheteur</label>
+                <br/>
 
-  <input type="radio" id="vendeur" name="role" value="vendeur">
-  <label for="vendeur">Vendeur</label>
-</div><br/>
+                <input type="radio" id="vendeur" name="role" value="vendeur">
+                <label for="vendeur">Vendeur</label>
+                </div><br/>
 
                 <input type="submit" id='submit' value='Enregistrer' >
 
