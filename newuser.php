@@ -9,12 +9,10 @@
         <script>
              function test(){
                 var role = document.getElementsByName("role");
-                if (var role = document.getElementsByName("role");
-                if (role[0].checked == true)
-                    alert("acheteur"); == true)
+                if (role[0].checked == true){
                     alert("acheteur");
                 return true;
-             }
+            }
         </script>
     </head>
     <body>

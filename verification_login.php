@@ -22,19 +22,18 @@ if(isset($_POST['mail']) && isset($_POST['password']))
         $reponse  = mysqli_fetch_array($exec_requete);
 
         $count = $reponse["nb"];
-        if($count > 0) // nom d'utilisateur et mot de passe correctes
-        {
+        if($count > 0) {// nombre d'enregistrement supérieure à 0
            $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];  
            header('Location: authentification_verif.php');
         }
         else
         {
-           header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
+           header('Location: login.php?erreur=1'); // veiller enregistrer ce champs
         }
     }
     else
     {
-       header('Location: login.php?erreur=2'); // utilisateur ou mot de passe vide
+       header('Location: login.php?erreur=2'); // veiller enregistrer ce champs
     }
 }
 else if($_GET["logout"]){

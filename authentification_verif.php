@@ -1,28 +1,33 @@
 <?php
 require_once "db.php";
+session_start();
 ?>
 
+
+
 <?php
-session_start();
 
-include "header.php";
+$message = "";
+if (isset($_SESSION['iduser']) == true) {
+    $user = $_SESSION['iduser'];
+    $sql = "SELECT * FROM utilisateur WHERE ID_UTILISATEUR = " . $user;
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $row["nom"];
 
 
-$message ="";
-if (isset($_SESSION['iduser']) == true) {   
-    $sql = "SELECT 'PRENOM' FROM 'utilisateur' WHERE ID_UTILISATEUR = 'iduser'";
-    $result = mysqli_query($db,$sql);
     // afficher un message
-    echo($message. "Bonjour," . $result . "<br>" . "Vous êtes bien connecté !");
+    echo ($message . "Bonjour," . $row . "<br>" . "Vous êtes bien connecté !");
 }
 ?>
 <html>
-    <head>
-        <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
-    </head>
+
+<head>
+    <!-- importer le fichier de style -->
+    <link rel="stylesheet" href="" media="screen" type="text/css" />
+</head>
+
 </html>
 
-<?php
-    include "footer.php";
-    ?>
+
