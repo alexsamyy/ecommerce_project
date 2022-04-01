@@ -13,6 +13,8 @@
     <a href="newuser.php">Nouvel utilisateur</a>
     <hr/>
     <a href="home.php">Home</a>
+    <hr/>
+    <a href="admin.php">Administrateur</a>
 </h1>
 </body>
 <footer>
