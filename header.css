@@ -1,28 +1,10 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
 
-
-
-
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-}
-
-
-
-
-
-
-
-
-
 body {
     font-family: 'Rubik', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    
 }
 
 div {
@@ -35,7 +17,7 @@ div {
 
 ul {
     list-style: none;
-    margin-bottom: 0px
+    margin-bottom: 0;
 }
 
 p {

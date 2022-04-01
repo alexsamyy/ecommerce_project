@@ -12,7 +12,7 @@ include "main.php";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <div class="super_container">
     <!-- Header -->
-    <header class="header">
+    <header class="header" style="position:fixed; background-color:white;">
         <!-- Top Bar -->
         <div class="top_bar">
             <div class="container">
@@ -42,7 +42,7 @@ include "main.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix"> <input type="search" required="required" class="header_search_input" placeholder="Rechercher des produits...">
+                                    <form action="#" class="header_search_form clearfix" style="width:100%;"> <input type="search" required="required" class="header_search_input" placeholder="Rechercher des produits...">
                                       <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png" alt=""></button>
                                     </form>
                                 </div>
@@ -59,11 +59,11 @@ include "main.php";
                             </div> <!-- Cart -->
                             <div class="cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
+                                    <div class="cart_icon"><a href="panier.php"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt=""></a>
                                         <div class="cart_count"><span>0</span></div>
                                     </div>
                                     <div class="cart_content">
-                                        <div class="cart_text"><a href="panier.php">Panier</a></div>
+                                        <div class="cart_text"><a href="panier.php"></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@ include "main.php";
                         <div class="main_nav_content d-flex flex-row">
                             <!-- Main Nav Menu -->
                             <div class="main_nav_menu">
-                                <ul class="standard_dropdown main_nav_dropdown">
+                                <ul class="standard_dropdown main_nav_dropdown"> 
                                     <li class="hassubs"> <a href="produit.php">Produits<i class="fas fa-chevron-down"></i></a>
                                         <ul>
                                             <li> <a href="#">Apple<i class="fas fa-chevron-down"></i></a>
@@ -134,5 +134,4 @@ include "main.php";
             </div>
         </nav> 
     </header>
-    <div style="height: 10px"> </div>
 </div>

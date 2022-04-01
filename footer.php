@@ -16,16 +16,16 @@ include "main.php";
     <section class="mb-4">
 
         <!-- Visa -->
-        <a style="color: #ffffff" role="button"><i class="fab fa-cc-visa fa-3x"></i></a>
+        <a style="color: #ffffff"><i class="fab fa-cc-visa fa-3x"></i></a>
 
         <!-- Mastercard -->
-        <a style="color: #ffffff" role="button"><i class="fab fa-cc-mastercard fa-3x"></i></a>
+        <a style="color: #ffffff"><i class="fab fa-cc-mastercard fa-3x"></i></a>
 
         <!-- PayPal -->
-        <a style="color: #ffffff" role="button"><i class="fab fa-cc-paypal fa-3x"></i></a>
+        <a style="color: #ffffff"><i class="fab fa-cc-paypal fa-3x"></i></a>
 
         <!-- Apple Pay -->
-        <a style="color: #ffffff" role="button"><i class="fab fa-cc-apple-pay fa-3x"></i></a>
+        <a style="color: #ffffff"><i class="fab fa-cc-apple-pay fa-3x"></i></a>
 
     </section>
     <!-- Section: Social media -->
@@ -42,7 +42,7 @@ include "main.php";
 
 
     <!-- Section: Links -->
-    <section class="">
+    <section>
       <!--Grid row-->
       <div class="row">
         <!--Grid column-->
@@ -93,16 +93,16 @@ include "main.php";
               <a href="conditions/condition_utilisation.pdf" class="text-white">Conditions générales d'utilisation</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Conditions générales de vente</a>
+              <a href="https://www.backmarket.fr/terms/sale" class="text-white">Conditions générales de vente</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Protection des données</a>
+              <a href="https://www.backmarket.fr/data-protection" class="text-white">Protection des données</a>
             </li>
             <li>
               <a href="#!" class="text-white">Cookies</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Mentions légales</a>
+              <a href="mentions.php" class="text-white">Mentions légales</a>
             </li>
           </ul>
         </div>

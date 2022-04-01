@@ -2,9 +2,9 @@ body{ /*supportppe*/
     background: #67BE4B;
 }
 #container{
-    width:400px;
+    width:500px;
     margin:0 auto;
-    margin-top:10%;
+    margin-top:225px;
 }
 /* Bordered form */
 form {

@@ -9,7 +9,9 @@
         <script>
              function test(){
                 var role = document.getElementsByName("role");
+                if (var role = document.getElementsByName("role");
                 if (role[0].checked == true)
+                    alert("acheteur"); == true)
                     alert("acheteur");
                 return true;
              }
@@ -43,16 +45,16 @@
 
                 <div>
                 <input type="radio" id="acheteur" name="role" value="acheteur" checked>
-                <label for="acheteur">Client acheteur</label>
+                <label for="acheteur"> acheteur </label>
                 <br/>
 
                 <input type="radio" id="vendeur" name="role" value="vendeur">
-                <label for="vendeur">Vendeur</label>
+                <label for="vendeur"> Vendeur </label>
                 </div><br/>
 
                 <input type="submit" id='submit' value='Enregistrer' >
 
-        
+             
             </form>
         </div>
     </body>
