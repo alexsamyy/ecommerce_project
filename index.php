@@ -14,7 +14,7 @@
     <hr/>
     <a href="home.php">Home</a>
     <hr/>
-    <a href="admin.php">Administrateur</a>
+    <a href="add_article.php">Ajouter un article</a>
 </h1>
 </body>
 <footer>

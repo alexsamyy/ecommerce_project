@@ -5,7 +5,7 @@
 <div class="flex-grow flex flex-col">
 <article style="text-align:center; margin-top:50px;">
     <h1>Mentions légales</h1>
-    <section>
+    <section style="margin-top:150px">
         <div>
             Nom social et forme juridique : FoneMarket SAS
             <br>
