@@ -1,6 +1,6 @@
 <header>
 <?php
-    include "header.php";
+    include "../composants/header.php";
 ?>
 </header>
 
@@ -31,13 +31,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="media/banniere.jpg" class="d-block w-100" alt="Wild Landscape"/>
+      <img src="../media/banniere.jpg" class="d-block w-100" alt="Wild Landscape"/>
     </div>
     <div class="carousel-item">
-      <img src="media/banniere.jpg" class="d-block w-100" alt="Camera"/>
+      <img src="../media/banniere.jpg" class="d-block w-100" alt="Camera"/>
     </div>
     <div class="carousel-item">
-      <img src="media/banniere.jpg" class="d-block w-100" alt="Exotic Fruits"/>
+      <img src="../media/banniere.jpg" class="d-block w-100" alt="Exotic Fruits"/>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
@@ -56,5 +56,5 @@
 </body>
 
 <?php
-    include "footer.php";
+    include "../composants/footer.php";
     ?>  

@@ -1,17 +1,17 @@
 
  <?php
-    include "header.php";
+    include "../composants/header.php";
 ?>
 
         <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
     </head>
     <body>
         
         <div id="container">
             <!-- zone de connexion -->
             
-            <form id="login" action="verification_login.php" method="POST">
+            <form id="login" action="../fonctions/verification_login.php" method="POST">
                 <h1>Connexion</h1>
 
                 <label><b>E-mail</b></label><br/>
@@ -23,7 +23,7 @@
                 <input type="submit" id='submit' value='Login' >
                 <label><input type="checkbox"> Se rappeler de moi </label>
                 <p><a href="" >Mot de passe oublié ?</a></p>
-                <p><a href="newuser.php">Créer un compte  </a> pour vous connecter si vous n'en avez pas un</p>
+                <p><a href="../pages/newuser.php">Créer un compte  </a> pour vous connecter si vous n'en avez pas un</p>
                 <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
@@ -36,7 +36,7 @@
             </div>
 
     <?php
-    include "footer.php";
+    include "../composants/footer.php";
     ?>
 
 </html>

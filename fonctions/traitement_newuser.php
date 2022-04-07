@@ -1,5 +1,5 @@
 <?php
-require_once "db.php";
+require_once "../composants/db.php";
 ?>
 
 <?php
@@ -19,7 +19,7 @@ require_once "db.php";
     
     mysqli_query($db, $sql);
 
-    header('location: home.php');
+    header('location: ../pages/home.php');
 
      ?>
 

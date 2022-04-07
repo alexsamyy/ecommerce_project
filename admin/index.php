@@ -8,11 +8,11 @@
 
 <body>
 <h1>
-    <a href="login.php">Connexion</a>
+    <a href="../pages/login.php">Connexion</a>
     <hr/>
-    <a href="newuser.php">Nouvel utilisateur</a>
+    <a href="../pages/newuser.php">Nouvel utilisateur</a>
     <hr/>
-    <a href="home.php">Home</a>
+    <a href="../pages/home.php">Home</a>
     <hr/>
     <a href="add_article.php">Ajouter un article</a>
 </h1>

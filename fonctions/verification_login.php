@@ -1,7 +1,7 @@
 <?php
 session_start();
 // connexion à la base de données
-require_once "db.php";
+require_once "../composants/db.php";
 ?>
 <?php
 if(isset($_POST['mail']) && isset($_POST['password']))
@@ -24,25 +24,25 @@ if(isset($_POST['mail']) && isset($_POST['password']))
         $count = $reponse["nb"];
         if($count > 0) {// nombre d'enregistrement supérieure à 0
            $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];  
-           header('Location: authentification_verif.php');
+           header('Location: ../fonctions/authentification_verif.php');
         }
         else
         {
-           header('Location: login.php?erreur=1'); // veiller enregistrer ce champs
+           header('Location: ../pages/login.php?erreur=1'); // veiller enregistrer ce champs
         }
     }
     else
     {
-       header('Location: login.php?erreur=2'); // veiller enregistrer ce champs
+       header('Location: ../pages/login.php?erreur=2'); // veiller enregistrer ce champs
     }
 }
 else if($_GET["logout"]){
    session_destroy();
-   header('Location: login.php');
+   header('Location: ../pages/login.php');
 
 }else
 {
-   header('Location: login.php');
+   header('Location: ../pages/login.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>

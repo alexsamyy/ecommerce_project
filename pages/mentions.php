@@ -1,5 +1,5 @@
 <?php
-    include "header.php";
+    include "../composants/header.php";
 ?>
 
 <div class="flex-grow flex flex-col">
@@ -29,5 +29,5 @@
 </article>
 
 <?php
-    include "footer.php";
+    include "../composants/footer.php";
 ?>

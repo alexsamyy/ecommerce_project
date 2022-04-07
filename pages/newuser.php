@@ -1,11 +1,11 @@
 <?php
-    include "header.php";
+    include "../composants/header.php";
 ?>
 
 <html><!--supportppe-->
     <head>
         <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
         <script>
              function test(){
                 var role = document.getElementsByName("role");
@@ -20,7 +20,7 @@
             <!-- zone de connexion -->
         
             
-            <form action="traitement_newuser.php" method="GET" onsubmit="return test()">
+            <form action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
                 <h1>Nouvel utilisateur</h1>
                 
                 <label><b>Prénom</b></label><br/>
@@ -59,5 +59,5 @@
 </html>
 
 <?php
-    include "footer.php";
+    include "../composants/footer.php";
 ?>

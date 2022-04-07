@@ -1,5 +1,5 @@
 <?php
-include("db.php");
+include("../composants/db.php");
 ?>
 
 <?php
@@ -27,6 +27,6 @@ if(isset($_POST['upload'])){
     
     mysqli_query($db, $sql);
 
-    header('location: home.php');
+    header('location: ../pages/home.php');
 
     ?>

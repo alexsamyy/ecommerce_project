@@ -3,7 +3,7 @@
 
 <?php
 $title = "header";
-include "main.php";
+include "../composants/main.php";
 ?>
 
 <!-- Footer -->
@@ -35,7 +35,7 @@ include "main.php";
       <p>
         FoneMarket est un site de vente en ligne de smartphones. Nous vendons les derniers modèles des principales marques.
         Vous voulez vendre votre smartphone ? <br> Rejoignez-nous en tant que vendeur et vendez dès que possible sur notre
-        <a data-mdb-toggle="tooltip" title="Clique ici !" href=marketplace.php style="color : white; font-weight : bold;">marketplace</a> !
+        <a data-mdb-toggle="tooltip" title="Clique ici !" href=../pages/marketplace.php style="color : white; font-weight : bold;">marketplace</a> !
       </p>
     </section>
     <!-- Section: Text -->
@@ -90,7 +90,7 @@ include "main.php";
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="conditions/condition_utilisation.pdf" class="text-white">Conditions générales d'utilisation</a>
+              <a href="https://www.backmarket.fr/terms/use" class="text-white">Conditions générales d'utilisation</a>
             </li>
             <li>
               <a href="https://www.backmarket.fr/terms/sale" class="text-white">Conditions générales de vente</a>
@@ -102,7 +102,7 @@ include "main.php";
               <a href="#!" class="text-white">Cookies</a>
             </li>
             <li>
-              <a href="mentions.php" class="text-white">Mentions légales</a>
+              <a href="../pages/mentions.php" class="text-white">Mentions légales</a>
             </li>
           </ul>
         </div>
@@ -118,7 +118,7 @@ include "main.php";
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
     © 2022 Copyright :
-    <a class="text-white" href="home.php">FoneMarket</a>
+    <a class="text-white" href="../pages/home.php">FoneMarket</a>
   </div>
   <!-- Copyright -->
 

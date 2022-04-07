@@ -1,6 +1,6 @@
 <?php
 $title = "FoneMarket";
-include "header.php";
+include "../composants/header.php";
 ?>
 
 <!-- Body -->
@@ -22,5 +22,5 @@ include "header.php";
 <!-- Body -->
 
 <?php
-include "footer.php";
+include "../composants/footer.php";
 ?>

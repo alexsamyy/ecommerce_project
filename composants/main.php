@@ -25,8 +25,8 @@
 ></script>
 
 <!-- CSS -->
-<link rel="stylesheet" href="index.css" media="screen" type="text/css" />
-<link rel="stylesheet" href="header.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/index.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
 
 
 

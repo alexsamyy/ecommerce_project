@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <link rel="stylesheet" href="../style/style.css" media="screen" type="text/css" />
     </head>
     <body style='background:#fff;'>
         <div id="content">
@@ -19,7 +19,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:login.php");
+                      header("location:../pages/login.php");
                    }
                 }
                 else if($_SESSION['iduser'] !== ""){

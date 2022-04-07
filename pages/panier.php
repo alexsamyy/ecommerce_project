@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-include "header.php";
+include "../composants/header.php";
 ?>
 <div class="card">
     <div class="row">
@@ -79,7 +79,7 @@ include "header.php";
 
 
 <?php
-    include "footer.php";
+    include "../composants/footer.php";
 ?>
 
 </body>

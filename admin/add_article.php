@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 
  <!-- importer le fichier de style -->
- <link rel="stylesheet" href="add_article.css" media="screen" type="text/css" />
+ <link rel="stylesheet" href="../style/add_article.css" media="screen" type="text/css" />
 
 <title>Ajouter un article</title>
 
@@ -15,15 +15,15 @@
 <header>
 
 <?php
-include "header.php";
+include "../composants/header.php";
 ?>
 
 </header>
 
 <body>
-    <div style="margin-top:250px;">
-    <h1 style="text-align:center">Ajouter un article</h1>
-    <form style="margin-top:50px; text-align:center;" action="verification_ajout.php" method="post">
+    <div style="margin-top:250px; text-align:center">
+    <h1 style="text-align:center">Ajouter un article (ADMINISTRATEUR)</h1>
+    <form style="margin-top:50px; text-align:center;" action="../fonctions/verification_ajout.php" method="post">
 
         <label>Nom</label>
         <input type="text" name="nom"></input>
@@ -87,13 +87,14 @@ include "header.php";
 
         <!-- AJOUTER DES PHOTOS -->
 
-        <form method="post" action="verification_ajout.php" enctype='multipart/form-data'>
+        <form method="post" action="../fonctions/verification_ajout.php" enctype='multipart/form-data'>
         <input type='file' name='file' />
         </form>
 
         <!-- AJOUTER DES PHOTOS -->
 
-        <input type="submit" value="Ajouter un article"/></p>
+        <br>
+        <input type="submit"  value="Ajouter un article"/></p>
 
     </form>
 </div>
@@ -102,7 +103,7 @@ include "header.php";
 <footer>
 
 <?php
-include "footer.php";
+include "../composants/footer.php";
 ?>
 
 </footer>
