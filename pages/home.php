@@ -50,9 +50,14 @@
   </button>
 </div>
 
+<h2 style="margin-top:40px">Peut-être votre prochain smartphone...</h2>
 
-    <h2 style="margin-top:40px">Peut-être votre prochain smartphone...</h2>
-    
+<div class="grid">
+  <div class="item">Product 1</div>
+  <div class="item">Product 2</div>
+  <div class="item">Product 3</div>
+</div>    
+
 </body>
 
 <?php
