@@ -1,6 +1,7 @@
 <header>
 <?php
     include "../composants/header.php";
+    include "../composants/db.php"; 
 ?>
 </header>
 
@@ -53,9 +54,19 @@
 <h2 style="margin-top:40px">Peut-être votre prochain smartphone...</h2>
 
 <div class="grid">
-  <div class="item">Product 1</div>
-  <div class="item">Product 2</div>
-  <div class="item">Product 3</div>
+
+  <div class="item">
+    $img = mysqli_query()
+  </div>
+
+  <div class="item">
+    Product 2
+  </div>
+
+  <div class="item">
+    Product 3
+  </div>
+
 </div>    
 
 </body>
