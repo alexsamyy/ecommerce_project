@@ -1,7 +1,9 @@
 <header>
 <?php
+    session_start();
     include "../composants/header.php";
-    include "../composants/db.php"; 
+    // connexion à la base de données
+    require_once "../composants/db.php";
 ?>
 </header>
 
@@ -51,26 +53,34 @@
   </button>
 </div>
 
-<h2 style="margin-top:40px">Peut-être votre prochain smartphone...</h2>
+<h2 style="margin-top:40px; text-align:center">Peut-être votre prochain smartphone... &#128521</h2>
 
+<!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
 <div class="grid">
+<?php
 
-  <div class="item">
-    $img = mysqli_query()
-  </div>
+$sql = "SELECT * FROM smartphone";
+$result = mysqli_query($db,$sql);
+while ($row = mysqli_fetch_array($result)){
+    ?>
 
-  <div class="item">
-    Product 2
-  </div>
+    <div class="grid_in">
+    <a href="/"><img class="img" src="<?= $row["PHOTO"]; ?>"></a>
+    <a class="nom" href="/"><h4><?=$row["NOM"];?></h4></a>
+    <br>  
+    <p class="description"><?= $row["DESCRIPTION"]; ?></p>
+    <br> 
+    <p class="prix"><?= $row["PRIX"];?> €</p>
+    </div>
+<?php
+}
+?>
+</div> 
 
-  <div class="item">
-    Product 3
-  </div>
-
-</div>    
+<!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
 
 </body>
 
 <?php
     include "../composants/footer.php";
-    ?>  
+?>  
