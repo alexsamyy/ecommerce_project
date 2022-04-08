@@ -1,5 +1,29 @@
-h1{
+.title_page{
     text-align:center;
     margin-top:250px;
     margin-bottom: 50px;
 }
+
+.grid_navbar{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+
+.grid_product{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.total_display{
+    margin-left: 10px;
+}
+
+#sortBy{
+    color:black;
+}
+
+/* CSS SIDE NAV FILTERS */
+

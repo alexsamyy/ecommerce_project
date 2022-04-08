@@ -6,13 +6,34 @@
     require_once "../composants/db.php";
 ?>
 
-<h1>SMARTPHONES</h1>
+<div><h1 class="title_page">SMARTPHONES</h1></div>
+
+<!-- NAV BAR SIDE FILTERS -->
+<div class="grid_navbar">
+    <!-- Affichage total produits trouvés -->
+    <div class="total_display"> 
+        <?php
+            $requete = "SELECT count(*) as total FROM smartphone";
+            $sum = mysqli_query($db,$requete);  
+            $row = mysqli_fetch_array($sum)
+        ?>
+        <h3><?= $row["total"];?> produits trouvés</h3>
+    </div>
+
+    <!-- TITRE DE LA PAGE -->
+
+
+    <!-- Triage en fonction du prix -->
+    </div>
+    </form>
+
+<!-- NAV BAR SIDE FILTERS -->
 
 <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
-<div class="grid">
+<div class="grid_product">
 <?php
 
-$sql = "SELECT * FROM smartphone";
+$sql = "SELECT * FROM smartphone WHERE NEUF = true";
 $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result)){
     ?>
@@ -23,14 +44,14 @@ while ($row = mysqli_fetch_array($result)){
     <br>  
     <p class="description"><?= $row["DESCRIPTION"]; ?></p>
     <br> 
-    <p class="prix"><?= $row["PRIX"];?> €</p>
+    <h3 class="prix"><?= $row["PRIX"];?> €</h3>
     </div>
 <?php
 }
 ?>
 </div> 
-
 <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
+
 
 
 <?php

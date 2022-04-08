@@ -3,12 +3,6 @@ $title = "header";
 include "../composants/main.php";
 ?>
 
-
- <!-- importer le fichier de style -->
- <link rel="stylesheet" href="../composants/header.css" media="screen" type="text/css" />
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <div class="super_container">
     <!-- Header -->
@@ -42,7 +36,7 @@ include "../composants/main.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix" style="width:500px;"> <input type="search" required="required" class="header_search_input" placeholder="Rechercher des produits...">
+                                    <form action="#" class="header_search_form clearfix"> <input style="width:100%" required="required" class="header_search_input" placeholder="Rechercher des produits...">
                                       <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>
                                 </div>

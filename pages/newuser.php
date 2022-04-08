@@ -15,12 +15,13 @@
         </script>
     </head>
     <body>
+    
         <div id="container">
             <!-- zone de connexion -->
         
             
             <form id="login" action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
-                <h2>Nouvel utilisateur</h2>
+                <h2>Créer un compte</h2>
                 
                 <label><b>Prénom</b></label><br/>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/><br/>  
@@ -29,7 +30,7 @@
                 <input type="text" placeholder="Entrer votre nom" name="nom" required><br/><br/>
 
                 <label><b>Date de naissance</b></label><br/>
-                <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/><br/>
+                <input style="border-radius:10px" type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/><br/>
 
 
                 <label><b>E-mail</b></label><br/>
@@ -50,6 +51,8 @@
                 </div><br/>
 
                 <input type="submit" id='submit' value='Enregistrer' >
+                <br/>
+                <p>Déjà membre ? <a href="../pages/login.php" class="HasAcc">Connectez-vous !</a></p>
 
              
             </form>

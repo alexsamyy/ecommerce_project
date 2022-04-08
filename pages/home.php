@@ -70,7 +70,7 @@ while ($row = mysqli_fetch_array($result)){
     <br>  
     <p class="description"><?= $row["DESCRIPTION"]; ?></p>
     <br> 
-    <p class="prix"><?= $row["PRIX"];?> €</p>
+    <h3 class="prix"><?= $row["PRIX"];?> €</h3>
     </div>
 <?php
 }

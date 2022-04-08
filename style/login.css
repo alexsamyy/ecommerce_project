@@ -34,6 +34,7 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 /* Set a style for all buttons */
@@ -45,6 +46,7 @@ input[type=submit] {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 10px;
 }
 input[type=submit]:hover {
     background-color: white;
@@ -52,3 +54,6 @@ input[type=submit]:hover {
     border: 1px solid #53af57;
 }   
 
+.HasAcc{
+    color:black;
+}

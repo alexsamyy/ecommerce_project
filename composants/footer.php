@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-
 <?php
 $title = "header";
 include "../composants/main.php";
@@ -125,5 +122,3 @@ include "../composants/main.php";
 </footer>
 </div>
 <!-- Footer -->
-
-</html>
