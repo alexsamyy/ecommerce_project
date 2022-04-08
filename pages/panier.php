@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>coucou</title>
+    <link rel="stylesheet" href="../style/panier.css">
+        
 </head>
 <body>
 <?php
@@ -73,7 +74,7 @@ include "../composants/header.php";
             </div> <button class="btn">CHECKOUT</button>
         </div>
     </div>
-</div>
+
 
 
 
@@ -83,4 +84,3 @@ include "../composants/header.php";
 ?>
 
 </body>
-</head>
