@@ -23,26 +23,26 @@
                 <h2>Nouvel utilisateur</h2>
                 
                 <label><b>Prénom</b></label><br/>
-                <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/>
+                <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/><br/>  
 
                 <label><b>Nom</b></label><br/>
-                <input type="text" placeholder="Entrer votre nom" name="nom" required><br/>
+                <input type="text" placeholder="Entrer votre nom" name="nom" required><br/><br/>
 
                 <label><b>Date de naissance</b></label><br/>
-                <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/>
+                <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/><br/>
 
 
                 <label><b>E-mail</b></label><br/>
                 <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 
                 <label><b>Mot de passe</b></label>
-                <input type="text" placeholder="Entrer votre mot de passe" name="password" required>
+                <input type="text" placeholder="Entrer votre mot de passe" name="password" required><br/><br/>
                 
                 <p style="color: green;">S'inscrire en tant que :</p>
 
                 <div>
                 <input type="radio" id="acheteur" name="role" value="acheteur" checked>
-                <label for="acheteur"> acheteur </label>
+                <label for="acheteur"> Acheteur </label>
                 <br/>
 
                 <input type="radio" id="vendeur" name="role" value="vendeur">
