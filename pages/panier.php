@@ -1,12 +1,10 @@
-<html>
-    <head>
-    <link rel="stylesheet" href="../style/panier.css">
-        
-</head>
-<body>
+<header>
+<link rel="stylesheet" href="../style/panier.css">
 <?php
-include "../composants/header.php";
+    include "../composants/header.php";
 ?>
+</header>
+<body>
 <div class="card">
     <div class="row">
         <div class="col-md-8 cart">
@@ -74,13 +72,11 @@ include "../composants/header.php";
             </div> <button class="btn">CHECKOUT</button>
         </div>
     </div>
-
-
-
-
-
-<?php
-    include "../composants/footer.php";
-?>
-
 </body>
+
+<footer>
+    <?php
+        include "../composants/footer.php";
+    ?>
+</footer>
+

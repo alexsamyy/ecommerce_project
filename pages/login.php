@@ -12,7 +12,7 @@
             <!-- zone de connexion -->
             
             <form id="login" action="../fonctions/verification_login.php" method="POST">
-                <h1>Connexion</h1>
+                <h2>Connexion</h2>
 
                 <label><b>E-mail</b></label><br/>
                 <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>

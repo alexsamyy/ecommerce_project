@@ -1,9 +1,8 @@
-<?php
-    include "../composants/header.php";
-?>
-
 <html><!--supportppe-->
     <head>
+        <?php
+        include "../composants/header.php";
+        ?>
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
         <script>
@@ -20,8 +19,8 @@
             <!-- zone de connexion -->
         
             
-            <form action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
-                <h1>Nouvel utilisateur</h1>
+            <form id="login" action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
+                <h2>Nouvel utilisateur</h2>
                 
                 <label><b>Prénom</b></label><br/>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/>
