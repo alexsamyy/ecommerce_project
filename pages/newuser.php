@@ -30,7 +30,7 @@
                 <input type="text" placeholder="Entrer votre nom" name="nom" required><br/><br/>
 
                 <label><b>Date de naissance</b></label><br/>
-                <input style="border-radius:10px" type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/><br/>
+                <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/><br/>
 
 
                 <label><b>E-mail</b></label><br/>

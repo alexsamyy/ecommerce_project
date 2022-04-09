@@ -48,6 +48,7 @@ input[type=submit] {
     width: 100%;
     border-radius: 10px;
 }
+
 input[type=submit]:hover {
     background-color: white;
     color: #53af57;
@@ -56,4 +57,10 @@ input[type=submit]:hover {
 
 .HasAcc{
     color:black;
+}
+
+input[type=date]{
+    text-align: center;
+    width: 200px;
+    border-radius:10px
 }
