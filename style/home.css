@@ -8,15 +8,18 @@
 .grid_in {
   background: white;
   box-shadow: 2px 5px 10px rgba(0,0,0,.2);
-  padding: 1.5em;
   border-radius: 1em;
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 1em;
   align-items: center;
   color: black;
-  font-weight: 100;
+  font-weight: 10;
   text-align: center;
+  grid-template-columns: 3 1;
+  grid-template-rows: 1px 100px;
+  min-width: 0;
+  max-height: 250px;
+  max-width: 500px;
+  cursor: pointer;
 }
 
 .grid_in:hover{
@@ -26,11 +29,34 @@
 }
 
 .img {
-  width: 250px;
-  height: 250px;
-  border-radius: 1px;
+  width: 220px;
+  height: 300px;
+  padding-bottom: 120px;
+  display: block;
+  place-items: center;
+  position: absolute;
+  margin-right: auto;
 }
 
 .nom {
-  color:black;
+  color:white;
+}
+
+.description{
+  max-height: 50px;
+  overflow: hidden;
+  color: white;
+}
+
+.info_product{
+  margin-left: auto;
+  width: 50%;
+  height: 100%;
+  margin-bottom: 30%;
+  border-radius: 10px;
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
 }

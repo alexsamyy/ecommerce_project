@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_array($result)){
     <br>  
     <p class="description"><?= $row["DESCRIPTION"]; ?></p>
     <br> 
-    <h3 class="prix"><?= $row["PRIX"];?> €</h3>
+    <h6 class="prix"><?= $row["PRIX"];?> €</h6>
     </div>
 <?php
 }

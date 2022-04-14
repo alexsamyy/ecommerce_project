@@ -56,21 +56,28 @@
 <h2 style="margin-top:40px; text-align:center">Peut-être votre prochain smartphone... &#128521</h2>
 
 <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
-<div class="grid">
+<div class="grid"> <!-- GRID PARENT -->
 <?php
 
 $sql = "SELECT * FROM smartphone order by rand() limit 3";
 $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result)){
     ?>
-    <div class="grid_in">
-    <a href="/"><img class="img" src="<?= $row["PHOTO"]; ?>"></a>
-    <br>
-    <a class="nom"><h4><?=$row["NOM"];?></h4></a>
-    <br>  
-    <p class="description"><?= $row["DESCRIPTION"]; ?></p>
-    <br> 
-    <h3 class="prix"><?= $row["PRIX"];?> €</h3>
+    <!-- GRID ENFANT -->
+    <div class="grid_in" title="Clique pour voir !" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'> 
+      <br>
+      <!-- IMAGE -->
+      <div class="img_place">
+      <img class="img" src="<?= $row["PHOTO"]; ?>">
+      </div>
+      <br>
+      <br>
+      <!-- INFORMATION PRODUIT -->
+      <div class="info_product">
+        <h4 class="nom"><?=$row["NOM"];?></h4> 
+        <p class="description"><?= $row["DESCRIPTION"]; ?></p>
+        <h6 class="prix"><?= $row["PRIX"];?> €</h6>
+      </div>
     </div>
 <?php
 }
