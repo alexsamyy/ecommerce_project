@@ -80,11 +80,11 @@ while ($row = mysqli_fetch_array($result)){
         <p class="description"><?= substr($row["DESCRIPTION"], 0, 100);
         if (strlen($row["DESCRIPTION"]) > 100){?>
           <span>...</span>
-        </p>
           <a class="see_more" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'>Voir plus</a>
         <?php
         }
         ?>
+        </p>
         
         <h6 class="prix"><?= $row["PRIX"];?> €</h6>
       </div>
