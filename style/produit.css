@@ -6,7 +6,7 @@
 
 .grid_navbar{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: 300px auto;
     grid-gap: 10px;
 }
 

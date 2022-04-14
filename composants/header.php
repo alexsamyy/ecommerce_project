@@ -115,7 +115,6 @@ include "../composants/main.php";
                                             <li><a href="#">Google<i class="fas fa-chevron-down"></i></a></li>
                                             <li><a href="#">OnePlus<i class="fas fa-chevron-down"></i></a></li>
                                             <li><a href="#">Oppo<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="#">Autres<i class="fas fa-chevron-down"></i></a></li>
                                         </ul>
                                     </li>
                                     <li> <a href="../pages/marketplace.php">Marketplace</a>

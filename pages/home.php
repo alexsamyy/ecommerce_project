@@ -66,7 +66,7 @@ while ($row = mysqli_fetch_array($result)){
     <!-- GRID ENFANT -->
     <div class="grid_in"> 
       <br>
-    <div class="divide_by_two"> <!-- AFFICHAGE INTERIEUR GRID ENFANT -->
+    <div>
 
       <!-- IMAGE -->
       <div class="img_place" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'>
