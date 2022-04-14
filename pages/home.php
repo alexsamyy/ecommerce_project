@@ -64,20 +64,32 @@ $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result)){
     ?>
     <!-- GRID ENFANT -->
-    <div class="grid_in" title="Clique pour voir !" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'> 
+    <div class="grid_in"> 
       <br>
+    <div class="divide_by_two"> <!-- AFFICHAGE INTERIEUR GRID ENFANT -->
+
       <!-- IMAGE -->
-      <div class="img_place">
+      <div class="img_place" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'>
       <img class="img" src="<?= $row["PHOTO"]; ?>">
-      </div>
+      </div>  
       <br>
       <br>
       <!-- INFORMATION PRODUIT -->
       <div class="info_product">
         <h4 class="nom"><?=$row["NOM"];?></h4> 
-        <p class="description"><?= $row["DESCRIPTION"]; ?></p>
+        <p class="description"><?= substr($row["DESCRIPTION"], 0, 100);
+        if (strlen($row["DESCRIPTION"]) > 100){?>
+          <span>...</span>
+        </p>
+          <a class="see_more" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'>Voir plus</a>
+        <?php
+        }
+        ?>
+        
         <h6 class="prix"><?= $row["PRIX"];?> €</h6>
       </div>
+
+    </div>
     </div>
 <?php
 }
