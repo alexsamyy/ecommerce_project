@@ -22,7 +22,7 @@
 
                 <input type="submit" id='submit' value='Login' >
                 <label><input type="checkbox"> Se rappeler de moi </label>
-                <p><a href="" >Mot de passe oublié ?</a></p>
+                <p><a href="mdp_oublier.php" >Mot de passe oublié ?</a></p>
                 <p><a href="../pages/newuser.php">Créer un compte  </a> pour vous connecter si vous n'en avez pas un</p>
                 <?php
                 if(isset($_GET['erreur'])){

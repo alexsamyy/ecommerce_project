@@ -1,6 +1,6 @@
 <?php
 $title = "FoneMarket";
-include "../composants/header.php";
+include "../composants/header_connexion.php";
 ?>
 
 <!-- Body -->
