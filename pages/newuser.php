@@ -1,7 +1,7 @@
 <html><!--supportppe-->
     <head>
         <?php
-        include "../composants/header.php";
+             include "../composants/header.php"
         ?>
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
@@ -10,6 +10,7 @@
                 var role = document.getElementsByName("role");
                 if (role[0].checked == true){
                     alert("acheteur");
+                }
                 return true;
             }
         </script>
@@ -21,7 +22,7 @@
         
             
             <form id="login" action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
-                <h2>Créer un compte</h2>
+                <h2> FONEMARKED </h2>
                 
                 <label><b>Prénom</b></label><br/>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/><br/>  
@@ -34,7 +35,7 @@
 
 
                 <label><b>E-mail</b></label><br/>
-                <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
+                <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 
                 <label><b>Mot de passe</b></label>
                 <input type="text" placeholder="Entrer votre mot de passe" name="password" required><br/><br/>
@@ -44,13 +45,12 @@
                 <div>
                 <input type="radio" id="acheteur" name="role" value="acheteur" checked>
                 <label for="acheteur"> Acheteur </label>
-                <br/>
 
                 <input type="radio" id="vendeur" name="role" value="vendeur">
                 <label for="vendeur"> Vendeur </label>
                 </div><br/>
 
-                <input type="submit" id='submit' value='Enregistrer' >
+                <input type="submit" id='submit' value='Créer un compte' >
                 <br/>
                 <p>Déjà membre ? <a href="../pages/login.php" class="HasAcc">Connectez-vous !</a></p>
 
@@ -61,5 +61,5 @@
 </html>
 
 <?php
-    include "../composants/footer.php";
+    include "../composants/footer.php"
 ?>

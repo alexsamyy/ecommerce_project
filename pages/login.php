@@ -1,6 +1,6 @@
 
  <?php
-    include "../composants/header.php";
+    include "../composants/header.php"
 ?>
 
         <!-- importer le fichier de style -->
@@ -12,13 +12,13 @@
             <!-- zone de connexion -->
             
             <form id="login" action="../fonctions/verification_login.php" method="POST">
-                <h2>Connexion</h2>
+                <h2>FONEMARK</h2>
 
                 <label><b>E-mail</b></label><br/>
-                <input type="text" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
+                <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 
                 <label><b>Mot de passe</b></label>
-                <input type="text" placeholder="Entrer votre mot de passe" name="password" required>
+                <input type="password" placeholder="Entrer votre mot de passe" name="password" required>
 
                 <input type="submit" id='submit' value='Login' >
                 <label><input type="checkbox"> Se rappeler de moi </label>
@@ -29,14 +29,14 @@
                     $err = $_GET['erreur'];
                     if($err==1 || $err==2)
                         echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                        echo $str;
+
                 }
                 ?>
             </form>
             </div>
 
     <?php
-    include "../composants/footer.php";
+       include "../composants/footer.php"
     ?>
 
 </html>
