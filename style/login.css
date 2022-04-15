@@ -27,7 +27,7 @@ h2{
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -64,3 +64,4 @@ input[type=date]{
     width: 200px;
     border-radius:10px
 }
+

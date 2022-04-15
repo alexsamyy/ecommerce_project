@@ -1,6 +1,7 @@
 <?php
 $title = "header";
 include "../composants/main.php";
+require_once "../composants/db.php";
 ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
@@ -15,8 +16,30 @@ include "../composants/main.php";
                         <div class="top_bar_contact_item">
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918647/user.svg"></div>
-                                <div><a href="../pages/newuser.php">Créer un compte</a></div>
-                                <div><a href="../pages/login.php">Connexion</a></div>
+
+
+                                <?php 
+                                    $message = "Bienvenue ";
+                                    if (isset($_SESSION['iduser']) == true) {
+                                        $user = $_SESSION['iduser'];
+
+                                        $sql = "SELECT * FROM utilisateur WHERE ID_UTILISATEUR = " . $user;
+                                        $result = mysqli_query($db, $sql);
+                                        $row = mysqli_fetch_array($result);
+
+                                        $row = $row['PRENOM'];
+
+                                        // afficher un message
+                                        echo ($message . "" . $row);
+                                    } else { ?>
+                                        <div><a href="../pages/newuser.php">Créer un compte</a></div>
+                                        <div><a href="../pages/login.php">Connexion</a></div>
+                                    <?php
+                                    }
+                                ?>        
+
+
+                        
                             </div>
                         </div>
                     </div>
@@ -36,9 +59,14 @@ include "../composants/main.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix"> <input style="width:100%" required="required" class="header_search_input" placeholder="Rechercher des produits...">
+                                    <form action="#" class="header_search_form clearfix"> <input style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
                                       <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>
+
+                                    <!-- BARRE DE RECHERCHE FONCTIONNALITE -->
+                                    
+                                    <!-- BARRE DE RECHERCHE FONCTIONNALITE -->
+
                                 </div>
                             </div>
                         </div>
