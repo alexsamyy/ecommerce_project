@@ -22,7 +22,7 @@
         
             
             <form id="login" action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
-                <h2> FONEMARKED </h2>
+                <h2>Créer un compte</h2>
                 
                 <label><b>Prénom</b></label><br/>
                 <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/><br/>  

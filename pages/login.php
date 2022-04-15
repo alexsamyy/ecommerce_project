@@ -12,8 +12,8 @@
             <!-- zone de connexion -->
             
             <form id="login" action="../fonctions/verification_login.php" method="POST">
-                <h2>FONEMARK</h2>
-
+                <h2>Connexion</h2>
+                
                 <label><b>E-mail</b></label><br/>
                 <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
 

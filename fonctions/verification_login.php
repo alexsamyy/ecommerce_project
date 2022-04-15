@@ -25,7 +25,7 @@ if(isset($_POST['mail']) && isset($_POST['password']))
         $count = $reponse["nb"];
         if($count > 0) {// nombre d'enregistrement supérieure à 0
            $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];
-           header('Location: ../pages/home_connexion.php');
+           header('Location: ../pages/home.php');
         }
         else
         {
