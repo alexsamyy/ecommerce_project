@@ -1,7 +1,24 @@
 
- <?php
-    include "../composants/header.php"
+<header>
+<?php
+    session_start();
+    include "../composants/header.php";
+    include "../composants/main.php";
+    // connexion à la base de données
+    require_once "../composants/db.php";
 ?>
+</header>
+
+        <!-- IF ALREADY LOGGED IN, REDIRECTS TO HOME PAGE -->
+        <?php 
+            if (isset($_SESSION['iduser']) == true){
+                header("Location: ../pages/home.php");
+                die();
+            }
+            else{
+        ?>
+
+        <!-- IF NOT DISPLAY LOGIN PAGE -->
 
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
@@ -34,6 +51,8 @@
                 ?>
             </form>
             </div>
+
+        <?php } ?>
 
     <?php
        include "../composants/footer.php"

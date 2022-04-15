@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="../style/home.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/user.css" media="screen" type="text/css" />
 
 
 

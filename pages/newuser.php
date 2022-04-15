@@ -1,8 +1,14 @@
 <html><!--supportppe-->
     <head>
-        <?php
-             include "../composants/header.php"
-        ?>
+    
+    <?php
+    session_start();
+    include "../composants/header.php";
+    include "../composants/main.php";
+    // connexion à la base de données
+    require_once "../composants/db.php";
+    ?>
+
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
         <script>
@@ -58,8 +64,9 @@
             </form>
         </div>
     </body>
-</html>
-
+<footer>
 <?php
     include "../composants/footer.php"
 ?>
+</footer>
+</html>

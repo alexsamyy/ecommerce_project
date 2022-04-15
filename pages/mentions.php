@@ -1,7 +1,13 @@
+<header>
 <?php
+    session_start();
     include "../composants/header.php";
+    include "../composants/main.php";
+    // connexion à la base de données
+    require_once "../composants/db.php";
 ?>
-
+</header>
+<body>
 <div class="flex-grow flex flex-col">
 <article style="text-align:center; margin-top:50px;">
     <h1>Mentions légales</h1>
@@ -27,7 +33,9 @@
     </section>
 </div>
 </article>
-
+</body>
+<footer>
 <?php
     include "../composants/footer.php";
 ?>
+</footer>

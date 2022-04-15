@@ -1,7 +1,12 @@
+<header>
 <?php
+    session_start();
     include "../composants/header.php";
+    include "../composants/main.php";
+    // connexion à la base de données
+    require_once "../composants/db.php";
 ?>
-
+</header>
 <body>
 <div style="height: 100px; margin-top:250px; margin-bottom:100px;" class="text_sell">
 <h3 style="text-align:center">
@@ -19,8 +24,8 @@
     Vous avez déjà répondu au questionnaire et votre smartphone est éligible à la vente ? <a href="../pages/ajout_article_user.php" style="color:black; font-weight:bold">Cliquez-ici !</a>
 </div>
 </body>
-
-
+<footer>
 <?php
     include "../composants/footer.php";
 ?>
+</footer>

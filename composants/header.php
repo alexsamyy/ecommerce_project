@@ -15,9 +15,11 @@ require_once "../composants/db.php";
                     <div class="col d-flex flex-row">
                         <div class="top_bar_contact_item">
                             <div class="top_bar_user">
-                                <div class="user_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918647/user.svg"></div>
-
-
+                                <div class="user_icon hassubs">
+                                
+                                <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918647/user.svg"></div>
+                                
+                                <a href="../pages/user.php">
                                 <?php 
                                     $message = "Bienvenue ";
                                     if (isset($_SESSION['iduser']) == true) {
@@ -30,9 +32,10 @@ require_once "../composants/db.php";
                                         $row = $row['PRENOM'];
 
                                         // afficher un message
-                                        echo ($message . "" . $row);
+                                        echo ($message . "" . $row . " !");
                                     } else { ?>
                                         <div><a href="../pages/newuser.php">Créer un compte</a></div>
+                                        <span>|</span>
                                         <div><a href="../pages/login.php">Connexion</a></div>
                                     <?php
                                     }
@@ -41,6 +44,8 @@ require_once "../composants/db.php";
 
                         
                             </div>
+
+
                         </div>
                     </div>
                 </div>

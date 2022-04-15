@@ -1,7 +1,11 @@
 <header>
-<link rel="stylesheet" href="../style/panier.css">
+<link rel="stylesheet" href="../style/panier.css">  
 <?php
+    session_start();
     include "../composants/header.php";
+    include "../composants/main.php";
+    // connexion à la base de données
+    require_once "../composants/db.php";
 ?>
 </header>
 <body>
