@@ -34,13 +34,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../media/banniere.jpg" class="d-block w-100" alt="Wild Landscape"/>
+      <a href="sell.php"><img src="../media/sellYoursBefore.jpg" class="d-block w-100" alt="Vendez votre appareil avant d'en adopter un nouveau"/></a>
     </div>
     <div class="carousel-item">
-      <img src="../media/banniere.jpg" class="d-block w-100" alt="Camera"/>
+    <a href="marketplace.php"><img src="../media/iPhone11lessWaste.jpg" class="d-block w-100" alt="less waste, buy refurbished"/></a>
     </div>
     <div class="carousel-item">
-      <img src="../media/banniere.jpg" class="d-block w-100" alt="Exotic Fruits"/>
+    <a href="marketplace.php"><img src="../media/samsungLessWaste.jpg" class="d-block w-100" alt="less waste, buy refurbished"/></a>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
@@ -69,7 +69,7 @@ while ($row = mysqli_fetch_array($result)){
     <div>
 
       <!-- IMAGE -->
-      <div class="img_place" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'>
+      <div class="img_place" onclick='location.href = "http://localhost/FoneMarket/pages/page_produit.php/<?=$row["ID"];?>"'>
       <img class="img" src="<?= $row["PHOTO"]; ?>">
       </div>  
       <br>
@@ -80,7 +80,7 @@ while ($row = mysqli_fetch_array($result)){
         <p class="description"><?= substr($row["DESCRIPTION"], 0, 100);
         if (strlen($row["DESCRIPTION"]) > 100){?>
           <span>...</span>
-          <a class="see_more" onclick='location.href = "http://localhost/FoneMarket/pages/produit.php/<?=$row["ID"];?>"'>Voir plus</a>
+          <a class="see_more" onclick='location.href = "http://localhost/FoneMarket/pages/page_produit.php/<?=$row["ID"];?>"'>Voir plus</a>
         <?php
         }
         ?>

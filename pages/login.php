@@ -1,6 +1,7 @@
 
 <header>
 <?php
+    ob_start();
     session_start();
     include "../composants/header.php";
     include "../composants/main.php";
@@ -9,16 +10,16 @@
 ?>
 </header>
 
-        <!-- IF ALREADY LOGGED IN, REDIRECTS TO HOME PAGE -->
-        <?php 
+            <!-- IF YES, REDIRECT TO HOME PAGE -->
+            <?php 
             if (isset($_SESSION['iduser']) == true){
-                header("Location: ../pages/home.php");
-                die();
-            }
+                
+                    header("Location: home.php");
+                    die();
+        
+            } // IF NOT ALREADY LOGGED IN, DISPLAY LOGIN PAGE
             else{
-        ?>
-
-        <!-- IF NOT DISPLAY LOGIN PAGE -->
+            ?>
 
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
@@ -41,6 +42,7 @@
                 <label><input type="checkbox"> Se rappeler de moi </label>
                 <p><a href="mdp_oublier.php" >Mot de passe oublié ?</a></p>
                 <p><a href="../pages/newuser.php">Créer un compte  </a> pour vous connecter si vous n'en avez pas un</p>
+
                 <?php
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
@@ -51,8 +53,7 @@
                 ?>
             </form>
             </div>
-
-        <?php } ?>
+            <?php } ?>
 
     <?php
        include "../composants/footer.php"

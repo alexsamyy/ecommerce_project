@@ -2,6 +2,7 @@
     <head>
     
     <?php
+    ob_start();
     session_start();
     include "../composants/header.php";
     include "../composants/main.php";
@@ -23,6 +24,18 @@
     </head>
     <body>
     
+        <!-- IF YES, REDIRECT TO HOME PAGE -->
+        <?php 
+            if (isset($_SESSION['iduser']) == true){
+                
+                    header("Location: home.php");
+                    die();
+        
+            } // IF NOT ALREADY LOGGED IN, DISPLAY CREATE AN ACCOUNT PAGE
+            else{
+        ?>
+
+
         <div id="container">
             <!-- zone de connexion -->
         
@@ -63,6 +76,9 @@
              
             </form>
         </div>
+
+        <?php } ?>
+
     </body>
 <footer>
 <?php

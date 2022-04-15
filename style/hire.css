@@ -1,0 +1,9 @@
+.hire_mail:hover{
+    color:blue;
+    text-decoration: underline;
+}
+
+.hire_mail{
+    font-weight: bold;
+    color:black
+}

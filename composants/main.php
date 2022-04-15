@@ -30,6 +30,9 @@
 <link rel="stylesheet" href="../style/home.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="../style/user.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/page_produit.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="../style/student_offer.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="../style/hire.css" media="screen" type="text/css" />
 
 
 

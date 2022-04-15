@@ -14,6 +14,11 @@
 <div class="grid_product">
 <?php
 
+$sum = "SELECT count(*) as total, * FROM smartphone WHERE NEUF = false";
+if ($sum == 0){
+    ?><h3>Aucun produit en vente &#128532<h3><?php	
+}
+else{
 $sql = "SELECT * FROM smartphone WHERE NEUF = false";
 $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result)){
@@ -28,6 +33,7 @@ while ($row = mysqli_fetch_array($result)){
     <h3 class="prix"><?= $row["PRIX"];?> €</h3>
     </div>
 <?php
+}
 }
 ?>
 </div> 

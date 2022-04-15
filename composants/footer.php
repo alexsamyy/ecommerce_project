@@ -51,10 +51,10 @@ include "../composants/main.php";
               <a href="sell.php" class="text-white">Revendre votre appareil</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Offre étudiante &#128527</a>
+              <a href="student_offer.php" class="text-white">Offre étudiante &#128527</a>
             </li>
             <li>
-              <a href="#!" class="text-white">On recrute ! &#128516</a>
+              <a href="hire.php" class="text-white">On recrute ! &#128516</a>
             </li>
           </ul>
         </div>
