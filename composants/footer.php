@@ -4,7 +4,7 @@ include "../composants/main.php";
 ?>
 
 <!-- Footer -->
-<div class="bottom">
+<div class="footer_bottom">
 <footer class=" text-center text-white" style="background-color:#212121">
   <!-- Grid container -->
   <div class="container p-4">

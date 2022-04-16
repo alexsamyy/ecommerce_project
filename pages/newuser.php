@@ -64,13 +64,15 @@
                 <div>
                 <input type="radio" id="acheteur" name="role" value="acheteur" checked>
                 <label for="acheteur"> Acheteur </label>
+                
+                <br>
 
                 <input type="radio" id="vendeur" name="role" value="vendeur">
                 <label for="vendeur"> Vendeur </label>
                 </div><br/>
 
                 <input type="submit" id='submit' value='Créer un compte' >
-                <br/>
+                <br><br>
                 <p>Déjà membre ? <a href="../pages/login.php" class="HasAcc">Connectez-vous !</a></p>
 
              
