@@ -8,8 +8,8 @@
 ?>
 </header>
 
-<body>  
-
+<body>
+  
 <div>
   <h1 class="title_page">SMARTPHONES</h1>
 </div>
