@@ -9,7 +9,7 @@
 </header>
 <body>
 
-<div style="height: 100px; margin-top:250px; margin-bottom:10px;" class="text_sell">
+<div style="height: 100px; margin-top:250px; margin-bottom:10px;">
 <h3 style="text-align:center">
     Vous souhaitez nous rejoindre dans l'aventure FoneMarket ?
 </h3>
@@ -18,7 +18,7 @@
     Nous recherchons des personnes qualifiées dans la vente à distance peu importe l'expérience.<br>
     Les seules qualités à avoir sont d'être dynamique, savoir coopérer avec son équipe et avoir le sourire !<br>
     Si vous pensez pouvoir remplir ces critères, n'hésitez pas à nous envoyer
-    votre CV à cette adresse email <a class="hire_mail" href="mailto:hr@fonemarket.fr">hr@fonemarket.fr</a><br>
+    votre CV à cette adresse email <a style="color:black; font-weight:bold" class="hire_mail" href="mailto:hr@fonemarket.fr">hr@fonemarket.fr</a><br>
 </h4>
 </div>
 

@@ -66,16 +66,16 @@ include "../composants/main.php";
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white">Paiement</a>
+              <a href="paiement.php" class="text-white">Paiement</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Livraison</a>
+              <a href="livraison.php" class="text-white">Livraison</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Retour</a>
+              <a href="retour.php" class="text-white">Retour</a>
             </li>
             <li>
-              <a href="#!" class="text-white">FAQ</a>
+              <a href="faq.php" class="text-white">FAQ</a>
             </li>
           </ul>
         </div>

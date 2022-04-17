@@ -9,12 +9,12 @@
 </header>
 <body>
 
-<div style="height: 100px; margin-top:250px; margin-bottom:10px;" class="text_sell">
+<div style="height: 100px; margin-top:250px; margin-bottom:10px;">
 <h3 style="text-align:center">
     Découvrez nos offres étudiantes !
 </h3>
 <h4 style="text-align:center";>
-    Connectez-vous avec votre <a class="unidays" href="https://www.myunidays.com/FR/fr-FR/account/log-in">compte Unidays</a> ! <br>
+    Connectez-vous avec votre <a class="unidays" style="color:black; font-weight:bold" href="https://www.myunidays.com/FR/fr-FR/account/log-in">compte Unidays</a> ! <br>
     Et profitez de -10% de réduction lors de l'achat de votre nouveau smartphone ! <br>
     <h6 style="text-align:center">(Uniquement sur les smartphones neufs. Non disponible pour le marketplace.)</h6>
 </h4>

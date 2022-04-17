@@ -16,7 +16,7 @@
 $id_this_product = $_GET['id'];
 
 //MYSQL SELECT INFORMATION TABLE SMARTPHONE ONLY
-$requete_info =  "SELECT * FROM smartphone WHERE $id_this_product = ID";
+$requete_info =  "SELECT * FROM smartphone WHERE '$id_this_product' = ID";
 $info = mysqli_query($db,$requete_info);  
 $row = mysqli_fetch_array($info);
 
@@ -32,10 +32,6 @@ $requete_marque = "SELECT m.MARQUE FROM marque m WHERE $ID_MARQUE = m.ID_MARQUE"
 $marque = mysqli_query($db,$requete_marque);
 $row_marque = mysqli_fetch_array($marque);
 
-if ($id_this_product == 0){
-  header("Location: home.php");
-  die();
-}else{
 ?>
 
   <div class="grid-container_product">
@@ -82,15 +78,23 @@ if ($id_this_product == 0){
   </div>
   </div>
 
-  <!-- AFFICHE D'AUTRES PRODUITS -->
-
   <h2 style="margin-top:40px; text-align:center">Pas convaincu ? Voici d'autres smartphones...</h2>
+
+  <!-- AFFICHE D'AUTRES PRODUITS -->
+  
+  <?php
+  if (empty($row)){?>
+    <h2 style="margin-top:40px; text-align:center">Nous vous proposons d'autres smartphones...</h2>
+  <?php
+  }?>
+  
+  
 
   <div class="grid">
     <!-- GRID PARENT -->
     <?php
 
-$sql = "SELECT * FROM smartphone WHERE ID <> $id_this_product order by rand() limit 3";
+$sql = "SELECT * FROM smartphone WHERE NOM <> '$id_this_product' and NEUF = 1 order by rand() limit 3";
 $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result)){
     ?>
@@ -109,8 +113,8 @@ while ($row = mysqli_fetch_array($result)){
         <!-- INFORMATION PRODUIT -->
         <div class="info_product">
           <h4 class="nom"><?=$row["NOM"];?></h4>
-          <p class="description"><?= substr($row["DESCRIPTION"], 0, 130);
-        if (strlen($row["DESCRIPTION"]) > 130){?>
+          <p class="description"><?= substr($row["DESCRIPTION"], 0, 110);
+        if (strlen($row["DESCRIPTION"]) > 110){?>
             <span>...</span>
             <a class="see_more" href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
               plus</a>
@@ -129,11 +133,10 @@ while ($row = mysqli_fetch_array($result)){
 }
 ?>
 
-    <?php } ?>
 
     <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
   </div>
-  <!-- AFFICHE D'AUTRES PRODUITS -->
+  <!-- FIN AFFICHE D'AUTRES PRODUITS -->
 
 </body>
 

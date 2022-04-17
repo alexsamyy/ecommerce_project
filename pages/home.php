@@ -70,8 +70,8 @@ while ($row = mysqli_fetch_array($result)){
         <!-- INFORMATION PRODUIT -->
         <div class="info_product">
           <h4 class="nom"><?=$row["NOM"];?></h4>
-          <p class="description"><?= substr($row["DESCRIPTION"], 0, 130);
-        if (strlen($row["DESCRIPTION"]) > 130){?>
+          <p class="description"><?= substr($row["DESCRIPTION"], 0, 110);
+        if (strlen($row["DESCRIPTION"]) > 110){?>
             <span>...</span>
             <a class="see_more" href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
               plus</a>

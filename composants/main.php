@@ -35,6 +35,7 @@
 <link rel="stylesheet" href="../style/hire.css" media="screen" type="text/css" />
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 <meta charset="utf-8">
 <title><?= $title; ?></title>
