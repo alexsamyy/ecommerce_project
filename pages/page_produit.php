@@ -56,15 +56,15 @@ $row_marque = mysqli_fetch_array($marque);
       <div class="spec_part">
         <h3 class="title_info">Détails techniques</h3>
         <div>
-          Marque : <?= $row_marque["MARQUE"]?>
+          <b>Marque : </b><?= $row_marque["MARQUE"]?>
           <br>
-          Stockage : <?= $row["STOCKAGE"]?> Go
+          <b>Stockage : </b><?= $row["STOCKAGE"]?> Go
           <br>
-          Couleur : <?= $row_couleur["COULEUR"]?>
+          <b>Couleur : </b><?= $row_couleur["COULEUR"]?>
           <br>
-          Système : <?= $row["SYSTEME_D_EXPLOITATION"]?>
+          <b>Système : </b><?= $row["SYSTEME_D_EXPLOITATION"]?>
           <br>
-          Réseau : <?= $row["RESEAU"]?>
+          <b>Réseau : </b><?= $row["RESEAU"]?>
           <br>
         </div>
       </div>
