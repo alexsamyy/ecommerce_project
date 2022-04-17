@@ -26,7 +26,7 @@ $row = mysqli_fetch_array($result);
 if (empty($row)){ //IF NO PRODUCT, DISPLAY A MESSAGE
     ?>
 
-<h2 style="text-align:center; margin-top:300px; margin-bottom:300px;">Aucun <?=$marque?> en vente pour le
+<h2 style="text-align:center; margin-top:300px; margin-bottom:300px;">Aucun produit <?=$marque?> en vente pour le
     moment &#128532</h2>
 
 <?php
