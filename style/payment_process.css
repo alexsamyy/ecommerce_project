@@ -1,0 +1,21 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.gif_panda{
+    width: 100px;
+}
+
+.gif_part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks_txt{
+    text-align: center;
+}
+

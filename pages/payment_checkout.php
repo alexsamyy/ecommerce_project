@@ -1,6 +1,7 @@
 <header>
     <?php
     $title = "Paiement";
+    ob_start();
     session_start();
     include "../composants/header.php";
     // connexion à la base de données
@@ -10,8 +11,40 @@
 
 <body>
 
-    <!-- INFORMATION ARTICLE DANS PANIER (PARTIE GAUCHE) -->
+    <?php
+    if (isset($_SESSION['iduser']) == true){
+        $user = $_SESSION['iduser'];
+
+        $sql = "SELECT * FROM utilisateur WHERE ID_UTILISATEUR = " . $user;
+        $result = mysqli_query($db, $sql);
+        $row = mysqli_fetch_array($result);
+    ?>
+
+    <!-- GRID GLOBAL -->
     <div class="grid_container_panier">
+
+        <!-------------------------------------------- BARRE DE PROGRESSION PANIER ------------------------------------->
+
+        <div class="stepper-wrapper">
+            <div class="stepper-item completed">
+                <a style="color:black" href="../pages/panier.php">
+                    <div class="step-counter">1</div>
+                </a>
+                <div class="step-name">Livraison</div>
+            </div>
+            <div class="stepper-item active">
+                <div class="step-counter">2</div>
+                <div class="step-name">Paiement</div>
+            </div>
+            <div class="stepper-item">
+                <div class="step-counter">3</div>
+                <div class="step-name">Confirmation</div>
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------->
+
+        <!-- INFORMATION PAIEMENT -->
 
         <div class="panier_product_info">
 
@@ -104,9 +137,8 @@
                 </div>
                 <!-- BOUTON SUPPRIMER PRODUIT -->
                 <div class="proceed_btn">
-                    <form action="" method="post">
-                        <input class="btn_payer" type="button" value="PAYER">
-                    </form>
+                    <input onclick="window.location.href='../pages/confirm_payment.php';" class="btn_payer"
+                        type="button" value="CONFIRMATION">
                 </div>
             </div>
 
@@ -114,6 +146,11 @@
         </div>
 
     </div>
+
+    <?php }
+    else{
+        header("Location: ../pages/login.php");
+    }?>
 
 </body>
 
