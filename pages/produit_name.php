@@ -10,12 +10,7 @@
 </header>
 
 <body>
-    <!------------------------------ HAUT DE LA PAGE ------------------------------------>
-    <div>
-        <h1 class="title_page">SMARTPHONES</h1>
-    </div>
-    <!------------------------------ FIN HAUT DE LA PAGE ------------------------------------>
-
+    
     <!---------------------- AFFICHE EN FONCTION DU NOM DE PRODUIT DEMANDE ------------------->
 
     <?php
@@ -24,11 +19,19 @@ $name = $_GET['name'];
 $requete = "SELECT * FROM smartphone WHERE '$name' = NOM and NEUF = true";
 $result = mysqli_query($db,$requete);
 $row = mysqli_fetch_array($result);
+?>
 
+<!------------------------------ HAUT DE LA PAGE ------------------------------------>
+    <div class="title_page">
+        <h1 class="title"><?=$name?></h1>
+    </div>
+<!------------------------------ FIN HAUT DE LA PAGE ------------------------------------>
+
+<?php
 //----------------------- PRODUIT NON PRESENT DANS LA DATABASE --------------------
 if (empty($row)){?>
-    <h2 style="text-align:center; margin-top:100px; margin-bottom:100px;">Aucun <?=$name?> en vente pour le
-        moment &#128532</h2>
+    <h3 style="text-align:center; margin-top:100px; margin-bottom:100px;">Aucun <?=$name?> en vente pour le
+        moment &#128532</h3>
     <h2 style="margin-top:40px; text-align:center">Nous vous proposons d'autres smartphones...</h2>
 
     <!--------------------------------- AFFICHE D'AUTRES PRODUITS --------------------------------->

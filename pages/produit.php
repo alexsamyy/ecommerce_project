@@ -11,8 +11,8 @@
 
 <body>
   
-<div>
-  <h1 class="title_page">SMARTPHONES</h1>
+<div class="title_page">
+  <h1 class="title">Smartphones</h1>
 </div>
 
 </div>

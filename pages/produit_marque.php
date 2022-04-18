@@ -27,8 +27,8 @@ $row = mysqli_fetch_array($result);
 if (empty($row)){ //IF NO PRODUCT, DISPLAY A MESSAGE
     ?>
 
-<h2 style="text-align:center; margin-top:300px; margin-bottom:300px;">Aucun produit <?=$marque?> en vente pour le
-    moment &#128532</h2>
+<h3 style="text-align:center; margin-top:300px; margin-bottom:300px;">Aucun produit <?=$marque?> en vente pour le
+    moment &#128532</h3>
 
 <?php
 }
@@ -36,8 +36,8 @@ else{
 ?>
 
 <!------------------------------ HAUT DE LA PAGE ------------------------------------>
-<div>
-    <h1 class="title_page">SMARTPHONES</h1>
+<div class="title_page">
+    <h1 class="title"><?=$marque?></h1>
 </div>
 
 

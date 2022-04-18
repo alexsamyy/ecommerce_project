@@ -9,7 +9,9 @@
 ?>
 </header>
 
-<div><h1 class="title_page">MARKETPLACE</h1></div>
+<div class="title_page">
+  <h1 class="title">Marketplace</h1>
+</div>
 
 <?php
 $sql = "SELECT * FROM smartphone WHERE NEUF = false";

@@ -1,7 +1,16 @@
 .title_page {
     text-align: center;
-    margin-top: 250px;
+    margin-top: 205px;
     margin-bottom: 50px;
+    background-color: #212121;
+    color:white;
+    height:150px;
+}
+
+.title{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
 }
 
 .grid_navbar {
