@@ -1,23 +1,11 @@
 <header>
     <?php
-    $title = "Panier";
+    $title = "Paiement";
     session_start();
     include "../composants/header.php";
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-
-<!-- FONCTION JAVASCRIPT POUR CODE PROMO => MET AUTOMATIQUEMENT EN MAJUSCULE LE TEXTE ENTRANT -->
-
-<script>
-function capletter() {
-  var x = document.getElementById("discount_input");
-  x.value = x.value.toUpperCase();
-}
-</script>
-
-<!---------------------------------------------------------------------------------------------->
-
 </header>
 
 <body>
@@ -98,25 +86,27 @@ function capletter() {
                 <!-- NOM PRODUIT -->
                 <div class="discount_box">
                     <form action="" method="post">
-                        <input type="text" maxlength="10" id="discount_input" onkeyup="capletter()" placeholder="CODE PROMO">
+                        <input type="text" placeholder="CODE PROMO">
                     </form>
                 </div>
                 <!-- PRIX PRODUIT -->
                 <div class="total_prod">
-                    <h5>TOTAL PANIER : 1209 €</h5>
+                    <h5>TOTAL PANIER :</h5>
                 </div>
                 <!-- DETAILS TECHNIQUES PRODUIT -->
                 <div class="delivery_fees">
-                    <h5>ESTIMATION FRAIS DE LIVRAISON : 20 €</h5>
+                    <h5>ESTIMATION FRAIS DE LIVRAISON :</h5>
                 </div>
                 <hr>
                 <!-- QUANTITE -->
                 <div class="total_order">
-                    <h5>MONTANT TOTAL : 1229 €</5>
+                    <h5>MONTANT TOTAL :</5>
                 </div>
                 <!-- BOUTON SUPPRIMER PRODUIT -->
                 <div class="proceed_btn">
-                    <input onclick="window.location.href='../pages/payment_checkout.php';" class="btn_payer" type="button" value="PAYER">
+                    <form action="" method="post">
+                        <input class="btn_payer" type="button" value="PAYER">
+                    </form>
                 </div>
             </div>
 

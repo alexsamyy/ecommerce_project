@@ -1,5 +1,4 @@
 <?php
-$title = "header";
 include "../composants/main.php";
 require_once "../composants/db.php";
 ?>

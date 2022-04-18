@@ -1,5 +1,6 @@
 <header>
   <?php
+    $title = "FoneMarket";
     session_start();
     include "../composants/header.php";
     // connexion à la base de données

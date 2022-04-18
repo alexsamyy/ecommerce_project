@@ -1,5 +1,6 @@
 <header>
 <?php
+    $title = "Offre étudiante";
     session_start();
     include "../composants/header.php";
     include "../composants/main.php";

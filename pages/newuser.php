@@ -1,7 +1,8 @@
 <html><!--supportppe-->
-    <head>
+    <header>
     
     <?php
+    $title = "Créer un compte";
     ob_start();
     session_start();
     include "../composants/header.php";
@@ -21,7 +22,7 @@
                 return true;
             }
         </script>
-    </head>
+    </header>
     <body>
     
         <!-- IF YES, REDIRECT TO HOME PAGE -->

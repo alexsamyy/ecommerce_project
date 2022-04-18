@@ -1,11 +1,11 @@
 <header>
   <?php
+    $title = "Produit";
     session_start();
     include "../composants/header.php";
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-  <title>PRODUIT</title>
 </header>
 
 <body>
@@ -14,7 +14,6 @@
   <?php
 
 $id_this_product = $_GET['id'];
-
 //MYSQL SELECT INFORMATION TABLE SMARTPHONE ONLY
 $requete_info =  "SELECT * FROM smartphone WHERE '$id_this_product' = ID";
 $info = mysqli_query($db,$requete_info);  
@@ -81,14 +80,14 @@ $row_marque = mysqli_fetch_array($marque);
   <h2 style="margin-top:40px; text-align:center">Pas convaincu ? Voici d'autres smartphones...</h2>
 
   <!-- AFFICHE D'AUTRES PRODUITS -->
-  
+
   <?php
   if (empty($row)){?>
-    <h2 style="margin-top:40px; text-align:center">Nous vous proposons d'autres smartphones...</h2>
+  <h2 style="margin-top:40px; text-align:center">Nous vous proposons d'autres smartphones...</h2>
   <?php
   }?>
-  
-  
+
+
 
   <div class="grid">
     <!-- GRID PARENT -->

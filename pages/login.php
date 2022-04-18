@@ -1,6 +1,6 @@
-
 <header>
 <?php
+    $title = "Connexion";
     ob_start();
     session_start();
     include "../composants/header.php";

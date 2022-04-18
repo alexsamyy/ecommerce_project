@@ -1,178 +1,123 @@
-body {
-    background: white;
-    min-height: 100vh;
-    vertical-align: middle;
-    display: flex;
-    font-family: sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-top:200px;
+/* PANIER GLOBAL (CONSTITUE LE GRID PARENT */
+
+.grid_container_panier {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    'info_prod info_panier';
+    gap: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-top:250px;
+    margin-left : 100px;
+    margin-right: 100px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: red;
 }
 
-.title {
-    margin-bottom: 5vh
+/* PARTIE GAUCHE */ 
+
+.panier_product_info{
+    grid-area:info_prod;
+    display: grid;
+    grid-template-areas:
+    'user'
+    'nb_prod'
+    'info_order';
+    max-width: 800px;
+    padding: 40px;
+    background-color: green;
 }
 
-.card {
+.user_info{
+    grid-area: user;
+    width: 500px;
     margin: auto;
-    max-width: 950px;
-    width: 90%;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
-    border: transparent
 }
 
-@media(max-width:767px) {
-    .card {
-        margin: 3vh auto
-    }
+.img_prod_panier{
+    grid-area: img;
+    padding: 10px;
 }
 
-.cart {
-    background-color: #fff;
-    padding: 4vh 5vh;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem
+.photo_prod{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
-@media(max-width:767px) {
-    .cart {
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem
-    }
+.title_user_info{
+    border-bottom: 5px solid black;
+    width: 500px;
+    height: 30px;
 }
 
-.summary {
-    background-color: #ddd;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 4vh;
-    color: rgb(65, 65, 65)
+.coord{
+    float:left;
 }
 
-@media(max-width:767px) {
-    .summary {
-        border-top-right-radius: unset;
-        border-bottom-left-radius: 1rem
-    }
+.modify{
+    float: right;
+    margin-right: 320px;
+    font-size: small;
 }
 
-.summary .col-2 {
-    padding: 0
+.global_info{
+    grid-area: global_info;
+    margin: auto;
+    font-size: medium;
 }
 
-.summary .col-10 {
-    padding: 0
+.delete_article{
+    font-size: small;
 }
 
-.row {
-    margin: 0
+.info_order{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    'img global_info';
+    grid-area: info_order;
+    margin: auto;
+    width: 500px;
+    background-color: beige;
 }
 
-.title b {
-    font-size: 1.5rem
+.nb_prod{
+    grid-area:nb_prod;
+    border-bottom: 5px solid black;
+    width: 500px;
+    height: 30px;
+    margin: auto;
 }
 
-.main {
-    margin: 0;
-    padding: 2vh 0;
-    width: 100%
+/* PARTIE DROITE */
+
+.grid_info_panier{
+    grid-area:info_panier;
+    display: grid;
+    max-width: 600px;
+    background-color: yellow;
 }
 
-.col-2,
-.col {
-    padding: 0 1vh
+.info_paiement{
+    margin:auto;
 }
 
-a {
-    padding: 0 1vh
+.order_detail{
+    border-bottom: 5px solid black;
+    width: 500px;
+    height: 30px;
 }
 
-.close {
-    margin-left: auto;
-    font-size: 0.7rem
+.discount_box{
+    margin-top: 10px;
 }
 
-img {
-    width: 3.5rem
-}
-
-.back-to-shop {
-    margin-top: 4.5rem
-}
-
-h5 {
-    margin-top: 4vh
-}
-
-hr {
-    margin-top: 1.25rem
-}
-
-form {
-    padding: 2vh 0
-}
-
-select {
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1.5vh 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247)
-}
-
-input {
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247)
-}
-
-input:focus::-webkit-input-placeholder {
-    color: transparent
-}
-
-.btn {
-    background-color: #000;
-    border-color: #000;
+.btn_payer{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #212121;
     color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0
-}
-
-.btn:focus {
-    box-shadow: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    -webkit-user-select: none;
-    transition: none
-}
-
-.btn:hover {
-    color: white
-}
-
-a {
-    color: black
-}
-
-a:hover {
-    color: black;
-    text-decoration: none
-}
-
-#code {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center
 }

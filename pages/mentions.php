@@ -1,5 +1,6 @@
 <header>
 <?php
+    $title = "Mentions légales";
     session_start();
     include "../composants/header.php";
     include "../composants/main.php";

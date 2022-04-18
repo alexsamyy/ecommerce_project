@@ -1,5 +1,6 @@
 <header>
 <?php
+    $title = "Mon compte";
     ob_start();
     session_start();
     include "../composants/header.php";

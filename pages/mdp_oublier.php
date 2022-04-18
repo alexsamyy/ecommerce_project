@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>mdp_oublier</title>
-</head>
+<header>
+<?php
+    $title = "Réinitialiser son mot de passe";
+    ob_start();
+    session_start();
+    include "../composants/main.php";
+    // connexion à la base de données
+    require_once "../composants/db.php";
+?>
+</header>
 
 <body>
     <form id="mdp_oublier" action="../fonctions/traitement_mdp_oublier.php" method="GET">
@@ -14,4 +17,7 @@
     </form>
 </body>
 
+<footer>
+
+</footer>
 </html>
