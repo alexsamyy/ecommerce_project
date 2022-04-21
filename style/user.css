@@ -1,4 +1,41 @@
-.logout{
+.grid_container_user {
+    display: grid;
+    background-color: green;
+    margin-top: 220px;
+    grid-template-areas:
+        "info_acc_user . info_acc_paiement"
+        "user_acc_commande . user_add_marketplace"
+    ;
+    width: 100%;
+    height: 100%;
+
+}
+
+.info_acc_user {
+    display: grid;
+    grid-area: info_acc_user;
+}
+.info_acc_paiement{
+    display: grid;
+    grid-area: info_acc_paiement;
+    background-color: rgb(255, 200, 0);
+}
+.user_acc_commande{
+    grid-area: user_acc_commande;
+        background-color: rgb(29, 15, 154);
+
+}
+.user_add_marketplace{
+    grid-area: user_add_marketplace;
+        background-color: rgb(141, 171, 171);
+
+}
+
+
+
+
+
+.logout {
     text-align: center;
     margin: 350px;
 }
