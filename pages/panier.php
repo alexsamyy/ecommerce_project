@@ -136,7 +136,7 @@
                 <div class="total_order">
                     <h5>MONTANT TOTAL : 1229 €</5>
                 </div>
-                <!-- BOUTON SUPPRIMER PRODUIT -->
+                <!-- BOUTON PASSER COMMANDE -->
                 <div class="proceed_btn">
                     <input onclick="window.location.href='../pages/payment_checkout.php';" class="btn_payer"
                         type="button" value="PASSER COMMANDE">
