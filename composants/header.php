@@ -50,9 +50,7 @@ require_once "../composants/db.php";
                                 </div>
 
                                 <a href="../pages/user.php">
-
-
-                                    <?php 
+                                    <?php
                                     $message = "Bienvenue ";
                                     if (isset($_SESSION['iduser']) == true) {
                                         $user = $_SESSION['iduser'];
@@ -66,9 +64,9 @@ require_once "../composants/db.php";
                                         // afficher un message
                                         echo ($message . "" . $row . " !");
                                     } else { ?>
-                                    <div><a href="../pages/newuser.php">Créer un compte</a></div>
-                                    <span>|</span>
-                                    <div><a href="../pages/login.php">Connexion</a></div>
+                                        <div><a href="../pages/newuser.php">Créer un compte</a></div>
+                                        <span>|</span>
+                                        <div><a href="../pages/login.php">Connexion</a></div>
                                     <?php
                                     }
                                     ?>
@@ -95,16 +93,8 @@ require_once "../composants/db.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-
-
-                                    <form autocomplete="off" class="header_search_form clearfix">
-                                        <input onkeyup="manakey(event)" oninput="activeSearch()" style="width:100%"
-                                            required="required" class="Search_bar header_search_input" name="Rechercher"
-                                            placeholder="Rechercher des produits...">
-
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"
-                                            style="background-color:black;"><img
-                                                src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
+                                    <form action="#" class="header_search_form clearfix"> <input onkeyup="activeSearch" style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
+                                        <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>
 
 
@@ -115,8 +105,7 @@ require_once "../composants/db.php";
                     <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
                             <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist_icon"><img
-                                        src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918681/heart.png">
+                                <div class="wishlist_icon"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918681/heart.png">
                                 </div>
                                 <div class="wishlist_content">
                                     <div class="wishlist_text"><a href="../pages/favoris.php">Favoris</a></div>
@@ -124,8 +113,7 @@ require_once "../composants/db.php";
                             </div> <!-- Cart -->
                             <div class="cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon"><a href="../pages/panier.php"><img
-                                                src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png"></a>
+                                    <div class="cart_icon"><a href="../pages/panier.php"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png"></a>
                                         <div class="cart_count"><span>0</span></div>
                                     </div>
                                     <div class="cart_content">
@@ -146,8 +134,7 @@ require_once "../composants/db.php";
                             <!-- Main Nav Menu -->
                             <div class="main_nav_menu">
                                 <ul class="standard_dropdown main_nav_dropdown">
-                                    <li class="hassubs"> <a href="../pages/produit.php">Produits<i
-                                                class="fas fa-chevron-down"></i></a>
+                                    <li class="hassubs"> <a href="../pages/produit.php">Produits<i class="fas fa-chevron-down"></i></a>
                                         <ul>
                                             <li> <a
                                                     href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Apple">Apple<i
@@ -191,14 +178,12 @@ require_once "../composants/db.php";
                                                     </li>
                                                     <li><a href="#">S21 FE 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="#">Galaxy Z series<i
-                                                                class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="#">Galaxy Z series<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Galaxy A53 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                     <li><a href="#">Galaxy S20FE<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="#">Galaxy A52s 5G<i
-                                                                class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="#">Galaxy A52s 5G<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Galaxy A22 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                 </ul>
@@ -209,16 +194,12 @@ require_once "../composants/db.php";
                                                 <ul>
                                                     <li><a href="#">Xiaomi 12 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="#">Xiaomi 12 Pro 5G<i
-                                                                class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Xiaomi 11T Pro<i
-                                                                class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="#">Xiaomi 12 Pro 5G<i class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="#">Xiaomi 11T Pro<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Redmi Note 11<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="#">Redmi Note 11S<i
-                                                                class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Redmi Note 11 Pro<i
-                                                                class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="#">Redmi Note 11S<i class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="#">Redmi Note 11 Pro<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Redmi 10<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Redmi 9A<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Redmi 9C NFC<i class="fas fa-chevron-down"></i></a>

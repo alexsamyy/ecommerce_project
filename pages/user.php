@@ -1,6 +1,6 @@
 <header>
     <?php
-    $title = "Mon compte";
+    $title = "add_marketplace";
     ob_start();
     session_start();
     include "../composants/header.php";
@@ -9,51 +9,80 @@
     require_once "../composants/db.php";
     ?>
 </header>
-<!-- Body -->
+
+
+<!-- importer le fichier de style -->
+<link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
+</head>
 
 <body>
 
-    <!-- IF YES, DISPLAY LOG OUT PAGE -->
-    <?php
-    if (isset($_SESSION['iduser']) == true) {
-    ?>
-        <!-- GRID PRINCIPAL PARTIE COMPTE USER -->
-        <div class="grid_container_user">
-            <!-- GRID INFORMATIONS PERSONNELLES USER -->
-            <div class="info_acc_user">
-                
+    <div id="container">
+        <!-- zone de connexion -->
+        <!-- IF YES, DISPLAY LOG OUT PAGE -->
+        <?php
+        if (isset($_SESSION['iduser']) == true) {
+        ?>
+            <!-- GRID PRINCIPAL PARTIE COMPTE USER -->
+            <div class="33grid_container_user">
+                <!-- GRID INFORMATIONS PERSONNELLES USER -->
+                <div class="info_acc_user">
+                    <?php
+                    $user = $_SESSION['iduser'];
+
+                    $sql = "SELECT * FROM utilisateur WHERE ID_UTILISATEUR = " . $user;
+                    $result = mysqli_query($db, $sql);
+                    $row = mysqli_fetch_array($result);
+
+
+                    echo "Prénom : " . $row['PRENOM'];
+                    echo "<br/>";
+                    echo "Nom : " . $row['NOM'];
+                    echo "<br/>";
+                    echo "Role : " . $row['ROLE'];
+                    echo "<br/>";
+                    echo "Adresse mail : " . $row['EMAIL'];
+                    echo "<br/>";
+                    echo "Date de naissance : " . $row['DATE_BIRTH'];
+                    ?>
+                </div><br><br>
+                <div class="user_acc_commande">
+                    <input onclick="window.location.href='../pages/payment_checkout.php';" class="btn_payer" type="button" value="suiver votre commande">
+                </div><br><br>
+
+
+                <div class="info_acc_paiement">
+                    <input onclick="window.location.href='../pages/paiement.php';" class="" type="button" value="paiement">
+                </div><br><br>
+
+                <div class="user_add_marketplace">
+                    <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button" value="Ajouter un article">
+                </div><br><br>
+
+                <div>
+                    <form class="logout" action="../fonctions/deconnexion.php">
+                        <button>Déconnexion</button>
+                    </form>
+                </div>
+
+            <?php
+        } // IF NOT ALREADY LOGGED IN, REDIRECTS TO HOME PAGE
+        else {
+
+            header("Location: login.php");
+            die();
+        }
+
+            ?>
+
+
+
+
             </div>
-            <div class="info_acc_paiement">
-                <input onclick="window.location.href='../pages/paiement.php';" class="" type="button" value="paiement">
-            </div>
-            <div class="user_acc_commande">
-                <input onclick="window.location.href='../pages/payment_checkout.php';" class="btn_payer" type="button" value="PASSER COMMANDE">
-            </div>
-            <div class="user_add_marketplace">
-                <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button" value="Ajouter un article">
-            </div>
-        </div>
-        <form class="logout" action="../fonctions/deconnexion.php">
-            <button>Déconnexion</button>
-        </form>
+            <?php  ?>
 
-    <?php
-    } // IF NOT ALREADY LOGGED IN, REDIRECTS TO HOME PAGE
-    else {
+            <?php
+            include "../composants/footer.php"
+            ?>
 
-        header("Location: login.php");
-        die();
-    }
-
-    ?>
-
-
-</body>
-
-</html>
-<!-- Body -->
-<footer>
-    <?php
-    include "../composants/footer.php";
-    ?>
-</footer>
+            </html>
