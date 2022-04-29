@@ -24,6 +24,9 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"
 ></script>
 
+<!-- JQUERY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <!-- CSS -->
 <link rel="stylesheet" href="../style/footer.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
@@ -34,6 +37,7 @@
 <link rel="stylesheet" href="../style/student_offer.css" media="screen" type="text/css"/>
 <link rel="stylesheet" href="../style/hire.css" media="screen" type="text/css"/>
 <link rel="stylesheet" href="../style/panier.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="../style/payment_checkout.css" media="screen" type="text/css"/>
 <link rel="stylesheet" href="../style/payment_process.css" media="screen" type="text/css"/>
 
 

@@ -5,17 +5,73 @@
     height: 100%;
 }
 
-.gif_panda{
+.gif_panda {
     width: 100px;
 }
 
-.gif_part{
+.gif_part {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.thanks_txt{
+.thanks_txt {
     text-align: center;
 }
 
+/*------------------- ETAPE PAIEMENT ------------------*/
+
+.paiement_info {
+    margin-top: 10px;
+    display: grid;
+    grid-template-areas: 
+    'card_nb card_nb card_nb'
+    'expiration cvv cvv'
+    'titulaire titulaire titulaire';
+}
+
+.nb_card{
+    grid-area:card_nb;
+}
+
+.expiration{
+    grid-area: expiration;
+}
+
+.cvv{
+    grid-area: cvv;
+}
+
+.titulaire{
+    grid-area: titulaire;
+}
+
+/* DATE EXPIRATION CARTE BANCAIRE */
+
+.exp-wrapper {
+    position: relative;
+    border: 1px solid black;
+    display: flex;
+    width: 80px;
+    justify-content: space-around;
+    height: 26px;
+    line-height: 26px;
+    font-size: 24px;
+}
+
+.exp-wrapper:after {
+    content: ' / ';
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    color: #aaa;
+}
+
+input.exp {
+    float: left;
+    border: 0;
+    width: 30px;
+    outline: none;
+    appearance: none;
+    font-size: 14px;
+}

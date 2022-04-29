@@ -10,7 +10,7 @@
 </header>
 
 <div class="title_page">
-  <h1 class="title">Marketplace</h1>
+  <h1 class="title_asked_page">Marketplace</h1>
 </div>
 
 <?php

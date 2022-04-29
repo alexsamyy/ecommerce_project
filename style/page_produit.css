@@ -1,47 +1,75 @@
-.photo_product{
+.photo_product {
   grid-area: photo;
 }
 
-.img_product{
-  width:400px;
-  height:400px;
+.img_product {
+  width: 400px;
+  height: 400px;
   object-fit: cover;
-  position:sticky;
-  top:260px;
+  position: sticky;
+  top: 260px;
   box-sizing: border-box;
 }
 
 /* NOM PRODUIT */
 
-.nom_part{
+.nom_part {
   grid-area: nom;
   text-align: left;
 }
 
 /* PRIX PRODUIT */
 
-.prix_part{
+.prix_part {
   grid-area: prix;
   text-align: left;
   margin-top: 10px;
 }
 
+/* ---- PAGE PRODUIT INTERACTION USER ---- */
+
+.interaction_user{
+  display: flex;
+  flex-direction: row;
+}
+
 /* BOUTON AJOUT PANIER */
 
-.add_to_cart{
-  grid-area: panier;
+.add_to_cart {
   border-radius: 10px;
   width: 150px;
-  height: 30px;
-  margin-top: 10px;
+  height: 50px;
   font-size: medium;
-  color:white;
+  color: white;
   background-color: #212121;
+  grid-area: panier;
+}
+
+/* ANIMATION COEUR AJOUT FAVORIS */
+
+.favoris{
+  margin-left: 15%;
+}
+
+[id='toggle-heart']{
+  position: absolute;
+  left: -100vw;
+}
+
+[id='toggle-heart']:checked + label {
+  color: #e2264d;
+}
+
+[for='toggle-heart'] {
+  align-self: center;
+  color: #aab8c2;
+  font-size: 35px;
+  cursor: pointer;
 }
 
 /* DETAILS TECHNIQUES */
 
-.spec_part{
+.spec_part {
   grid-area: spec;
   font-size: medium;
   text-align: left;
@@ -49,43 +77,43 @@
 
 /* DESCRIPTION PRODUIT */
 
-.desc_part{
+.desc_part {
   grid-area: description;
   max-width: 800px;
 }
 
-.description_prod{
+.description_prod {
   font-size: large;
   overflow: visible;
-  color:black;
+  color: black;
   text-align: justify;
 }
 
 
 /* TITRE PARTIE INFORMATIONS PRODUIT */
 
-.title_info{
+.title_info {
   margin-top: 10px;
   text-align: left;
-  color:black;
+  color: black;
   text-decoration: underline;
 }
 
 
 /*--------*/
-.grid_info_prod{
-  grid-area:info;
+.grid_info_prod {
+  grid-area: info;
   display: grid;
   justify-content: center;
   grid-template-areas:
-    'nom'
-  	'prix'
-    'panier'
-    'spec'
-    'description';
+    'nom nom'
+    'prix prix'
+    'interaction_user .'
+    'spec spec'
+    'description description';
 }
 
-.grid-container_product{
+.grid-container_product {
   display: grid;
   grid-template-areas:
     'photo info info';
@@ -95,9 +123,8 @@
   grid-template-columns: 40% 60%;
 }
 
-.grid-container_product > div {
+.grid-container_product>div {
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
 }
-

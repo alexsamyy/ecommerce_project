@@ -74,12 +74,12 @@
             </div>
             <div class="info_order">
 
-                <!-------------- IMAGE ARTICLE -------------->
+                <!-------------- CREDIT CARD NB  -------------->
                 <div class="img_prod_panier">
                     <img class="photo_prod" src="../media/produit/iPhone13_minuit.jpg">
                 </div>
 
-                <!-------------- INFO COMMANDE -------------->
+                <!-------------- EXPIRATION CREDIT CARD -------------->
                 <div class="global_info">
                     <!-- NOM PRODUIT -->
                     <div class="prod_name">

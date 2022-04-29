@@ -23,7 +23,7 @@ $row = mysqli_fetch_array($result);
 
 <!------------------------------ HAUT DE LA PAGE ------------------------------------>
     <div class="title_page">
-        <h1 class="title"><?=$name?></h1>
+        <h1 class="title_asked_page"><?=$name?></h1>
     </div>
 <!------------------------------ FIN HAUT DE LA PAGE ------------------------------------>
 

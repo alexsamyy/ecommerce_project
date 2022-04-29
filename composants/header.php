@@ -3,16 +3,35 @@ include "../composants/main.php";
 require_once "../composants/db.php";
 ?>
 
+
 <script>
+    function sendad() {
+        var mot = document.getElementsByName('Rechercher')[0].value;
+        console.log(mot)
+        window.location = 'search.php?Rechercher=' + mot;
+    }
+
+    function manakey(e) {
+        if (e.keyCode == 13) {
+            sendad();
+        }
+    }
+
     function activeSearch() {
-        $.ajax({
-                url: "search.php"
-            })
-            .done(function () {
-                alert("Server called");
+        let pre_result = document.querySelector('.Search_bar').style.display = 'block';
+        var mot = document.getElementsByName('Rechercher')[0].value;
+        console.log(mot)
+        if (mot != "") {
+            $.post("search.php", {
+                mot: mot
+            }, function (data) {
+                $('.Search_bar').html(data);
             });
+        } else
+            document.querySelector(".search_prod").style.display = "none";
     }
 </script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <div class="super_container">
@@ -31,6 +50,8 @@ require_once "../composants/db.php";
                                 </div>
 
                                 <a href="../pages/user.php">
+
+
                                     <?php 
                                     $message = "Bienvenue ";
                                     if (isset($_SESSION['iduser']) == true) {
@@ -50,8 +71,7 @@ require_once "../composants/db.php";
                                     <div><a href="../pages/login.php">Connexion</a></div>
                                     <?php
                                     }
-                                ?>
-
+                                    ?>
 
 
                             </div>
@@ -75,13 +95,19 @@ require_once "../composants/db.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix"> <input onkeyup="activeSearch" style="width:100%"
-                                            required="required" class="header_search_input" name="Rechercher"
+
+
+                                    <form autocomplete="off" class="header_search_form clearfix">
+                                        <input onkeyup="manakey(event)" oninput="activeSearch()" style="width:100%"
+                                            required="required" class="Search_bar header_search_input" name="Rechercher"
                                             placeholder="Rechercher des produits...">
+
                                         <button type="submit" class="header_search_button trans_300" value="Submit"
                                             style="background-color:black;"><img
                                                 src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -123,25 +149,45 @@ require_once "../composants/db.php";
                                     <li class="hassubs"> <a href="../pages/produit.php">Produits<i
                                                 class="fas fa-chevron-down"></i></a>
                                         <ul>
-                                            <li> <a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Apple">Apple<i class="fas fa-chevron-down"></i></a>
+                                            <li> <a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Apple">Apple<i
+                                                        class="fas fa-chevron-down"></i></a>
                                                 <ul>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 13 Pro">iPhone 13 Pro<i class="fas fa-chevron-down"></i></a>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 13 Pro">iPhone
+                                                            13 Pro<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 13">iPhone 13<i class="fas fa-chevron-down"></i></a>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 13">iPhone
+                                                            13<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 12">iPhone 12<i class="fas fa-chevron-down"></i></a>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 12">iPhone
+                                                            12<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 11">iPhone 11<i class="fas fa-chevron-down"></i></a>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 11">iPhone
+                                                            11<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone SE">iPhone SE<i class="fas fa-chevron-down"></i></a>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone SE">iPhone
+                                                            SE<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Samsung">Samsung<i class="fas fa-chevron-down"></i></a>
+                                            <li><a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Samsung">Samsung<i
+                                                        class="fas fa-chevron-down"></i></a>
                                                 <ul>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22">S22<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22 Plus">S22+<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22 Ultra">S22 Ultra 5G<i class="fas fa-chevron-down"></i></a>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22">S22<i
+                                                                class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22 Plus">S22+<i
+                                                                class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a
+                                                            href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22 Ultra">S22
+                                                            Ultra 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                     <li><a href="#">S21 FE 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
@@ -157,7 +203,9 @@ require_once "../composants/db.php";
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Xiaomi">Xiaomi<i class="fas fa-chevron-down"></i></a>
+                                            <li><a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Xiaomi">Xiaomi<i
+                                                        class="fas fa-chevron-down"></i></a>
                                                 <ul>
                                                     <li><a href="#">Xiaomi 12 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
@@ -177,10 +225,18 @@ require_once "../composants/db.php";
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Huawei">Huawei<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Google">Google<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=OnePlus">OnePlus<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Oppo">Oppo<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Huawei">Huawei<i
+                                                        class="fas fa-chevron-down"></i></a></li>
+                                            <li><a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Google">Google<i
+                                                        class="fas fa-chevron-down"></i></a></li>
+                                            <li><a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=OnePlus">OnePlus<i
+                                                        class="fas fa-chevron-down"></i></a></li>
+                                            <li><a
+                                                    href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Oppo">Oppo<i
+                                                        class="fas fa-chevron-down"></i></a></li>
                                         </ul>
                                     </li>
                                     <li> <a href="../pages/marketplace.php">Marketplace</a>

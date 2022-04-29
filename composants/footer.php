@@ -18,9 +18,6 @@ include "../composants/main.php";
         <!-- Mastercard -->
         <a style="color: #ffffff"><i class="fab fa-cc-mastercard fa-3x"></i></a>
 
-        <!-- PayPal -->
-        <a style="color: #ffffff"><i class="fab fa-cc-paypal fa-3x"></i></a>
-
         <!-- Apple Pay -->
         <a style="color: #ffffff"><i class="fab fa-cc-apple-pay fa-3x"></i></a>
 

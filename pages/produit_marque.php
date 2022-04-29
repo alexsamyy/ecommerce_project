@@ -1,4 +1,4 @@
-<header>
+<head>
     <?php
     $title = "Produit";
     session_start();
@@ -7,12 +7,34 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-</header>
+<?php $marque = $_GET['marque']; ?>
 
+    <script>
+        function sortBy() {
+            var ordre = document.getElementById("trier").value;
+            if (ordre == null){
+                document.getElementById("demo").innerHTML = "";
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            }
+            var req ="../fonctions/sortBy.php?ordre=" + ordre + "&marque=<?php echo $marque ?>";
+            xmlhttp.open("GET", req, true);
+            xmlhttp.send();
+        }
+    </script>
+
+
+</head>
+
+<body>
 <!-- AFFICHE EN FONCTION DE LA MARQUE OU PRODUIT DEMANDE -->
 <?php
 // ASK FOR MARQUE ID 
-$marque = $_GET['marque'];
+
 $ID_MARQUE_request = "SELECT ID_MARQUE FROM marque WHERE '$marque' = MARQUE"; // GET ID MARQUE 
 $req_res = mysqli_query($db, $ID_MARQUE_request); 
 $row_id_marque = mysqli_fetch_array($req_res);
@@ -37,24 +59,21 @@ else{
 
 <!------------------------------ HAUT DE LA PAGE ------------------------------------>
 <div class="title_page">
-    <h1 class="title"><?=$marque?></h1>
+    <h1 class="title_asked_page"><?=$marque?></h1>
 </div>
-
-
 <!-------- TRIER EN PRIX CROISSANT OU DECROISSANT ------------>
 <div class="sortBy">
     <span>
-        <select style="color:black; margin-left:80%" name="sortby" id="trier">
-            <option style="font-weight:bold;" onclick='sortBy()' value="null">Trier par</option>
-            <option value="ASC" onclick='sortBy()'>Prix croissant</option>
-            <option value="DESC"onclick='sortBy()'>Prix décroissant</option>
+        <select style="color:black; margin-left:80%" name="sortby" onchange='sortBy()' id="trier">
+            <option value="null">Trier par</option>
+            <option value="ASC">Prix croissant</option>
+            <option value="DESC">Prix décroissant</option>
         </select>
     </span>
 </div>
-<!------------------------------ FIN HAUT DE LA PAGE ------------------------------------>
 
 <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
-<div class="grid">
+<div id="demo" class="grid">
     <!-- GRID PARENT -->
     <?php
 
@@ -100,9 +119,9 @@ while ($row = mysqli_fetch_array($result)){
 </div>
 
 <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
-
-
-
-<?php
+</body>
+<footer>
+    <?php
     include "../composants/footer.php";
 ?>
+</footer>
