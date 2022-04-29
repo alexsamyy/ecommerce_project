@@ -6,6 +6,20 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
+
+  <!---------------------- FONCTIONS JAVASCRIPT ------------------>
+
+  <script>
+    function addFavorite() {
+      if (document.getElementById('toggle-heart').checked) {
+        $.post('../fonctions/addFav.php'){}
+      }}
+  </script>
+
+  <!-------------------------------------------------------------->
+
+
+
 </header>
 
 <body>
@@ -50,7 +64,13 @@ $row_marque = mysqli_fetch_array($marque);
         <h3 class="prix"><?= $row["PRIX"];?> €</h3>
       </div>
 
-      <input class="add_to_cart" type="button" value="Ajouter au panier">
+      <div class="interaction_user">
+        <div><input class="add_to_cart" type="button" value="Ajouter au panier"></div>
+        <a class="favoris" onclick="addFavorite()" title="Ajoute-moi en favoris !">
+          <input id="toggle-heart" type="checkbox" />
+          <label for="toggle-heart">❤</label>
+        </a>
+      </div>
 
       <div class="spec_part">
         <h3 class="title_info">Détails techniques</h3>
@@ -93,7 +113,7 @@ $row_marque = mysqli_fetch_array($marque);
     <!-- GRID PARENT -->
     <?php
 
-$sql = "SELECT * FROM smartphone WHERE NOM <> '$id_this_product' and NEUF = 1 order by rand() limit 3";
+$sql = "SELECT * FROM smartphone WHERE (ID != $id_this_product and NEUF = 1) order by rand() limit 3";
 $result = mysqli_query($db,$sql);
 while ($row = mysqli_fetch_array($result)){
     ?>

@@ -12,7 +12,7 @@
 <body>
   
 <div class="title_page">
-  <h1 class="title">Smartphones</h1>
+  <h1 class="title_asked_page">Smartphones</h1>
 </div>
 
 </div>
