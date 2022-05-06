@@ -22,9 +22,13 @@ print_r($_GET);?>
                 // QUANTITE 
                 $quantity = 1;
                 
-                //ID DE L'UTILISATEUR
+                // ID DE L'UTILISATEUR
                 $id_user = $_SESSION['iduser'];
 
-                //
+                // ID DE L'ARTICLE
+                $id_product = $_GET['id'];
 
+                $req_add_cart =
+                "insert into panier " . "values(NULL, '" . $id_user. "','" . $quantity . "','" . $nom . 
+                "','" . $mail .  "','" . $date_naissance . "','" . $mdp . "')";
             ?>

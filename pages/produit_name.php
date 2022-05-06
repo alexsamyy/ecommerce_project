@@ -16,7 +16,7 @@
     <?php
 
 $name = $_GET['name'];
-$requete = "SELECT * FROM smartphone WHERE '$name' = NOM and NEUF = true";
+$requete = "SELECT * FROM smartphone WHERE NOM = '$name' and NEUF = true";
 $result = mysqli_query($db,$requete);
 $row = mysqli_fetch_array($result);
 ?>

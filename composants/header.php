@@ -3,35 +3,6 @@ include "../composants/main.php";
 require_once "../composants/db.php";
 ?>
 
-
-<script>
-    function sendad() {
-        var mot = document.getElementsByName('Rechercher')[0].value;
-        console.log(mot)
-        window.location = 'search.php?Rechercher=' + mot;
-    }
-
-    function manakey(e) {
-        if (e.keyCode == 13) {
-            sendad();
-        }
-    }
-
-    function activeSearch() {
-        let pre_result = document.querySelector('.Search_bar').style.display = 'block';
-        var mot = document.getElementsByName('Rechercher')[0].value;
-        console.log(mot)
-        if (mot != "") {
-            $.post("search.php", {
-                mot: mot
-            }, function (data) {
-                $('.Search_bar').html(data);
-            });
-        } else
-            document.querySelector(".search_prod").style.display = "none";
-    }
-</script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
 
@@ -95,7 +66,7 @@ require_once "../composants/db.php";
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix"> <input onkeyup="activeSearch" style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
+                                    <form action="../pages/recherche.php" class="header_search_form clearfix"> <input style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
                                         <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>
 
