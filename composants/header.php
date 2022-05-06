@@ -32,8 +32,10 @@ require_once "../composants/db.php";
     }
 </script>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+
+
 <div class="super_container">
     <!-- Header -->
     <header class="header" style="position:fixed; background-color:white;">
@@ -230,4 +232,4 @@ require_once "../composants/db.php";
             </div>
         </nav>
     </header>
-</div>
+</div>include "../composants/header.php";

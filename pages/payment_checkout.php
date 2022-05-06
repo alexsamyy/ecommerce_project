@@ -1,26 +1,28 @@
 <header>
     <?php
-    $title = "Paiement";
-    ob_start();
+    $title = "Panier";
     session_start();
     include "../composants/header.php";
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
+
+    <!-- FONCTION JAVASCRIPT POUR CODE PROMO => MET AUTOMATIQUEMENT EN MAJUSCULE LE TEXTE ENTRANT -->
+
+    <script>
+        function capletter() {
+            var x = document.getElementById("discount_input");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+
+    <!---------------------------------------------------------------------------------------------->
+
 </header>
 
 <body>
 
-    <?php
-    if (isset($_SESSION['iduser']) == true){
-        $user = $_SESSION['iduser'];
-
-        $sql = "SELECT * FROM utilisateur WHERE ID_UTILISATEUR = " . $user;
-        $result = mysqli_query($db, $sql);
-        $row = mysqli_fetch_array($result);
-    ?>
-
-    <!-- GRID GLOBAL -->
+    <!-- GRID PANIER GLOBAL -->
     <div class="grid_container_panier">
 
         <!-------------------------------------------- BARRE DE PROGRESSION PANIER ------------------------------------->
@@ -44,9 +46,9 @@
 
         <!---------------------------------------------------------------------------------------------------------------->
 
-        <!-- INFORMATION PAIEMENT -->
+        <!-- INFORMATION ARTICLE DANS PANIER (PARTIE GAUCHE) -->
 
-        <div class="payment_checkout_info">
+        <div class="panier_product_info">
 
             <!-- INFORMATIONS CLIENTS ET ADRESSE DE LIVRAISON (SI CONNECTE SINON DEMANDE DE CREATION DE COMPTE / CONNEXION) -->
             <div class="user_info">
@@ -68,93 +70,85 @@
                 </div>
             </div>
 
-            <!-- PAIEMENT -->
-            <div class="paiement_title">
-                <h4>Paiement</h4>
+            <!-- NOMBRE ARTICLE -->
+            <div class="nb_prod">
+                <h4>1 article</h4>
             </div>
+            <div class="info_order">
 
-            <div class="info_pay_order">
-
-                <!--------------INFORMATIONS BANCAIRES ET ADRESSE DE LIVRAISON (PARTIE GAUCHE)-------------->
-                <div class="paiement_info">
-
-                    <!-- NUMEROS DE CARTE -->
-                    <div class="nb_card">
-                        <label>Numéro de carte</label><br>
-                        <input class="card_nb" type="number" pattern="[0-9\s]{13,19}" maxlength="19"
-                            placeholder="xxxx xxxx xxxx xxxx">
-                    </div>
-
-                    <!-- DATE D'EXPIRATION ET CODE CVV DE LA CARTE -->
-                    <div class="expiration_cvv">
-                        <label>Date d'expiration</label><br>
-                        <div class="exp-wrapper">
-                            <input class="exp" id="month" maxlength="2" pattern="[0-9]*" inputmode="numerical"
-                                placeholder="MM" type="text" data-pattern-validate>
-                            <input class="exp" id="year" maxlength="2" pattern="[0-9]*" inputmode="numerical"
-                                placeholder="YY" type="text" data-pattern-validate>
-                        </div>
-                        <!-- CODE CVV -->
-                        <div class="cvv">
-                            <label>CVV</label><br>
-                            <input autocomplete="off" class="exp" id="cvv" maxlength="3" pattern="[0-9]*"
-                                inputmode="numerical" placeholder="CVV" type="text" data-pattern-validate>
-                        </div>
-                    </div>
-
-                    <!-- NOM TITULAIRE CARTE -->
-                    <div class="titulaire">
-                        <label>Titulaire de la carte</label><br>
-                        <input class="nom_titulaire" type="text">
-                    </div>
-
+                <!-------------- CREDIT CARD NB  -------------->
+                <div class="img_prod_panier">
+                    <img class="photo_prod" src="../media/produit/iPhone13_minuit.jpg">
                 </div>
 
-                <!-- INFORMATION PAIEMENT (PARTIE DROITE) -->
-                <div class="grid_info_panier">
-
-                    <div class="info_paiement">
-                        <!-- NOMBRE ARTICLE -->
-                        <div class="order_detail">
-                            <h4>Détails de la commande</h4>
-                        </div>
-                        <!-- NOM PRODUIT -->
-                        <div class="discount_box">
-                            <form action="" method="post">
-                                <input type="text" placeholder="CODE PROMO">
-                            </form>
-                        </div>
-                        <!-- PRIX PRODUIT -->
-                        <div class="total_prod">
-                            <h5>TOTAL PANIER :</h5>
-                        </div>
-                        <!-- DETAILS TECHNIQUES PRODUIT -->
-                        <div class="delivery_fees">
-                            <h5>ESTIMATION FRAIS DE LIVRAISON :</h5>
-                        </div>
-                        <hr>
-                        <!-- QUANTITE -->
-                        <div class="total_order">
-                            <h5>MONTANT TOTAL :</5>
-                        </div>
-                        <!-- BOUTON SUPPRIMER PRODUIT -->
-                        <div class="proceed_btn">
-                            <input onclick="window.location.href='../pages/confirm_payment.php';" class="btn_payer"
-                                type="button" value="CONFIRMATION">
-                        </div>
+                <!-------------- EXPIRATION CREDIT CARD -------------->
+                <div class="global_info">
+                    <!-- NOM PRODUIT -->
+                    <div class="prod_name">
+                        <b>iPhone 13</b><br>
                     </div>
-
-
+                    <!-- PRIX PRODUIT -->
+                    <div class="prod_prix">
+                        <b>1209 €</b><br>
+                    </div>
+                    <!-- DETAILS TECHNIQUES PRODUIT -->
+                    <div class="prod_info_tech">
+                        <b>Minuit</b><br>
+                        <b>512 Go</b><br>
+                    </div>
+                    <!-- QUANTITE -->
+                    <div class="quantite">
+                        <b>Quantité :</b> 1
+                    </div>
+                    <!-- BOUTON SUPPRIMER PRODUIT -->
+                    <div class="delete_btn">
+                        <a class="delete_article" href="#">Supprimer</a>
+                    </div>
                 </div>
 
             </div>
+
         </div>
-    </div>
 
-    <?php }
-    else{
-        header("Location: ../pages/login.php");
-    }?>
+        <!-- INFORMATION PAIEMENT (PARTIE DROITE) -->
+        <div class="grid_info_panier">
+
+            <div class="info_paiement">
+                <!-- NOMBRE ARTICLE -->
+                <div class="order_detail">
+                    <h4>Détails de la commande</h4>
+                </div>
+                <!-- NOM PRODUIT -->
+                <div class="discount_box">
+                    <form action="" method="post">
+                        <input type="text" maxlength="10" id="discount_input" onkeyup="capletter()"
+                            placeholder="CODE PROMO">
+                    </form>
+                </div>
+                <!-- PRIX PRODUIT -->
+                <div class="total_prod">
+                    <h5>TOTAL PANIER : 1209 €</h5>
+                </div>
+                <!-- DETAILS TECHNIQUES PRODUIT -->
+                <div class="delivery_fees">
+                    <h5>ESTIMATION FRAIS DE LIVRAISON : 20 €</h5>
+                </div>
+                <hr>
+                <!-- QUANTITE -->
+                <div class="total_order">
+                    <h5>MONTANT TOTAL : 1229 €</5>
+                </div>
+                <!-- BOUTON PASSER COMMANDE -->
+                <div class="proceed_btn">
+                    <input onclick="window.location.href='../pages/confirm_payment.php';" class="btn_payer"
+                        type="button" value="PASSER COMMANDE">
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
 
 </body>
 

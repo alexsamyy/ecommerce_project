@@ -1,6 +1,6 @@
 <header>
     <?php
-    $title = "add_marketplace";
+    $title = "Mon compte";
     ob_start();
     session_start();
     include "../composants/header.php";
@@ -17,14 +17,13 @@
 
 <body>
 
-    <div id="container">
-        <!-- zone de connexion -->
-        <!-- IF YES, DISPLAY LOG OUT PAGE -->
+    <div id="container_user">
+
         <?php
         if (isset($_SESSION['iduser']) == true) {
         ?>
             <!-- GRID PRINCIPAL PARTIE COMPTE USER -->
-            <div class="33grid_container_user">
+            <div class="grid_container_user">
                 <!-- GRID INFORMATIONS PERSONNELLES USER -->
                 <div class="info_acc_user">
                     <?php
@@ -47,16 +46,16 @@
                     ?>
                 </div><br><br>
                 <div class="user_acc_commande">
-                    <input onclick="window.location.href='../pages/payment_checkout.php';" class="btn_payer" type="button" value="suiver votre commande">
+                    <input onclick="window.location.href='../pages/orders.php';" class="check_order" type="button" value="Vos commandes">
                 </div><br><br>
 
 
                 <div class="info_acc_paiement">
-                    <input onclick="window.location.href='../pages/paiement.php';" class="" type="button" value="paiement">
+                    <input onclick="window.location.href='../pages/paiement.php';" class="banking_info" type="button" value="Vos moyens de paiement">
                 </div><br><br>
 
                 <div class="user_add_marketplace">
-                    <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button" value="Ajouter un article">
+                    <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button" value="Vendre un article">
                 </div><br><br>
 
                 <div>

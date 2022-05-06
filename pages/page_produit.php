@@ -1,33 +1,29 @@
-<header>
+<head>
   <?php
     $title = "Produit";
     session_start();
     include "../composants/header.php";
+    include "../composants/main.php"; 
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-
-  <!---------------------- FONCTIONS JAVASCRIPT ------------------>
-
-  <script>
-    function addFavorite() {
-      if (document.getElementById('toggle-heart').checked) {
-        $.post('../fonctions/addFav.php'){}
-      }}
-  </script>
-
-  <!-------------------------------------------------------------->
-
-
-
-</header>
+</head>
 
 <body>
+
+  <?php $id_this_product = $_GET['id']; ?>
+
+  <script>
+    function addCart() {
+      alert("Produit ajouté !");
+      window.location.href = "../fonctions/addCart.php?id=22";
+    }
+  </script>
+
 
   <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
   <?php
 
-$id_this_product = $_GET['id'];
 //MYSQL SELECT INFORMATION TABLE SMARTPHONE ONLY
 $requete_info =  "SELECT * FROM smartphone WHERE '$id_this_product' = ID";
 $info = mysqli_query($db,$requete_info);  
@@ -65,7 +61,9 @@ $row_marque = mysqli_fetch_array($marque);
       </div>
 
       <div class="interaction_user">
-        <div><input class="add_to_cart" type="button" value="Ajouter au panier"></div>
+        <div>
+          <input type="button" class="add_to_cart" onclick="addCart()" value="Ajouter au panier">
+        </div>
         <a class="favoris" onclick="addFavorite()" title="Ajoute-moi en favoris !">
           <input id="toggle-heart" type="checkbox" />
           <label for="toggle-heart">❤</label>
