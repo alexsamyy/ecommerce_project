@@ -16,7 +16,7 @@
   <script>
     function addCart() {
       alert("Produit ajouté !");
-      window.location.href = "../fonctions/addCart.php?id=22";
+      window.location.href = "../fonctions/addCart.php?id=<?=$id_this_product?>";
     }
   </script>
 

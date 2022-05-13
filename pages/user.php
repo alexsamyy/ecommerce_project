@@ -17,9 +17,10 @@
 
 <body>
 
-    <div id="container_user">
+    <div class="user_page">
+        <div id="container_user">
 
-        <?php
+            <?php
         if (isset($_SESSION['iduser']) == true) {
         ?>
             <!-- GRID PRINCIPAL PARTIE COMPTE USER -->
@@ -38,24 +39,29 @@
                     echo "<br/>";
                     echo "Nom : " . $row['NOM'];
                     echo "<br/>";
-                    echo "Role : " . $row['ROLE'];
+                    echo "Rôle : " . $row['ROLE'];
                     echo "<br/>";
                     echo "Adresse mail : " . $row['EMAIL'];
                     echo "<br/>";
                     echo "Date de naissance : " . $row['DATE_BIRTH'];
+                    echo "<br/>";
+                    echo "Adresse postale : " . $row['ADRESSE'];
                     ?>
                 </div><br><br>
                 <div class="user_acc_commande">
-                    <input onclick="window.location.href='../pages/orders.php';" class="check_order" type="button" value="Vos commandes">
+                    <input onclick="window.location.href='../pages/orders.php';" class="check_order" type="button"
+                        value="Vos commandes">
                 </div><br><br>
 
 
                 <div class="info_acc_paiement">
-                    <input onclick="window.location.href='../pages/paiement.php';" class="banking_info" type="button" value="Vos moyens de paiement">
+                    <input onclick="window.location.href='../pages/paiement.php';" class="banking_info" type="button"
+                        value="Vos moyens de paiement">
                 </div><br><br>
 
                 <div class="user_add_marketplace">
-                    <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button" value="Vendre un article">
+                    <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button"
+                        value="Vendre un article">
                 </div><br><br>
 
                 <div>
@@ -63,25 +69,26 @@
                         <button>Déconnexion</button>
                     </form>
                 </div>
+            </div>
 
             <?php
         } // IF NOT ALREADY LOGGED IN, REDIRECTS TO HOME PAGE
         else {
-
             header("Location: login.php");
             die();
-        }
-
-            ?>
+        }?>
 
 
+        </div>
+    </div>
 
 
-            </div>
-            <?php  ?>
 
-            <?php
+    </div>
+    <?php  ?>
+
+    <?php
             include "../composants/footer.php"
             ?>
 
-            </html>
+    </html>

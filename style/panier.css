@@ -26,7 +26,6 @@
     'info_order';
     max-width: 800px;
     padding: 40px;
-    background-color: green;
 }
 
 .user_info{
@@ -35,15 +34,11 @@
     margin: auto;
 }
 
-.img_prod_panier{
-    grid-area: img;
-    padding: 10px;
-}
-
 .photo_prod{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
+    margin: auto;
 }
 
 .title_user_info{
@@ -60,11 +55,13 @@
     float: right;
     margin-right: 320px;
     font-size: small;
+    background:none;
+    border:none;
+    color : blue;
 }
 
 .global_info{
-    grid-area: global_info;
-    margin: auto;
+  margin-left: 10%;
     font-size: medium;
 }
 
@@ -73,14 +70,14 @@
 }
 
 .info_order{
-    display: grid;
+    display: flex;
     grid-template-columns: 50% 50%;
-    grid-template-areas:
-    'img global_info';
     grid-area: info_order;
     margin: auto;
     width: 500px;
-    background-color: beige;
+    /* overflow-y: scroll; */
+    height: 220px;
+    align-items: center;
 }
 
 .nb_prod{
@@ -97,7 +94,6 @@
     grid-area:info_panier;
     display: grid;
     max-width: 600px;
-    background-color: yellow;
 }
 
 .info_paiement{

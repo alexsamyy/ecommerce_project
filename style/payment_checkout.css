@@ -73,7 +73,6 @@
     grid-area:info_panier;
     display: grid;
     max-width: 600px;
-    background-color: yellow;
 }
 
 .info_paiement{

@@ -9,11 +9,20 @@
 
 $search = $_GET['Rechercher'];
 
-print_r($_GET);
-
 $sql = "SELECT * FROM smartphone WHERE SOUNDEX(NOM) = SOUNDEX(' . $search .')";
 $result = mysqli_query($db, $sql);
-$row = mysqli_fetch_array($result);
+while ($row = mysqli_fetch_array($result)){
+  $id = $row["ID"];
+  $photo = $row["PHOTO"];
+  $nom = $row["NOM"];
+  $prix = $row["PRIX"];
+}
+?>
 
+<a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>"><img class="img" src="<?= $row["PHOTO"]; ?>">
+<?php echo $nom ?>
+<?php echo $prix ?></a>
+
+<?php
 header('location: ../pages/produit_name.php?name='. $search);
 ?>

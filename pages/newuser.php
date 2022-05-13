@@ -1,6 +1,7 @@
-<html><!--supportppe-->
-    <header>
-    
+<html>
+<!--supportppe-->
+<header>
+
     <?php
     $title = "Créer un compte";
     ob_start();
@@ -11,8 +12,9 @@
     require_once "../composants/db.php";
     ?>
 
-        <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
+    <!-- importer le fichier de style -->
+    <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
+    <!---------------------------
         <script>
              function test(){
                 var role = document.getElementsByName("role");
@@ -22,11 +24,13 @@
                 return true;
             }
         </script>
-    </header>
-    <body>
-    
-        <!-- IF YES, REDIRECT TO HOME PAGE -->
-        <?php 
+        ------------------------------>
+</header>
+
+<body>
+
+    <!-- IF YES, REDIRECT TO HOME PAGE -->
+    <?php 
             if (isset($_SESSION['iduser']) == true){
                 
                     header("Location: home.php");
@@ -37,55 +41,61 @@
         ?>
 
 
-        <div id="container">
-            <!-- zone de connexion -->
-        
-            
-            <form id="login" action="../fonctions/traitement_newuser.php" method="GET" onsubmit="return test()">
-                <h2>Créer un compte</h2>
-                
-                <label><b>Prénom</b></label><br/>
-                <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br/><br/>  
-
-                <label><b>Nom</b></label><br/>
-                <input type="text" placeholder="Entrer votre nom" name="nom" required><br/><br/>
-
-                <label><b>Date de naissance</b></label><br/>
-                <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br/><br/>
+    <div id="container">
+        <!-- zone de connexion -->
 
 
-                <label><b>E-mail</b></label><br/>
-                <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br/><br/>
+        <form id="login" action="../fonctions/traitement_newuser.php" method="POST">
+            <h2>Créer un compte</h2>
 
-                <label><b>Mot de passe</b></label>
-                <input type="text" placeholder="Entrer votre mot de passe" name="password" required><br/><br/>
-                
-                <p style="color: green;">S'inscrire en tant que :</p>
+            <label><b>Prénom</b></label><br />
+            <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br /><br />
 
-                <div>
+            <label><b>Nom</b></label><br />
+            <input type="text" placeholder="Entrer votre nom" name="nom" required><br /><br />
+
+            <label><b>Date de naissance</b></label><br />
+            <input type="date" placeholder="Entrer votre date de naissance" name="date_naissance" required><br /><br />
+
+
+            <label><b>E-mail</b></label><br />
+            <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br /><br />
+
+            <label><b>Mot de passe</b></label>
+            <input type="text" placeholder="Entrer votre mot de passe" name="password" required><br /><br />
+
+            <p style="color: green;">S'inscrire en tant que :</p>
+
+            <div>
                 <input type="radio" id="acheteur" name="role" value="acheteur" checked>
                 <label for="acheteur"> Acheteur </label>
-                
+
                 <br>
 
                 <input type="radio" id="vendeur" name="role" value="vendeur">
                 <label for="vendeur"> Vendeur </label>
-                </div><br/>
+            </div><br />
 
-                <input type="submit" id='submit' value='Créer un compte' >
-                <br><br>
-                <p>Déjà membre ? <a href="../pages/login.php" class="HasAcc">Connectez-vous !</a></p>
+            <input type="submit" id='submit' value='Créer un compte'>
+            <br><br>
+            <p>Déjà membre ? <a href="../pages/login.php" class="HasAcc">Connectez-vous !</a></p>
 
-             
-            </form>
-        </div>
+            <?php
+                if(isset($_GET['erreur'])){
+                        echo "<p style='color:red'>L'adresse email est déjà utilisée !</p>";
+                }
+            ?>
 
-        <?php } ?>
+        </form>
+    </div>
 
-    </body>
+    <?php } ?>
+
+</body>
 <footer>
-<?php
+    <?php
     include "../composants/footer.php"
 ?>
 </footer>
+
 </html>
