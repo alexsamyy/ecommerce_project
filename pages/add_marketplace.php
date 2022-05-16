@@ -35,8 +35,8 @@
                 <input type="text" placeholder="Ex: iOS" name="systeme_d_exploitation" required>
             </P>
             <P>
-                <label for="stockage"><b>Mémoire de stockage :</b></label><br />
-                <input type="text" placeholder="Ex: 128 Go" name="stockage" required>
+                <label for="stockage"><b>Mémoire de stockage (Go) :</b></label><br />
+                <input type="text" placeholder="Ex: 128" name="stockage" required>
             </P>
             <p>
                 <label for="reseau"><b>Réseau :</b></label><br />
@@ -51,15 +51,15 @@
                 </select><br />
             </p>
             <p>
-                <label for="app_photo"><b>Résolution de la caméra :</b></label><br />
+                <label for="app_photo"><b>Résolution de la caméra (Mpx) :</b></label><br />
                 <input type="text" placeholder="Ex: 5" name="app_photo" required>
             </p>
             <p>
-                <label for="taille_ecran"><b>Taille de l'écran:</b></label><br />
+                <label for="taille_ecran"><b>Taille de l'écran (en pouces) :</b></label><br />
                 <input type="text" placeholder="Ex: 4,7" name="taille_ecran" required>
             </p>
             <p>
-                <label for="description"><b>description du téléphone</b></label><br />
+                <label for="description"><b>Description du smartphone :</b></label><br />
                 <input type="text" placeholder="Ex: Smartphone en très bon état..." name="description" required><br>
             </p>
             <p>
