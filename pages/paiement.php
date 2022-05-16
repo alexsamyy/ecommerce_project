@@ -11,7 +11,7 @@
 
 <body>
 
-    <div style="text-align:justify; height: 100px; margin-top:250px; margin-bottom:220px; padding:20px">
+    <div style="text-align:justify; height: 100px; margin-top:230px; margin-bottom:220px; padding:20px">
         <h3 style="text-align:center">
             Les moyens de paiement
         </h3>

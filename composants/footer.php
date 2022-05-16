@@ -2,6 +2,7 @@
 $title = "header";
 include "../composants/main.php";
 ?>
+<link rel="stylesheet" href="../style/footer.css" media="screen" type="text/css" />
 
 <!-- Footer -->
 <div class="footer_bottom">
@@ -66,7 +67,7 @@ include "../composants/main.php";
               <a href="paiement.php" class="text-white">Paiement</a>
             </li>
             <li>
-              <a href="livraison.php" class="text-white">Livraison</a>
+              <a href="livraison_info.php" class="text-white">Livraison</a>
             </li>
             <li>
               <a href="retour.php" class="text-white">Retour</a>

@@ -27,21 +27,6 @@
 <!-- JQUERY -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- CSS -->
-<link rel="stylesheet" href="../style/footer.css" media="screen" type="text/css" />
-<link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
-<link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
-<link rel="stylesheet" href="../style/user.css" media="screen" type="text/css" />
-<link rel="stylesheet" href="../style/page_produit.css" media="screen" type="text/css"/>
-<link rel="stylesheet" href="../style/student_offer.css" media="screen" type="text/css"/>
-<link rel="stylesheet" href="../style/hire.css" media="screen" type="text/css"/>
-<link rel="stylesheet" href="../style/panier.css" media="screen" type="text/css"/>
-<link rel="stylesheet" href="../style/payment_checkout.css" media="screen" type="text/css"/>
-<link rel="stylesheet" href="../style/payment_process.css" media="screen" type="text/css"/>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
 <meta charset="utf-8">
 <title><?= $title; ?></title>
 

@@ -1,38 +1,29 @@
-#container_user {
-    display: grid;
-    margin-top: 225px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-        "info_acc_user . info_acc_paiement"
-        "user_acc_commande . user_add_marketplace"
-    ;
-    background-color: red;
-}
-
 .info_acc_user {
     grid-area: info_acc_user;
-    background-color: green;
-}
-.info_acc_paiement{
-    grid-area: info_acc_paiement;
-    background-color: grey;
-}
-.user_acc_commande{
-    grid-area: user_acc_commande;
-    background-color: rgb(29, 15, 154);
-
-}
-.user_add_marketplace{
-    grid-area: user_add_marketplace;
-    background-color: yellow;
-
+    display: inline-block;
+    width: 100%;
+    padding: 2%;
+    margin-top: 3%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
 }
 
-
-
-
-
-.logout {
+.user_add_marketplace,
+.logout,
+.user_acc_commande,
+.modify_pwd{
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    padding: 14px 20px;
+    margin-top: 5%;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
     text-align: center;
-    margin: auto;
+}
+
+.logout{
+    background-color: #212121;
+    color: white;
 }

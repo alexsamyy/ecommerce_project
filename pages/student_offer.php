@@ -1,4 +1,4 @@
-<header>
+<head>
 <?php
     $title = "Offre étudiante";
     session_start();
@@ -7,10 +7,11 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-</header>
+<link rel="stylesheet" href="../style/student_offer.css" media="screen" type="text/css"/>
+</head>
 <body>
 
-<div style="height: 100px; margin-top:250px; margin-bottom:10px;">
+<div style="height: 100px; margin-top:230px; margin-bottom:10px;">
 <h3 style="text-align:center">
     Découvrez nos offres étudiantes !
 </h3>

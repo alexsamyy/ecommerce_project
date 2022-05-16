@@ -1,39 +1,64 @@
-<?php
-include("../composants/db.php");
-?>
+<head>
+    <?php
+    ob_start();
+    session_start();
+    // connexion à la base de données
+    require_once "../composants/db.php";
+    ?>
+</head>
 
 <?php
 
-if (isset($_POST['upload'])) {
-
-  $photo = $_FILES['file']['name'];
-  $target_dir = "upload/";
-  $target_file = $target_dir . basename($_FILES["file"]["name"]);
+$file = $_FILES["name"];
+$newFileName = null;
+// On récupère toutes les infos du fichier ($_FILES["name..."]) qu'on a mis dans $file
+$fileName = $file['name'];
+$fileTmpName = $file['tmp_name'];
+$fileSize = $file['size'];
+$fileError = $file['error'];
+$fileType = $file['type'];
+// On récupère l'extension du fichier
+$fileExt = explode('.', $fileName);
+// On met l'extension en miniscule au cas où elle ne le serait pas.
+// "end" permet de récupérer la dernière chaîne d'un tableau
+$fileActualExt = strtolower(end($fileExt));
+// Ici on vérifie différentes données notamment la taille, s'il y a une erreur, ou bien si l'extension n'est pas autorisée
+$allowed = array('jpg', 'jpeg', 'png');
+if (in_array($fileActualExt, $allowed) == false) {
+  echo "L'extension du fichier n'est pas autorisée !";
+  header("Refresh:5; url=http://localhost/pages/add_marketplace.php", true, 303);
 }
-$photo = $GET["photo"];
-$nom = $_GET["nom"];
-$desc = $_GET["description"];
-$prix = $_GET["prix"];
-$systeme = $_GET["systeme_d_exploitation"];
-$stockage =  $_GET["stockage"];
-$reseau = $_GET["reseau"];
-$double_sim = $_GET["double_sim"];
-$app_photo = $_GET["app_photo"];
-$taille_ecran = $_GET["taille_ecran"];
 
-$sql = "insert into smartphone " .
-  "values(NULL, '" . $photo . "','" . $desc . "','" . $prix .
-  "','" . $nom .  "','" . $systeme . "','" . $stockage . "','" . $reseau  .
-   "','" . $sim  . "','" . $app_photo  . "','" . $ecran . "')";
+if ($fileSize > 1000000) {
+  echo "Votre fichier est trop volumineux !";
+  header("Refresh:5; url=http://localhost/pages/add_marketplace.php", true, 303);
+}
+
+// On le déplace à cet endroit
+$destinationname = "../media/produit/" . $fileName;
+move_uploaded_file($fileTmpName, $destinationname);
+
+
+$nom = $_POST["nom"];
+$desc = $_POST["description"];
+$prix = $_POST["prix"];
+$systeme = $_POST["systeme_d_exploitation"];
+$stockage =  $_POST["stockage"];
+$reseau = $_POST["reseau"];
+$nombre_sim = $_POST['dual_sim'];
+$app_photo = $_POST["app_photo"];
+$taille_ecran = $_POST["taille_ecran"];
+$marque = $_POST["marque"];
+$couleur = $_POST["couleur"];
+
+
+
+$sql = "insert into smartphone values(NULL, 0, '$destinationname', '$desc', $prix, '$nom', '$systeme', $stockage , '$reseau',"
+. "$nombre_sim, $app_photo, $taille_ecran, $marque, $couleur)" ;
+
+echo $sql;
 
 $sql = mysqli_query($db, $sql);
 
-// Vérifie la connexion 
-if (!$sql) { 
-  die("Échec de la connexion : " . mysqli_connect_error()); 
-}
-
-
-header('location: ../pages/home.php');
-
+header('Location: http://localhost/FoneMarket/pages/home.php');
 ?>

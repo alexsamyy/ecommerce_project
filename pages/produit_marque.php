@@ -7,6 +7,7 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
+<link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
 <?php $marque = $_GET['marque']; ?>
 
     <script>

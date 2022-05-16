@@ -1,10 +1,10 @@
 body{ /*supportppe*/
-    background: #67BE4B;
+    background: white;
 }
 #container{
-    width:500px;
-    margin:0 auto;
-    margin-top:250px;
+    width:600px;
+    margin:auto;
+    margin-top:15%;
 }
 /* Bordered form */
 #login {
@@ -27,7 +27,7 @@ h2{
 }
 
 /* Full-width inputs */
-input[type=text], input[type=password], input[type=email] {
+input[type=mail]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -55,13 +55,4 @@ input[type=submit]:hover {
     border: 1px solid #53af57;
 }   
 
-.HasAcc{
-    color:black;
-}
 
-input[type=date]{
-    text-align: center;
-    width: 200px;
-    height: 35px;
-    border-radius:10px
-}

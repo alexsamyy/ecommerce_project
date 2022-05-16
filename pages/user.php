@@ -13,19 +13,26 @@
 
 <!-- importer le fichier de style -->
 <link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/user.css" media="screen" type="text/css" />
 </head>
 
 <body>
+    <!-- IF YES, REDIRECT TO HOME PAGE -->
+    <?php
+    if (isset($_SESSION['iduser']) == false) {
 
-    <div class="user_page">
-        <div id="container_user">
+        header("Location: login.php");
+        die();
+    } // IF NOT ALREADY LOGGED IN, DISPLAY LOGIN PAGE
+    else {
+    ?>
 
-            <?php
-        if (isset($_SESSION['iduser']) == true) {
-        ?>
-            <!-- GRID PRINCIPAL PARTIE COMPTE USER -->
-            <div class="grid_container_user">
-                <!-- GRID INFORMATIONS PERSONNELLES USER -->
+        <div id="container">
+            <!-- zone de connexion -->
+
+            <div id="login">
+                <h2>Mon compte</h2>
+
                 <div class="info_acc_user">
                     <?php
                     $user = $_SESSION['iduser'];
@@ -34,61 +41,29 @@
                     $result = mysqli_query($db, $sql);
                     $row = mysqli_fetch_array($result);
 
-
-                    echo "Prénom : " . $row['PRENOM'];
-                    echo "<br/>";
-                    echo "Nom : " . $row['NOM'];
-                    echo "<br/>";
-                    echo "Rôle : " . $row['ROLE'];
-                    echo "<br/>";
-                    echo "Adresse mail : " . $row['EMAIL'];
-                    echo "<br/>";
-                    echo "Date de naissance : " . $row['DATE_BIRTH'];
-                    echo "<br/>";
-                    echo "Adresse postale : " . $row['ADRESSE'];
                     ?>
-                </div><br><br>
-                <div class="user_acc_commande">
-                    <input onclick="window.location.href='../pages/orders.php';" class="check_order" type="button"
-                        value="Vos commandes">
-                </div><br><br>
-
-
-                <div class="info_acc_paiement">
-                    <input onclick="window.location.href='../pages/paiement.php';" class="banking_info" type="button"
-                        value="Vos moyens de paiement">
-                </div><br><br>
-
-                <div class="user_add_marketplace">
-                    <input onclick="window.location.href='../pages/add_marketplace.php';" class="" type="button"
-                        value="Vendre un article">
-                </div><br><br>
-
-                <div>
-                    <form class="logout" action="../fonctions/deconnexion.php">
-                        <button>Déconnexion</button>
-                    </form>
+                    <b>Prénom : </b><?= $row['PRENOM'] ?><br>
+                    <b>Nom : </b><?= $row['NOM'] ?><br>
+                    <b>Adresse e-mail : </b><?= $row['EMAIL'] ?><br>
+                    <b>Date de naissance : </b><?= $row['DATE_BIRTH'] ?><br>
                 </div>
+
+                <button onclick="window.location.href='../pages/gest_commande.php';" class="user_add_marketplace">Mes commandes</button>
+
+                <button onclick="window.location.href='../pages/add_marketplace.php';" class="user_acc_commande">Ajouter un article</button>
+
+                <button onclick="window.location.href='../pages/nouveau_mdp.php';" class="modify_pwd">Modifier mon mot de passe</button>
+
+                <button onclick="window.location.href='../fonctions/deconnexion.php';" class="logout">Déconnexion</button>
+                
             </div>
-
-            <?php
-        } // IF NOT ALREADY LOGGED IN, REDIRECTS TO HOME PAGE
-        else {
-            header("Location: login.php");
-            die();
-        }?>
-
-
         </div>
-    </div>
+    <?php } ?>
+</body>
 
 
-
-    </div>
-    <?php  ?>
-
+<footer>
     <?php
-            include "../composants/footer.php"
-            ?>
-
-    </html>
+    include "../composants/footer.php"
+    ?>
+</footer>

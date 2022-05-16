@@ -8,14 +8,15 @@
     require_once "../composants/db.php";
 ?>
 </head>
-
+<link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/page_produit.css" media="screen" type="text/css"/>
 <body>
 
   <?php $id_this_product = $_GET['id']; ?>
 
   <script>
     function addCart() {
-      alert("Produit ajouté !");
+      // alert("Produit ajouté !");
       window.location.href = "../fonctions/addCart.php?id=<?=$id_this_product?>";
     }
   </script>
@@ -64,10 +65,6 @@ $row_marque = mysqli_fetch_array($marque);
         <div>
           <input type="button" class="add_to_cart" onclick="addCart()" value="Ajouter au panier">
         </div>
-        <a class="favoris" onclick="addFavorite()" title="Ajoute-moi en favoris !">
-          <input id="toggle-heart" type="checkbox" />
-          <label for="toggle-heart">❤</label>
-        </a>
       </div>
 
       <div class="spec_part">

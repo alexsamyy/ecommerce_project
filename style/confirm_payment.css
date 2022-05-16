@@ -1,0 +1,36 @@
+.qty_product {
+    margin-top: 10px;
+}
+
+.dropdown_item {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 500px;
+    max-height: 180px;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+    margin-top: 2%;
+}
+
+/* width */
+.dropdown_item::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.dropdown_item::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.dropdown_item::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.dropdown_item::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.cost_info{
+    margin-top: 2%;
+}

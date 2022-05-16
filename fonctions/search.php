@@ -23,6 +23,3 @@ while ($row = mysqli_fetch_array($result)){
 <?php echo $nom ?>
 <?php echo $prix ?></a>
 
-<?php
-header('location: ../pages/produit_name.php?name='. $search);
-?>

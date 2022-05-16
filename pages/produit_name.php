@@ -8,7 +8,7 @@
     require_once "../composants/db.php";
 ?>
 </header>
-
+<link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
 <body>
     
     <!---------------------- AFFICHE EN FONCTION DU NOM DE PRODUIT DEMANDE ------------------->

@@ -1,98 +1,37 @@
-/* PARTIE GAUCHE */ 
-
-.payment_checkout_info{
-    grid-area:info_prod;
-    display: grid;
-    grid-template-areas:
-    'user'
-    'paiement_title'
-    'info_pay_order';
-    max-width: 800px;
-    padding: 40px;
-    background-color: green;
+::placeholder {
+    font-weight: bold;
+    font-size: medium;
 }
 
-.paiement_title{
-    grid-area:paiement_title;
-    border-bottom: 5px solid black;
-    width: 500px;
-    height: 30px;
+div.payment {
+    position: relative;
+    white-space: nowrap;
+}
+
+div#card_nb,
+div#cvv {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+}
+
+
+#number{
+    width: 180px;
+}
+
+#cryptogramme{
+    width: 45px;
+}
+
+#titulaire{
+    width: 250px;
+}
+
+#date_expiration{
+    width: 250px;
+}
+
+.paiement{
     margin: auto;
-}
-
-.user_info{
-    grid-area: user;
-    width: 500px;
-    margin: auto;
-}
-
-.info_pay_order{
-    display: grid;
-    grid-area: info_pay_order;
-    margin: auto;
-    width: 500px;
-    height: 200px;
-    background-color: grey;
-}
-
-
-.paiement_info{
-    display: grid;
-    grid-area:
-    'nb_card'
-    'expir_card_cvv'
-    'titulaire';
-    padding: auto;
-    width: 500px;
-    background-color: beige;
-    
-    
-}
-
-/*---------------- CONTENU GRID INFO PAIEMENT ------------------*/
-
-.nb_card{
-    grid-area: nb_card;
-}
-
-.expiration_cvv{
-    grid-area: expir_card_cvv;
-    float: left;
-    background-color: azure;
-    margin: auto;
-}
-
-.titulaire{
-    grid-area:titulaire;
-}
-
-
-/* PARTIE DROITE */
-
-.grid_info_panier{
-    grid-area:info_panier;
-    display: grid;
-    max-width: 600px;
-}
-
-.info_paiement{
-    margin:auto;
-}
-
-.order_detail{
-    border-bottom: 5px solid black;
-    width: 500px;
-    height: 30px;
-}
-
-.discount_box{
-    margin-top: 10px;
-}
-
-.btn_payer{
-    width: 500px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: #212121;
-    color: white;
 }

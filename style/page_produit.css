@@ -38,33 +38,11 @@
 .add_to_cart {
   border-radius: 10px;
   width: 150px;
-  height: 50px;
+  height: 40px;
   font-size: medium;
   color: white;
   background-color: #212121;
   grid-area: panier;
-}
-
-/* ANIMATION COEUR AJOUT FAVORIS */
-
-.favoris{
-  margin-left: 15%;
-}
-
-[id='toggle-heart']{
-  position: absolute;
-  left: -100vw;
-}
-
-[id='toggle-heart']:checked + label {
-  color: #e2264d;
-}
-
-[for='toggle-heart'] {
-  align-self: center;
-  color: #aab8c2;
-  font-size: 35px;
-  cursor: pointer;
 }
 
 /* DETAILS TECHNIQUES */

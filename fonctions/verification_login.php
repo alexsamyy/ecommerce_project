@@ -23,18 +23,18 @@ if(isset($_POST['mail']) && isset($_POST['password']))
         $reponse  = mysqli_fetch_array($exec_requete);
 
         $count = $reponse["nb"];
-        if($count > 0) {// nombre d'enregistrement supérieure à 0
+        if($count > 0) {// nombre d'enregistrement supérieur à 0
            $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];
            header('Location: ../pages/home.php');
         }
         else
         {
-           header('Location: ../pages/login.php?erreur=1'); // veiller enregistrer ce champs
+           header('Location: ../pages/login.php?erreur=1'); // veuiller enregistrer ce champs
         }
     }
     else
     {
-       header('Location: ../pages/login.php?erreur=2'); // veiller enregistrer ce champs
+       header('Location: ../pages/login.php?erreur=2'); // veuiller enregistrer ce champs
     }
 }
 else if($_GET["logout"]){

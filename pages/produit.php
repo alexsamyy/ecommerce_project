@@ -1,4 +1,4 @@
-<header>
+<head>
   <?php
     $title = "Produit";
     session_start();
@@ -7,6 +7,7 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
+<link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
 
   <script>
     function filter_brand() {
@@ -26,7 +27,7 @@
     }
   </script>
 
-</header>
+</head>
 
 <body>
 
