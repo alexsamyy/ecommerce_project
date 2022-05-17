@@ -1,6 +1,6 @@
 <html>
 <!--supportppe-->
-<header>
+<head>
 
     <?php
     $title = "Créer un compte";
@@ -25,7 +25,7 @@
             }
         </script>
         ------------------------------>
-</header>
+</head>
 
 <body>
 

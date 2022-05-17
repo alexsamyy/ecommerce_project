@@ -1,4 +1,4 @@
-<header>
+<head>
     <?php
     $title = "Ajouter un article";
     ob_start();
@@ -8,7 +8,7 @@
     // connexion à la base de données
     require_once "../composants/db.php";
     ?>
-</header>
+</head>
 
 
 <!-- importer le fichier de style -->

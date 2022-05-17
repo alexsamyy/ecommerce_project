@@ -1,4 +1,4 @@
-<header>
+<head>
     <?php
     $title = "Support retour";
     session_start();
@@ -7,7 +7,7 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-</header>
+</head>
 
 <body>
 

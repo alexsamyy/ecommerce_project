@@ -1,4 +1,4 @@
-<header>
+<head>
 <?php
     $title = "Mentions légales";
     session_start();
@@ -7,7 +7,7 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-</header>
+</head>
 <body>
 <div class="flex-grow flex flex-col">
 <article style="text-align:center; margin-top:50px;">

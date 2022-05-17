@@ -7,9 +7,12 @@
     // connexion à la base de données
     require_once "../composants/db.php";
 ?>
-</head>
+
 <link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
 <link rel="stylesheet" href="../style/page_produit.css" media="screen" type="text/css"/>
+
+</head>
+
 <body>
 
   <?php $id_this_product = $_GET['id']; ?>
