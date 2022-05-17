@@ -87,8 +87,8 @@
                     </p>
                     <p>
                         <label for="dual_sim"><b>Dual sim :</b></label><br />
-                        <select name="dual_sim" id="dual_sim">
-                            <option value="null">Veuillez choisir une option</option>
+                        <select name="dual_sim" id="dual_sim" required>
+                            <option value="">Veuillez choisir une option</option>
                             <?php
                             if ($row["DOUBLE_SIM"] == 1) { ?>
                                 <option selected value="1">Oui</option>
@@ -113,8 +113,8 @@
                     </p>
                     <p>
                         <label for="marque"><b>Marque :</b></label><br />
-                        <select name="marque" id="marque">
-                            <option value="null">--choisir une option--</option>
+                        <select name="marque" id="marque" required>
+                            <option value="">--choisir une option--</option>
                             <?php
                             $marque = "SELECT * FROM marque";
                             $result = mysqli_query($db, $marque);
@@ -132,8 +132,8 @@
                     </p>
                     <p>
                         <label for="couleur"><b>Couleur :</b></label><br />
-                        <select name="couleur" id="couleur">
-                            <option value="null">--choisir une option--</option>
+                        <select name="couleur" id="couleur" required>
+                            <option value="">--choisir une option--</option>
                             <?php
                             $couleur = "SELECT * FROM couleur";
                             $result = mysqli_query($db, $couleur);
