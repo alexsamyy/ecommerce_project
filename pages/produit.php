@@ -1,22 +1,23 @@
 <head>
   <?php
-    $title = "Produit";
-    session_start();
-    include "../composants/header.php";
-    include "../composants/main.php";
-    // connexion à la base de données
-    require_once "../composants/db.php";
-?>
-<link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
+  $title = "Produit";
+  session_start();
+  include "../composants/header.php";
+  include "../composants/main.php";
+  // connexion à la base de données
+  require_once "../composants/db.php";
+  ?>
+  <link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
 
   <script>
+    /*
     function filter_brand() {
       var marque = document.getElementById("marque-select").value;
       if (marque == null) {
         document.getElementById("demo").innerHTML = "";
       }
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function () {
+      xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           document.getElementById("demo").innerHTML = this.responseText;
         }
@@ -25,6 +26,7 @@
       xmlhttp.open("GET", req, true);
       xmlhttp.send();
     }
+    */
   </script>
 
 </head>
@@ -35,6 +37,8 @@
     <h1 class="title_asked_page">Smartphones</h1>
   </div>
 
+  <?php 
+  /*
   </div>
   <div class="filtres">
     <form method="get">
@@ -55,8 +59,7 @@
 
         <!-- MINIMUM PRIX / MAXIMUM PRIX -->
         <input name="min_price" onkeyup="filter_price()" value="0" style="width:50px" type="number" placeholder="€ min">
-        <input name="max_price" onkeyup="filter_price()" value="5000" style="width:50px" type="number"
-          placeholder="€ max">
+        <input name="max_price" onkeyup="filter_price()" value="5000" style="width:50px" type="number" placeholder="€ max">
 
         <!-- CHOIX SYSTEME EXPLOITATION -->
         <select style="color:black" onchange="filter_syst()" name="syst" id="syst-select">
@@ -92,11 +95,8 @@
         </select>
       </fieldset>
     </form>
-  </div>
-
-  <!-- TITRE DE LA PAGE -->
-
-
+    */
+    ?>
   <!-- Triage en fonction du prix -->
   </div>
   </form>
@@ -108,43 +108,43 @@
   <div class="grid" id="demo">
     <!-- GRID PARENT -->
     <?php
-$requete = "SELECT * FROM smartphone WHERE NEUF = true";
-$result = mysqli_query($db,$requete);
-while ($row = mysqli_fetch_array($result)){
+    $requete = "SELECT * FROM smartphone WHERE NEUF = true";
+    $result = mysqli_query($db, $requete);
+    while ($row = mysqli_fetch_array($result)) {
     ?>
-    <!-- GRID ENFANT -->
-    <div class="grid_in">
-      <br>
-      <div>
-        <!-- IMAGE -->
-        <a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">
-          <div class="img_place">
-            <img class="img" src="<?= $row["PHOTO"]; ?>">
+      <!-- GRID ENFANT -->
+      <div class="grid_in">
+        <br>
+        <div>
+          <!-- IMAGE -->
+          <a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?= $row["ID"]; ?>">
+            <div class="img_place">
+              <img class="img" src="<?= $row["PHOTO"]; ?>">
+            </div>
+          </a>
+          <br>
+          <br>
+          <!-- INFORMATION PRODUIT -->
+          <div class="info_product">
+            <h4 class="nom"><?= $row["NOM"]; ?></h4>
+            <p class="description"><?= substr($row["DESCRIPTION"], 0, 110);
+              if (strlen($row["DESCRIPTION"]) > 110) { ?>
+                <span>...</span>
+                <a class="see_more" href="http://localhost/FoneMarket/pages/page_produit.php?id=<?= $row["ID"]; ?>">Voir
+                  plus</a>
+              <?php
+              }
+              ?>
+            </p>
+
+            <h6 class="prix"><?= $row["PRIX"]; ?> €</h6>
           </div>
-        </a>
-        <br>
-        <br>
-        <!-- INFORMATION PRODUIT -->
-        <div class="info_product">
-          <h4 class="nom"><?=$row["NOM"];?></h4>
-          <p class="description"><?= substr($row["DESCRIPTION"], 0, 110);
-        if (strlen($row["DESCRIPTION"]) > 110){?>
-            <span>...</span>
-            <a class="see_more" href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
-              plus</a>
-            <?php
-        } 
-        ?>
-          </p>
 
-          <h6 class="prix"><?= $row["PRIX"];?> €</h6>
         </div>
-
       </div>
-    </div>
     <?php
-}
-?>
+    }
+    ?>
   </div>
 
   <!-- PHP RETRIEVE PRODUCTS IN DATABASE -->
@@ -153,6 +153,6 @@ while ($row = mysqli_fetch_array($result)){
 
 <footer>
   <?php
-    include "../composants/footer.php";
-?>
+  include "../composants/footer.php";
+  ?>
 </footer>

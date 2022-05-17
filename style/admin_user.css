@@ -1,0 +1,49 @@
+.list_users {
+    display: flex;
+    margin-top: 250px;
+    padding: 1%;
+    margin-top: 230px;
+    margin-left: 80px;
+    margin-right: 80px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    width: 500px;
+    padding: 8px;
+}
+
+th {
+    background-color: #212121;
+    color: white;
+    height: 50px;
+}
+
+.modify{
+    border: none;
+    background-color: white;
+}
+
+.modify:hover{
+    font-weight: bold;
+}
+
+.delete{
+    color:black;
+}
+
+.delete:hover{
+    font-weight: bold;
+    color: black;
+}
+
+input{
+    text-align: center;
+}
+
+.id_input{
+    border: none;
+}

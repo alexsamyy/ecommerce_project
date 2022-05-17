@@ -12,16 +12,68 @@
 
 
 <!-- importer le fichier de style -->
-<link rel="stylesheet" href="../style/login.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="../style/add_marketplace.css" media="screen" type="text/css" />
 </head>
 
 <body>
 
     <div id="container">
         <!-- zone de connexion -->
+        <?php
+        if (isset($_SESSION['iduser']) == false) { // IF NOT ALREADY LOGGED IN, DISPLAY LOGIN PAGE
 
-        <form id="login" action="../fonctions/traitement_add_marketplace.php" enctype="multipart/form-data" method="POST">
-            <h2>Vendre son appareil</h2>
+            header("Location: ../pages/login.php");
+            die();
+        } // IF ALREADY LOGGED IN, DISPLAY CART
+        else {
+            $user = $_SESSION['iduser'];
+
+            //MYSQL SELECT USER INFORMATION
+            $sql = "SELECT * FROM utilisateur WHERE ID_UTILISATEUR = " . $user;
+            $result = mysqli_query($db, $sql);
+            $row_user_info = mysqli_fetch_array($result);
+
+            if ($row_user_info['EMAIL']  == "admin@fonemarket.fr") {
+
+                //VALUE TEXT IN SUBMIT BUTTON
+                $btn_value = "Ajouter un smartphone";?>
+    
+                <?php
+            }else{?>
+                <form id="login" action="../fonctions/traitement_add_marketplace.php?admin=false" enctype="multipart/form-data" method="POST">
+                    <h2>Vendre son appareil</h2>
+                    <p>
+                        <select hidden name="neuf" id="neuf">
+                            <option value="null">Veuillez choisir une option</option>
+                            <option value="1">Oui</option>
+                            <option selected value="0">Non</option>
+                        </select><br />
+                    </p>
+                    <?php
+                $btn_value = "Vendre mon smartphone";
+            }
+
+            if ($row_user_info['EMAIL']  == "admin@fonemarket.fr") {
+
+                //VALUE TEXT IN SUBMIT BUTTON
+                $btn_value = "Ajouter un smartphone"
+                ?>
+
+                <form id="login" action="../fonctions/traitement_add_marketplace.php?admin=true" enctype="multipart/form-data" method="POST">
+                    <h2>Ajouter un appareil</h2>
+                    <p>
+                        <label for="neuf"><b>Neuf</b></label><br />
+                        <select name="neuf" id="neuf">
+                            <option value="null">Veuillez choisir une option</option>
+                            <option value="1">Oui</option>
+                            <option value="0">Non</option>
+                        </select><br />
+                    </p>
+            <?php
+            }
+        }
+            ?>
+
             <p>
                 <label for="nom"><b>Nom du produit :</b></label><br />
                 <input type="text" placeholder="Ex: iPhone X" name="nom" required>
@@ -46,8 +98,8 @@
                 <label for="dual_sim"><b>Dual sim :</b></label><br />
                 <select name="dual_sim" id="dual_sim">
                     <option value="null">Veuillez choisir une option</option>
-                    <option value="0">Oui</option>
-                    <option value="1">Non</option>
+                    <option value="1">Oui</option>
+                    <option value="0">Non</option>
                 </select><br />
             </p>
             <p>
@@ -60,7 +112,7 @@
             </p>
             <p>
                 <label for="description"><b>Description du smartphone :</b></label><br />
-                <input type="text" placeholder="Ex: Smartphone en très bon état..." name="description" required><br>
+                <textarea id="description" type="text" placeholder="Ex: Smartphone en très bon état..." name="description" required></textarea><br>
             </p>
             <p>
                 <label for="marque"><b>Marque :</b></label><br />
@@ -100,9 +152,9 @@
                 <label for="photo"><b>Ajouter une image</b></b></label><br />
                 <input type="file" name="name" />
 
-                <input type="submit" id='submit' value='Vendre mon smartphone'>
+                <input type="submit" id='submit' value="<?=$btn_value?>">
             </p>
-        </form>
+                </form>
     </div>
 
     <?php

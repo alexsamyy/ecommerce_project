@@ -1,0 +1,87 @@
+.all_prod_content {
+    padding: 1%;
+    margin-top: 230px;
+    margin-left: 80px;
+    margin-right: 80px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/*-----------------------------------*/
+
+.item {
+    padding: 2px 3px;
+    height: 350px;
+    display: flex;
+    border-bottom: 2px solid #E1E8EE;
+}
+
+.photo_prod {
+    width: 100px;
+    height: 100px;
+}
+
+.image {
+    margin-right: 20px;
+    padding-top: 100px;
+}
+
+.info_tech {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.info_tech span {
+    display: block;
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+}
+
+.info_tech span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+}
+
+.description {
+    overflow: auto;
+    overflow-x: hidden;
+    height: 300px;
+    width: 850px;
+    text-align: justify;
+    padding: 2%;
+    border: 2px solid black;
+    border-radius: 2px;
+    margin: auto;
+}
+
+.delete_btn {
+    width: 100px;
+    margin: auto;
+}
+
+.delete_btn span{
+    display: block;
+    font-size: large;
+    color: #43484D;
+    font-weight: 400;
+}
+
+.delete_btn span:first-child{
+    margin-bottom: 5px;
+}
+
+.delete_btn span:last-child {
+    margin-top: 8px;
+}
+
+.delete {
+    background: none;
+    border: none;
+    color: black;
+}
+
+.delete:hover {
+    font-weight: bold;
+    color: black;
+}

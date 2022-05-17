@@ -18,7 +18,7 @@ require_once "../composants/db.php";
         header('Location: ../pages/newuser.php?erreur=1');
     }else{
          $sql = "insert into utilisateur " . 
-     "values(NULL, '" . $role. "','" . $prenom . "','" . $nom . 
+     "values(NULL,'" . $prenom . "','" . $nom . 
      "','" . $mail .  "','" . $date_naissance . "','" . $mdp . "')";
 
         mysqli_query($db, $sql);

@@ -39,6 +39,12 @@ $destinationname = "../media/produit/" . $fileName;
 move_uploaded_file($fileTmpName, $destinationname);
 
 
+if ($_GET["admin"] == 'false'){
+  $neuf = $_POST["neuf"];
+}else{
+  $neuf = $_POST["neuf"];
+}  
+
 $nom = $_POST["nom"];
 $desc = $_POST["description"];
 $prix = $_POST["prix"];
@@ -53,12 +59,17 @@ $couleur = $_POST["couleur"];
 
 
 
-$sql = "insert into smartphone values(NULL, 0, '$destinationname', '$desc', $prix, '$nom', '$systeme', $stockage , '$reseau',"
+$sql = "insert into smartphone values(NULL, $neuf, '$destinationname', '$desc', $prix, '$nom', '$systeme', $stockage , '$reseau',"
 . "$nombre_sim, $app_photo, $taille_ecran, $marque, $couleur)" ;
 
 echo $sql;
 
 $sql = mysqli_query($db, $sql);
 
-header('Location: http://localhost/FoneMarket/pages/home.php');
+if ($_GET["admin"] == true){
+  header('Location: http://localhost/FoneMarket/pages/admin_product.php');
+}else{
+  header('Location: http://localhost/FoneMarket/pages/home.php');
+} 
+
 ?>
