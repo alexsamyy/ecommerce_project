@@ -60,7 +60,7 @@
                     $usr_id += 1;
                 ?>
                     <tr>
-                        <form action="../fonctions/admin_modify_user.php" method="POST">
+                        <form action="../fonctions/admin_modify_user.php?id=<?php echo $usr["ID_UTILISATEUR"] ?>" method="POST">
                             <td><input class="id_input" name="id" readonly value="<?= $usr_id ?>"></td>
                             <td><input name="prenom" type="text" value="<?= $usr["PRENOM"]; ?>"></td>
                             <td><input name="nom" type="text" value="<?= $usr["NOM"]; ?>"></td>

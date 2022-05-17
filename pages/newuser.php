@@ -62,7 +62,7 @@
             <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br /><br />
 
             <label><b>Mot de passe</b></label>
-            <input type="text" placeholder="Entrer votre mot de passe" name="password" required><br /><br />
+            <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br /><br />
 
             <input type="submit" id='submit' value='Créer un compte'>
             <br><br>
