@@ -1,6 +1,6 @@
 <head>
     <?php
-    $title = "Panier";
+    $title = "Gérer les articles";
     session_start();
     ob_start();
     include "../composants/header.php";

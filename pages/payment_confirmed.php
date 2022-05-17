@@ -1,6 +1,6 @@
 <head>
     <?php
-    $title = "Vérification du paiement";
+    $title = "Paiement confirmé !";
     ob_start();
     session_start();
     // connexion à la base de données
