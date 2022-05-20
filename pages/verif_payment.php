@@ -7,7 +7,7 @@
     require_once "../composants/db.php";
     include "../composants/main.php";
     ?>
-    <meta http-equiv="refresh" content="300.5;url=../pages/payment_confirmed.php">
+    <meta http-equiv="refresh" content="3.5;url=../pages/payment_confirmed.php">
     <link rel="stylesheet" href="../style/payment_process.css" media="screen" type="text/css" />
 </head>
 
@@ -70,7 +70,7 @@
 
             $add_detail_commande =
             "insert into detail_commande values(NULL, 1, $quantite, $id_this_product)" ;
-            echo $add_detail_commande;
+            // echo $add_detail_commande;
 
             mysqli_query($db, $add_detail_commande);
         }
@@ -97,7 +97,7 @@
 
             $add_commande =
             "insert into commande values(1, '$order_nb', $user, '$date_order[0]', '$expediteur')" ;
-            echo $add_commande;
+            // echo $add_commande;
 
             mysqli_query($db, $add_commande);
             //-------------------------------------------------------------------

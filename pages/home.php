@@ -7,11 +7,12 @@
   require_once "../composants/db.php";
   ?>
   <link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="../style/home.css" media="screen" type="text/css" />
 </head>
 
 <body>
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel" style="margin-top:200px">
+  <div id="carouselExampleIndicators" class="slide_home carousel slide" data-mdb-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1" aria-label="Slide 2"></button>

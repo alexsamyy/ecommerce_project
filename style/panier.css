@@ -54,6 +54,31 @@
     border-bottom: 1px solid #E1E8EE;
 }
 
+@media only screen and (min-width: 0px) and (max-width: 1008px) {
+    .item{
+        height: 150px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 671px) {
+    .cost{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 970px) {
+    #btn_payer {
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 900px) {
+    #btn_payer {
+        width: 120px;
+    }
+}
+
+
 .photo_prod {
     width: 100px;
     height: 100px;

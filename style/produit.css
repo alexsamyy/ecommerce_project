@@ -1,14 +1,20 @@
 .title_page {
     text-align: center;
-    margin-top: 205px;
+    margin-top: 180px;
     margin-bottom: 50px;
     background-color: #212121;
     color:white;
     height:100px;
 }
 
+@media only screen and (max-width: 991px) {
+    .title_page {
+      margin-top: 210px;
+    }
+  }
+
 .title_asked_page{
-    text-align: center;
+    text-align: center; 
     vertical-align: middle;
     line-height: 100px;
 }

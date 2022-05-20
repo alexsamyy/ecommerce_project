@@ -68,10 +68,11 @@
                             <td><input name="birth" type="date" value="<?= $usr["DATE_BIRTH"]; ?>"></td>
                             <td>
                                 <span class="modify_btn"><button type="submit" class="modify">Modifier</button></span>
-
-                                <span class="delete_btn"><a class="delete" href="../fonctions/admin_delete_user.php?id=<?= $usr["ID_UTILISATEUR"]; ?>">Supprimer</a></span>
-                            </td>
                         </form>
+
+                        <span class="delete_btn"><a class="delete" href="../fonctions/admin_delete_user.php?id=<?= $usr["ID_UTILISATEUR"]; ?>">Supprimer</a></span>
+                        </td>
+                        
                     </tr>
                 <?php } ?>
             </table>

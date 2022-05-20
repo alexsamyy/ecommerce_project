@@ -10,6 +10,25 @@
 
     <link rel="stylesheet" href="../style/livraison.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="../style/payment_checkout.css" media="screen" type="text/css" />
+
+    <script>
+        function verif_card_nb() {
+            var card_nb = document.getElementById("card_nb").value;
+            if (card_nb == null) {
+                document.getElementById("nb_card_error").innerHTML = "";
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("nb_card_error").innerHTML = this.responseText;
+                }
+            }
+            var req = "../fonctions/verif_card_nb.php?nb=" + card_nb;
+            xmlhttp.open("GET", req, true);
+            xmlhttp.send();
+        }
+    </script>
+
 </head>
 
 <body>
@@ -141,7 +160,7 @@
             <?php } ?>
             <!-- INFORMATION PAIEMENT (PARTIE DROITE) -->
             <div class="grid_info_panier paiement">
-                
+
                 <div class="info_paiement">
                     <div class="title_user_info">
                         <h4 class="coord">Paiement</h4>
@@ -150,7 +169,8 @@
                     <div class="perso_info_user">
                         <div class="payment">
                             <div id="card_nb"><label>Numéro de carte </label><br>
-                                <input id="number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required>
+                                <input onkeyup="verif_card_nb()" id="number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required>
+                                <div id="nb_card_error"></div>
                             </div>
                             <div id="cvv"><label>Cryptogramme visuel</label><br>
                                 <input id="cryptogramme" class="form_delivery_info_nom" type="tel" pattern="\d*" maxlength="3" placeholder="CVV" required>
@@ -166,22 +186,22 @@
                     </div>
                 </div>
 
-                    <hr>
+                <hr>
 
-                    <!-- MONTANT TOTAL -->
-                    <div class="total_order">
-                        <h5 id="total_cost_delivery">MONTANT TOTAL : <?= $total_panier + 20 ?> €</5>
-                    </div>
-                    <!-- BOUTON PASSER COMMANDE -->
-                    <div class="proceed_btn">
-                        <input class="btn_payer" type="submit" id='submit' value='CONFIRMATION'>
-                    </div>
+                <!-- MONTANT TOTAL -->
+                <div class="total_order">
+                    <h5 id="total_cost_delivery">MONTANT TOTAL : <?= $total_panier + 20 ?> €</5>
+                </div>
+                <!-- BOUTON PASSER COMMANDE -->
+                <div class="proceed_btn">
+                    <input class="btn_payer" type="submit" id='submit' value='CONFIRMATION'>
                 </div>
             </div>
-            </form>
-        <?php } ?>
-
     </div>
+    </form>
+<?php } ?>
+
+</div>
 
 </body>
 

@@ -4,46 +4,42 @@ session_start();
 require_once "../composants/db.php";
 ?>
 <?php
-if(isset($_POST['mail']) && isset($_POST['password']))
-{
+if(isset($_POST['mail']) && isset($_POST['password'])){
 
-    // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
-    // pour éliminer toute attaque de type injection SQL et XSS
-    $mail = mysqli_real_escape_string($db,htmlspecialchars($_POST['mail'])); 
-    $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
-    
+    $mail = addslashes ($_POST['mail']); 
+    $password = addslashes ($_POST['password']);
 
-    if($mail !== "" && $password !== "")
 
-    {         
+    $sql = "SELECT count(*) as nbr,  MDP, ID_UTILISATEUR from utilisateur WHERE EMAIL = '".$mail."'";
+    $result = mysqli_query($db, $sql);
+    $tab = mysqli_fetch_array($result);
+    $count1 = $tab["nbr"];
+    if($count1 > 0){
+         $hash = $tab["MDP"];
+         // récupérer le hash de la base et vérifier si elle correspond à $password
+         if (password_verify($password, $hash)){
+               $_SESSION['iduser'] = $tab["ID_UTILISATEUR"];
+                  header('Location: ../pages/home.php');
+               }
+               else
+               {
+                  header('Location: ../pages/login.php?erreur=1'); // veuiller enregistrer ce champs
+               }
+   }
 
-        $requete = "SELECT count(*) as nb, ID_UTILISATEUR FROM utilisateur where EMAIL = '" . $mail .
-         "' and MDP = '" . $password . "'";
-        $exec_requete = mysqli_query($db,$requete);
-        $reponse  = mysqli_fetch_array($exec_requete);
+           else
+           {
+              header('Location: ../pages/login.php?erreur=2'); // veuiller enregistrer ce champs
+           }
+   }
+       else if($_GET["logout"]){
+          session_destroy();
+          header('Location: ../pages/login.php');
 
-        $count = $reponse["nb"];
-        if($count > 0) {// nombre d'enregistrement supérieur à 0
-           $_SESSION['iduser'] = $reponse["ID_UTILISATEUR"];
-           header('Location: ../pages/home.php');
-        }
-        else
-        {
-           header('Location: ../pages/login.php?erreur=1'); // veuiller enregistrer ce champs
-        }
-    }
-    else
-    {
-       header('Location: ../pages/login.php?erreur=2'); // veuiller enregistrer ce champs
-    }
-}
-else if($_GET["logout"]){
-   session_destroy();
-   header('Location: ../pages/login.php');
+       }else
+       {
+          header('Location: ../pages/login.php');
+       }
+       mysqli_close($db); // fermer la connexion
 
-}else
-{
-   header('Location: ../pages/login.php');
-}
-mysqli_close($db); // fermer la connexion
 ?>

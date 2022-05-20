@@ -16,7 +16,7 @@ $mail = $_POST["mail"];
 $birth = $_POST["birth"];
 
 //CHECK IF USER IS ALREADY IN TABLE
-$check_user_email = "SELECT EMAIL FROM utilisateur WHERE EMAIL = '$mail'";
+$check_user_email = "SELECT EMAIL FROM utilisateur WHERE EMAIL = '$mail' AND ID_UTILISATEUR != $chosen_id_user";
 $check_result_user = mysqli_query($db, $check_user_email);
 if ($row_check_user = mysqli_fetch_array($check_result_user)) {
         header('Location: ../pages/admin_user.php?erreur=1');
@@ -29,5 +29,5 @@ if ($row_check_user = mysqli_fetch_array($check_result_user)) {
 
         $sql = mysqli_query($db, $sql);
 
-        header('Location: http://localhost/FoneMarket/pages/admin_user.php');
+        header('Location: http://localhost/FoneMarket/pages/admin_user.php?succes=1');
 }

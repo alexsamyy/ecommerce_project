@@ -1122,7 +1122,7 @@ select option {
 
 @media only screen and (max-width: 991px) {
     .header_search {
-        height: 50px
+        height: 10px
     }
 
     .custom_dropdown {
@@ -1130,11 +1130,11 @@ select option {
     }
 
     .main_nav {
-        margin-top: 56px
+        margin-top: 2px;
     }
 
     .main_nav_menu {
-        display: none
+        display: block
     }
 
     .logo_container,
@@ -1147,7 +1147,7 @@ select option {
     }
 
     .top_bar {
-        height: 40px
+        height: 2px
     }
 
     .top_bar_contact_item {
@@ -1331,3 +1331,4 @@ select option {
         padding-right: 25px
     }
 }
+
