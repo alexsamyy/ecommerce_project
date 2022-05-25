@@ -146,6 +146,30 @@ foreach ($array_detail_commande as $detail_order) {
     $total += $total_cost_quantity;
 }
 
+if ($cost_order < $total) {
+    // ---------------------- PROMOTION ----------------------
+    // LIBELLE
+    $pdf->SetXY(7, $y + 9);
+    $pdf->Cell(140, 5, utf8_decode("PROMOTION"), 0, 0, 'L');
+    // QUANTITE
+    $pdf->SetXY(145, $y + 9);
+    $pdf->Cell(13, 5, '1', 3, ' ', true, 0, 0, 'R');
+    // PRIX UNITAIRE
+    $pdf->SetXY(158, $y + 9);
+    $pdf->Cell(18, 5, 'NULL', 0, 0, 'R');
+    // TAXE
+    $pdf->SetXY(177, $y + 9);
+    $pdf->Cell(10, 5, 'NULL', 0, 0, 'R');
+    // TOTAL
+    $pdf->SetXY(187, $y + 9);
+    $pdf->Cell(18, 5, '-' . ($total - 20) / 100 * 10, 0, 0, 'R');
+
+    $pdf->Line(5, $y + 14, 205, $y + 14);
+
+    $y += 6;
+    // --------------------------------------------------------
+}
+
 // -------------- FRAIS DE LIVRAISON ----------------------
 // LIBELLE
 $pdf->SetXY(7, $y + 9);
@@ -170,9 +194,7 @@ $y += 6;
 // --------------------------------------------------------
 
 $nombre_format_francais =  iconv("UTF-8", "CP1252", "Net à payer TTC : " . $cost_order);
-if ($cost_order < $total) {
-    $nombre_format_francais = iconv("UTF-8", "CP1252", "Net à payer TTC : " . $cost_order . (" (réduction -10% appliquée)"));
-}
+
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->SetXY(25, 213);
 $pdf->Cell(90, 8, $nombre_format_francais, 0, 0, 'C');
