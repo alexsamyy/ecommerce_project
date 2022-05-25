@@ -11,28 +11,9 @@
     <link rel="stylesheet" href="../style/livraison.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="../style/payment_checkout.css" media="screen" type="text/css" />
 
-    <script>
-        function verif_card_nb() {
-            var card_nb = document.getElementById("card_nb").value;
-            if (card_nb == null) {
-                document.getElementById("nb_card_error").innerHTML = "";
-            }
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("nb_card_error").innerHTML = this.responseText;
-                }
-            }
-            var req = "../fonctions/verif_card_nb.php?nb=" + card_nb;
-            xmlhttp.open("GET", req, true);
-            xmlhttp.send();
-        }
-    </script>
-
 </head>
 
 <body>
-
     <?php
 
     if (isset($_SESSION['iduser']) == false) { // IF NOT ALREADY LOGGED IN, DISPLAY LOGIN PAGE
@@ -169,7 +150,7 @@
                     <div class="perso_info_user">
                         <div class="payment">
                             <div id="card_nb"><label>Numéro de carte </label><br>
-                                <input onkeyup="verif_card_nb()" id="number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required>
+                                <input id="number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required>
                                 <div id="nb_card_error"></div>
                             </div>
                             <div id="cvv"><label>Cryptogramme visuel</label><br>

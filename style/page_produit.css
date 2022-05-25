@@ -99,7 +99,10 @@
   padding: 30px;
   margin-top: 210px;
   grid-template-columns: 40% 60%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
+
 
 .grid-container_product>div {
   text-align: center;

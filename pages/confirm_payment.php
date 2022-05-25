@@ -38,7 +38,7 @@
     }
     ?>
 
-
+<form id="delivery_info" action="../pages/verif_payment.php" method="POST">
     <!-- GRID PANIER GLOBAL -->
     <div class="grid_container_panier">
 
@@ -63,10 +63,9 @@
 
         <!-- INFORMATION ARTICLE DANS PANIER (PARTIE GAUCHE) -->
 
-        <div class="all_info">
+            <div class="all_info">
 
-            <!-- INFORMATIONS CLIENTS ET ADRESSE DE LIVRAISON -->
-            <form id="delivery_info" action="../pages/verif_payment.php" method="POST">
+                <!-- INFORMATIONS CLIENTS ET ADRESSE DE LIVRAISON -->
                 <div class="livraison">
                     <div class="title_user_info">
                         <h4 class="coord">Adresse de livraison</h4>
@@ -98,116 +97,117 @@
                     <div class="perso_info_user">
                         <div class="relative">
                             <div id="one"><label>Prénom</label><br>
-                                <input id="facturation_prenom" class="form_delivery_info_prenom disabled_true" readonly="readonly" value="<?php echo $_POST["prenom_facturation"]; ?>">
+                                <input name="prenom_facturation" id="facturation_prenom" class="form_delivery_info_prenom disabled_true" readonly="readonly" value="<?php echo $_POST["prenom_facturation"]; ?>">
                             </div>
                             <div id="two"><label>Nom</label><br>
-                                <input id="facturation_nom" class="form_delivery_info_nom disabled_true" readonly="readonly" value="<?php echo $_POST["nom_facturation"]; ?>">
+                                <input name="nom_facturation" id="facturation_nom" class="form_delivery_info_nom disabled_true" readonly="readonly" value="<?php echo $_POST["nom_facturation"]; ?>">
                             </div>
                         </div>
                         <label>Adresse e-mail</label><br>
-                        <input id="facturation_mail" class="form_delivery_info_mail disabled_true" readonly="readonly" value="<?php echo $_POST["mail_facturation"]; ?>">
+                        <input name="mail_facturation" id="facturation_mail" class="form_delivery_info_mail disabled_true" readonly="readonly" value="<?php echo $_POST["mail_facturation"]; ?>">
                     </div>
                     <!-- ADRESSE DE FACTURATION  CLIENT -->
                     <div class="delivery_info">
                         <label>Adresse postale</label><br>
-                        <input id="facturation_adress" class="form_delivery_info_adresse disabled_true" readonly="readonly" value="<?php echo $_POST["adresse_facturation"]; ?>">
+                        <input name="adresse_facturation" id="facturation_adress" class="form_delivery_info_adresse disabled_true" readonly="readonly" value="<?php echo $_POST["adresse_facturation"]; ?>">
                     </div>
-                </div>
-        </div>
-
-        <?php
-        $total_panier = 0; //VARIABLE CONTENANT LE COÛT TOTAL DU PANIER
-        $total_cost_quantity = 0; //VARIABLE CONTENANT LE COÛT TOTAL D'UN ID PRODUIT EN FONCTION DE SA QUANTITE
-
-        $array_article = mysqli_fetch_all($user_cart, MYSQLI_ASSOC);
-
-        if (empty($array_article)) {
-            header("Location: ../pages/panier.php");
-            die();
-        } else {
-        ?>
-
-            <!-- INFORMATION PAIEMENT (PARTIE DROITE) -->
-            <div class="grid_info_panier paiement">
-
-                <div class="info_paiement">
-                    <div class="title_user_info">
-                        <h4 class="coord">Commande</h4>
-                    </div>
-                    <!-- INFORMATIONS CLIENT -->
-                    <div class="perso_info_user">
-
-
-                        <div class="dropdown_item">
-                            <?php
-                            foreach ($array_article as $articles) {
-
-                                //MYSQL SELECT INFORMATION TABLE SMARTPHONE ONLY
-                                $id_this_product = $articles["ID_PRODUIT"];
-                                $quantite = $articles["QUANTITE"];
-
-                                $requete_info = "SELECT * FROM smartphone WHERE '$id_this_product' = ID";
-                                $info = mysqli_query($db, $requete_info);
-                                $row = mysqli_fetch_array($info);
-
-                                //MYSQL SELECT COLOUR INFORMATION TABLE COULEUR ONLY
-                                $ID_COL = $row["ID_COULEUR"];
-                                $requete_couleur = "SELECT c.COULEUR FROM couleur c WHERE $ID_COL = c.ID_COULEUR";
-                                $couleur = mysqli_query($db, $requete_couleur);
-                                $row_couleur = mysqli_fetch_array($couleur);
-
-                                $total_cost_quantity = $quantite * $row["PRIX"];;
-                                $total_panier += $total_cost_quantity;
-                            ?>
-
-
-                                <!----------------------------------------------------------------------->
-
-                                <div class="item">
-
-                                    <div class="description">
-                                        <span><b><?= $row["NOM"]; ?></b></span>
-                                        <span><b><?= $row_couleur["COULEUR"]; ?></b></span>
-                                        <span><?= $row["STOCKAGE"]; ?> Go</span>
-                                    </div>
-
-                                    <div class="quantity">
-                                        <span><b>Quantité : </b><?= $quantite; ?></span>
-                                    </div>
-
-                                    <div class="total-price"><span><b><?= $row["PRIX"]; ?> €</b></span></div>
-
-                                </div>
-
-                                <!----------------------------------------------------------------------->
-
-                            <?php } ?>
-                        </div>
-
-                        <div class="cost_info">
-                            <b><label>Montant total du panier :</label></b><span id="total_cost_prod"><?= ' ' . $total_panier ?></span> €<br>
-                            <b><label>Frais de livraison :</label></b><span> 20 €</span><br>
-                            <?php $total_panier += 20; ?>
-                            <b><label>Montant total à payer :</label></b><span id="total_cost_delivery"><?= ' ' . $total_panier ?></span> €<br>
-                        </div>
-                    </div>
-                    <!-- DISCOUNT BOX -->
-                    <div class="discount_box">
-                        <input type="text" maxlength="10" id="discount_input" onkeyup="capletter_checkDiscount()" placeholder="CODE PROMO">
-                        <div id="msgDiscount"></div>
-                    </div>
-                </div>
-                <hr>
-                <!-- BOUTON PASSER COMMANDE -->
-                <div class="proceed_btn">
-                    <input class="btn_payer" type="submit" id='submit' value='PAYER'>
                 </div>
             </div>
+
+            <?php
+            $total_panier = 0; //VARIABLE CONTENANT LE COÛT TOTAL DU PANIER
+            $total_cost_quantity = 0; //VARIABLE CONTENANT LE COÛT TOTAL D'UN ID PRODUIT EN FONCTION DE SA QUANTITE
+
+            $array_article = mysqli_fetch_all($user_cart, MYSQLI_ASSOC);
+
+            if (empty($array_article)) {
+                header("Location: ../pages/panier.php");
+                die();
+            } else {
+            ?>
+
+                <!-- INFORMATION PAIEMENT (PARTIE DROITE) -->
+                <div class="grid_info_panier paiement">
+
+                    <div class="info_paiement">
+                        <div class="title_user_info">
+                            <h4 class="coord">Commande</h4>
+                        </div>
+                        <!-- INFORMATIONS CLIENT -->
+                        <div class="perso_info_user">
+
+
+                            <div class="dropdown_item">
+                                <?php
+                                foreach ($array_article as $articles) {
+
+                                    //MYSQL SELECT INFORMATION TABLE SMARTPHONE ONLY
+                                    $id_this_product = $articles["ID_PRODUIT"];
+                                    $quantite = $articles["QUANTITE"];
+
+                                    $requete_info = "SELECT * FROM smartphone WHERE '$id_this_product' = ID";
+                                    $info = mysqli_query($db, $requete_info);
+                                    $row = mysqli_fetch_array($info);
+
+                                    //MYSQL SELECT COLOUR INFORMATION TABLE COULEUR ONLY
+                                    $ID_COL = $row["ID_COULEUR"];
+                                    $requete_couleur = "SELECT c.COULEUR FROM couleur c WHERE $ID_COL = c.ID_COULEUR";
+                                    $couleur = mysqli_query($db, $requete_couleur);
+                                    $row_couleur = mysqli_fetch_array($couleur);
+
+                                    $total_cost_quantity = $quantite * $row["PRIX"];;
+                                    $total_panier += $total_cost_quantity;
+                                ?>
+
+
+                                    <!----------------------------------------------------------------------->
+
+                                    <div class="item">
+
+                                        <div class="description">
+                                            <span><b><?= $row["NOM"]; ?></b></span>
+                                            <span><b><?= $row_couleur["COULEUR"]; ?></b></span>
+                                            <span><?= $row["STOCKAGE"]; ?> Go</span>
+                                        </div>
+
+                                        <div class="quantity">
+                                            <span><b>Quantité : </b><?= $quantite; ?></span>
+                                        </div>
+
+                                        <div class="total-price"><span><b><?= $row["PRIX"]; ?> €</b></span></div>
+
+                                    </div>
+
+                                    <!----------------------------------------------------------------------->
+
+                                <?php } ?>
+                            </div>
+
+                            <div class="cost_info">
+                                <b><label>Montant total du panier :</label></b><span id="total_cost_prod"><input readonly="readonly" id="total_panier" name="total_panier" value="<?= $total_panier . ' €' ?>"></span><br>
+                                <b><label>Frais de livraison :</label></b><span> 20 €</span><br>
+                                <?php $total_panier_livraison = $total_panier + 20; ?>
+                                <b><label>Montant total à payer :</label></b><span id="total_cost_delivery"><input readonly="readonly" id="total" name="total" value="<?= $total_panier_livraison. ' €' ?>"></span><br>
+                            </div>
+
+                        </div>
+                        <!-- DISCOUNT BOX -->
+                        <div class="discount_box">
+                            <input name="discount" type="text" maxlength="10" id="discount_input" onkeyup="capletter_checkDiscount()" placeholder="CODE PROMO">
+                            <div id="msgDiscount"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- BOUTON PASSER COMMANDE -->
+                    <div class="proceed_btn">
+                        <input class="btn_payer" type="submit" id='submit' value='PAYER'>
+                    </div>
+                </div>
     </div>
-    </form>
 <?php } ?>
 
 </div>
+</form>
 
 <!-- FONCTION JAVASCRIPT POUR CODE PROMO => MET AUTOMATIQUEMENT EN MAJUSCULE LE TEXTE ENTRANT ET APPLIQUE LA PROMOTION -->
 
@@ -220,9 +220,9 @@
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var parts = xmlhttp.responseText.split('|');
-                document.getElementById("msgDiscount").innerHTML = parts[0];
-                document.getElementById("total_cost_prod").innerHTML = parts[1];
-                document.getElementById("total_cost_delivery").innerHTML = parts[2];
+                document.getElementById("msgDiscount").innerHTML= parts[0];
+                document.getElementById("total_panier").value = parts[1];
+                document.getElementById("total").value = parts[2];
             }
         }
         var req = "../fonctions/applyDiscount.php?discount=" + discount_input.value + "&total=<?php echo $total_panier ?>";

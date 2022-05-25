@@ -6,23 +6,28 @@ require_once "../composants/db.php";
 <link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script>
-    function search() {
-        let display = document.querySelector('.search_prod').style.display;
-        display = 'block';
+    function sendad(){
         var mot = document.getElementsByName('Rechercher')[0].value;
-        console.log(mot);
-        if (mot == "") {
-            document.querySelector(".search_prod").style.display = "none";
+        window.location = 'recherche.php?Rechercher=' + mot;
+    }
+
+    function manakey(e){
+        if (e.keyCode == 13){
+            sendad();
         }
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("search_prod").innerHTML = this.responseText;
-            }
+        var clientHeight = document.querySelector('.search_prod').clientHeight;
+        if (clientHeight < 356){
+            document.querySelector(".plus").style.display = "none";
         }
-        var req = "../fonctions/search.php?=" + mot;
-        xmlhttp.open("POST", req, true);
-        xmlhttp.send();
+    }
+
+    function salut(){
+        let display = document.querySelector('.search_prod').style.display = 'block';
+        var mot = document.getElementByName('Rechercher')[0].value;
+
+        if (mot != ""){
+            $.post("search.php")
+        }
     }
 </script>
 </head>
@@ -85,9 +90,9 @@ require_once "../composants/db.php";
                                     <form action="../pages/recherche.php" class="header_search_form clearfix">
 
                                         <!-- INPUT BARRE DE RECHERCHE -->
-                                        <input autocomplete="off" type="search" onkeyup="search()" style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
+                                        <input autocomplete="off" type="search" onkeyup="manakey(event)" oninput="salut()" style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
                                         <!------------------------------>
-                                        <div id="search_prod" class="search_prod"></div>
+                                        <span onclick='sendad()' id="search_prod" class="search_prod"></span>
 
                                         <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>

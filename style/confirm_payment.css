@@ -34,3 +34,17 @@
 .cost_info{
     margin-top: 2%;
 }
+
+#total_panier{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+#total{
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}

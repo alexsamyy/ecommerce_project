@@ -61,11 +61,11 @@
                 ?>
                     <tr>
                         <form action="../fonctions/admin_modify_user.php?id=<?php echo $usr["ID_UTILISATEUR"] ?>" method="POST">
-                            <td><input class="id_input" name="id" readonly value="<?= $usr_id ?>"></td>
-                            <td><input name="prenom" type="text" value="<?= $usr["PRENOM"]; ?>"></td>
-                            <td><input name="nom" type="text" value="<?= $usr["NOM"]; ?>"></td>
-                            <td><input name="mail"" type=" email" value="<?= $usr["EMAIL"]; ?>"></td>
-                            <td><input name="birth" type="date" value="<?= $usr["DATE_BIRTH"]; ?>"></td>
+                            <td><input id="input" class="id_input" name="id" readonly value="<?= $usr_id ?>"></td>
+                            <td><input id="input" name="prenom" type="text" value="<?= $usr["PRENOM"]; ?>"></td>
+                            <td><input id="input" name="nom" type="text" value="<?= $usr["NOM"]; ?>"></td>
+                            <td><input id="input" name="mail"" type=" email" value="<?= $usr["EMAIL"]; ?>"></td>
+                            <td><input id="input" name="birth" type="date" value="<?= $usr["DATE_BIRTH"]; ?>"></td>
                             <td>
                                 <span class="modify_btn"><button type="submit" class="modify">Modifier</button></span>
                         </form>
