@@ -1,35 +1,36 @@
 <head>
-<?php
-include "../composants/main.php";
-require_once "../composants/db.php";
-?>
-<link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-<script>
-    function sendad(){
-        var mot = document.getElementsByName('Rechercher')[0].value;
-        window.location = 'recherche.php?Rechercher=' + mot;
-    }
-
-    function manakey(e){
-        if (e.keyCode == 13){
-            sendad();
+    <?php
+    include "../composants/main.php";
+    require_once "../composants/db.php";
+    ?>
+    <link rel="stylesheet" href="../style/header.css" media="screen" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script>
+        function search() {
+            var mot = document.getElementsByName('Rechercher')[0].value;
+            if ((mot.length < 1)) {
+                document.getElementById("search_prod").style.display = "none";
+            }
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("search_prod").style.backgroundColor = "white";
+                    document.getElementById("search_prod").style.display = "block";
+                    document.getElementById("search_prod").innerHTML = this.responseText;
+                }
+            }
+            var req = "../fonctions/search.php?Rechercher=" + mot;
+            xmlhttp.open("GET", req, true);
+            xmlhttp.send();
         }
-        var clientHeight = document.querySelector('.search_prod').clientHeight;
-        if (clientHeight < 356){
-            document.querySelector(".plus").style.display = "none";
-        }
-    }
 
-    function salut(){
-        let display = document.querySelector('.search_prod').style.display = 'block';
-        var mot = document.getElementByName('Rechercher')[0].value;
-
-        if (mot != ""){
-            $.post("search.php")
+        function remove(){
+            var mot = document.getElementsByName('Rechercher')[0].value;
+            if ((mot.length == 0)) {
+                document.getElementById("search_prod").style.display = "none";
+            }
         }
-    }
-</script>
+    </script>
 </head>
 
 <div class="super_container">
@@ -90,9 +91,10 @@ require_once "../composants/db.php";
                                     <form action="../pages/recherche.php" class="header_search_form clearfix">
 
                                         <!-- INPUT BARRE DE RECHERCHE -->
-                                        <input autocomplete="off" type="search" onkeyup="manakey(event)" oninput="salut()" style="width:100%" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
+                                        <input autocomplete="off" type="search" onkeyup="remove()" oninput="search()"
+                                        style="width:100%;" required="required" class="header_search_input" name="Rechercher" placeholder="Rechercher des produits...">
                                         <!------------------------------>
-                                        <span onclick='sendad()' id="search_prod" class="search_prod"></span>
+                                        <span id="search_prod" class="search_prod"></span>
 
                                         <button type="submit" class="header_search_button trans_300" value="Submit" style="background-color:black;"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918770/search.png"></button>
                                     </form>
@@ -182,13 +184,6 @@ require_once "../composants/db.php";
                                                     <li><a href="#">S21 FE 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                     <li><a href="#">Galaxy Z series<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Galaxy A53 5G<i class="fas fa-chevron-down"></i></a>
-                                                    </li>
-                                                    <li><a href="#">Galaxy S20FE<i class="fas fa-chevron-down"></i></a>
-                                                    </li>
-                                                    <li><a href="#">Galaxy A52s 5G<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Galaxy A22 5G<i class="fas fa-chevron-down"></i></a>
-                                                    </li>
                                                 </ul>
                                             </li>
                                             <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Xiaomi">Xiaomi<i class="fas fa-chevron-down"></i></a>
@@ -198,13 +193,6 @@ require_once "../composants/db.php";
                                                     <li><a href="#">Xiaomi 12 Pro 5G<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Xiaomi 11T Pro<i class="fas fa-chevron-down"></i></a></li>
                                                     <li><a href="#">Redmi Note 11<i class="fas fa-chevron-down"></i></a>
-                                                    </li>
-                                                    <li><a href="#">Redmi Note 11S<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Redmi Note 11 Pro<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Redmi 10<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Redmi 9A<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="#">Redmi 9C NFC<i class="fas fa-chevron-down"></i></a>
-                                                    </li>
                                                 </ul>
                                             </li>
                                             <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Huawei">Huawei<i class="fas fa-chevron-down"></i></a></li>

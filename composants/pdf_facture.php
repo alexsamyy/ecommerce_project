@@ -213,4 +213,4 @@ $pdf->Cell($pdf->GetPageWidth(), 5, utf8_decode("17 rue Linné, 75005 Paris Fran
 $pdf->SetXY(1, $y1 + 12);
 $pdf->Cell($pdf->GetPageWidth(), 5, utf8_decode("+33 1 54 00 00 00 contact@fonemarket.fr"), 0, 0, 'C');
 
-$pdf->Output();
+$pdf->Output('D', 'facture_'.$nb_order.'.pdf');
