@@ -33,7 +33,7 @@
 
                 mysqli_query($db, $update_add_cart);
 
-                header('location: http://localhost/FoneMarket/pages/page_produit.php?id=' . $id_product);
+                header('location: /FoneMarket/pages/page_produit.php?id=' . $id_product);
 
                 }else{
                     $req_add_cart =
@@ -41,7 +41,7 @@
                     
                     mysqli_query($db, $req_add_cart);
     
-                    header('location: http://localhost/FoneMarket/pages/page_produit.php?id=' . $id_product);
+                    header('location: /FoneMarket/pages/page_produit.php?id=' . $id_product);
                 }
             }
             ?>

@@ -29,5 +29,5 @@ if ($row_check_user = mysqli_fetch_array($check_result_user)) {
 
         $sql = mysqli_query($db, $sql);
 
-        header('Location: http://localhost/FoneMarket/pages/admin_user.php?succes=1');
+        header('Location: /FoneMarket/pages/admin_user.php?succes=1');
 }

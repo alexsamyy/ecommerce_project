@@ -24,7 +24,7 @@
                     
                 mysqli_query($db, $req_del_db);
     
-                header('location: http://localhost/FoneMarket/pages/admin_user.php');
+                header('location: /FoneMarket/pages/admin_user.php');
                 }
             
             ?>""

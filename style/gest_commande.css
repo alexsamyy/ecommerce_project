@@ -42,3 +42,8 @@ th {
     border: none;
     background-color: white;
 }
+
+.download_btn:hover{
+    font-weight: bold;
+    color:blue;
+}

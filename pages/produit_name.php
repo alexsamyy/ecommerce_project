@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_array($result)){
             <br>
             <div>
                 <!-- IMAGE -->
-                <a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">
+                <a href="/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">
                     <div class="img_place">
                         <img class="img" src="<?= $row["PHOTO"]; ?>">
                     </div>
@@ -63,7 +63,7 @@ while ($row = mysqli_fetch_array($result)){
         if (strlen($row["DESCRIPTION"]) > 110){?>
                         <span>...</span>
                         <a class="see_more"
-                            href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
+                            href="/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
                             plus</a>
                         <?php
         } 
@@ -106,7 +106,7 @@ while ($row = mysqli_fetch_array($result)){
             <br>
             <div>
                 <!-- IMAGE -->
-                <a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">
+                <a href="/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">
                     <div class="img_place">
                         <img class="img" src="<?= $row["PHOTO"]; ?>">
                     </div>
@@ -120,7 +120,7 @@ while ($row = mysqli_fetch_array($result)){
         if (strlen($row["DESCRIPTION"]) > 110){?>
                         <span>...</span>
                         <a class="see_more"
-                            href="http://localhost/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
+                            href="/FoneMarket/pages/page_produit.php?id=<?=$row["ID"];?>">Voir
                             plus</a>
                         <?php
         } 

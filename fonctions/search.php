@@ -19,7 +19,7 @@
     $prix = $row["PRIX"];
   ?>
 
-    <a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?= $row["ID"] ?>">
+    <a href="/FoneMarket/pages/page_produit.php?id=<?= $row["ID"] ?>">
       <?php echo "<img style='height: 100px; width: 100px;' src='$photo'/>" ?>
       <?php echo "<span style='color:black'>$nom | </span>"?>
       <?php echo "<span style='color:black'>$stockage Go | </span>"?>

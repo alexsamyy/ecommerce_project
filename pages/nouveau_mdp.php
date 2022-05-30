@@ -31,16 +31,16 @@
             <form id="login" action="../fonctions/modification_pwd.php" method="POST">
                 <h2>Nouveau mot de passe</h2>
 
-                <label><b>Mot de passe actuel</b></label><br/>
-                <input type="password" placeholder="Entrer votre mot de passe actuel" name="current_pwd" required><br /><br />
+                <label><b>Mot de passe actuel</b></label><br />
+                <input id="mdp" type="password" placeholder="Entrer votre mot de passe actuel" name="current_pwd" required><br /><br />
 
                 <label><b>Nouveau mot de passe</b></label>
-                <input type="password" placeholder="Entrer votre nouveau mot de passe" name="new_pwd" required>
+                <input id="confirm_mdp" type="password" placeholder="Entrer votre nouveau mot de passe" name="new_pwd" required>
 
                 <input type="submit" id='submit' value='Changer mon mot de passe'>
-                
+
                 <p><a href="mdp_oublier.php">Mot de passe oublié ?</a></p>
-                
+
 
                 <?php
                 if (isset($_GET['erreur'])) {
@@ -56,6 +56,7 @@
             </form>
         </div>
     <?php } ?>
+
 </body>
 
 <footer>

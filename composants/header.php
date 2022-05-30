@@ -155,30 +155,30 @@
                                 <ul class="standard_dropdown main_nav_dropdown">
                                     <li class="hassubs"> <a href="../pages/produit.php">Produits<i class="fas fa-chevron-down"></i></a>
                                         <ul>
-                                            <li> <a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Apple">Apple<i class="fas fa-chevron-down"></i></a>
+                                            <li> <a href="/FoneMarket/pages/produit_marque.php?marque=Apple">Apple<i class="fas fa-chevron-down"></i></a>
                                                 <ul>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 13 Pro">iPhone
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=iPhone 13 Pro">iPhone
                                                             13 Pro<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 13">iPhone
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=iPhone 13">iPhone
                                                             13<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 12">iPhone
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=iPhone 12">iPhone
                                                             12<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone 11">iPhone
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=iPhone 11">iPhone
                                                             11<i class="fas fa-chevron-down"></i></a>
                                                     </li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=iPhone SE">iPhone
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=iPhone SE">iPhone
                                                             SE<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Samsung">Samsung<i class="fas fa-chevron-down"></i></a>
+                                            <li><a href="/FoneMarket/pages/produit_marque.php?marque=Samsung">Samsung<i class="fas fa-chevron-down"></i></a>
                                                 <ul>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22">S22<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22 Plus">S22+<i class="fas fa-chevron-down"></i></a></li>
-                                                    <li><a href="http://localhost/FoneMarket/pages/produit_name.php?name=Galaxy S22 Ultra">S22
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=Galaxy S22">S22<i class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=Galaxy S22 Plus">S22+<i class="fas fa-chevron-down"></i></a></li>
+                                                    <li><a href="/FoneMarket/pages/produit_name.php?name=Galaxy S22 Ultra">S22
                                                             Ultra 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
                                                     <li><a href="#">S21 FE 5G<i class="fas fa-chevron-down"></i></a>
@@ -186,7 +186,7 @@
                                                     <li><a href="#">Galaxy Z series<i class="fas fa-chevron-down"></i></a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Xiaomi">Xiaomi<i class="fas fa-chevron-down"></i></a>
+                                            <li><a href="/FoneMarket/pages/produit_marque.php?marque=Xiaomi">Xiaomi<i class="fas fa-chevron-down"></i></a>
                                                 <ul>
                                                     <li><a href="#">Xiaomi 12 5G<i class="fas fa-chevron-down"></i></a>
                                                     </li>
@@ -195,10 +195,10 @@
                                                     <li><a href="#">Redmi Note 11<i class="fas fa-chevron-down"></i></a>
                                                 </ul>
                                             </li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Huawei">Huawei<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Google">Google<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=OnePlus">OnePlus<i class="fas fa-chevron-down"></i></a></li>
-                                            <li><a href="http://localhost/FoneMarket/pages/produit_marque.php?marque=Oppo">Oppo<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="/FoneMarket/pages/produit_marque.php?marque=Huawei">Huawei<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="/FoneMarket/pages/produit_marque.php?marque=Google">Google<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="/FoneMarket/pages/produit_marque.php?marque=OnePlus">OnePlus<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="/FoneMarket/pages/produit_marque.php?marque=Oppo">Oppo<i class="fas fa-chevron-down"></i></a></li>
                                         </ul>
                                     </li>
                                     <li> <a href="../pages/marketplace.php">Marketplace</a>

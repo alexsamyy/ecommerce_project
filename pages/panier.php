@@ -82,7 +82,7 @@
 
                             <div class="item">
 
-                                <a href="http://localhost/FoneMarket/pages/page_produit.php?id=<?= $row["ID"]; ?>">
+                                <a href="/FoneMarket/pages/page_produit.php?id=<?= $row["ID"]; ?>">
                                     <div class="image">
                                         <img class="photo_prod" src="<?= $row["PHOTO"]; ?>">
                                     </div>

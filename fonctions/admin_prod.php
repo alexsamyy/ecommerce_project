@@ -10,6 +10,8 @@
 <?php
 $id_this_product = $_GET["id"];
 
+var_dump($_POST);
+$neuf = $_POST["neuf"];
 $nom = $_POST["nom"];
 $desc = $_POST["description"];
 $prix = $_POST["prix"];
@@ -22,7 +24,7 @@ $taille_ecran = $_POST["taille_ecran"];
 $marque = $_POST["marque"];
 $couleur = $_POST["couleur"];
 
-$sql = "UPDATE `smartphone` SET
+$sql = "UPDATE `smartphone` SET `NEUF`= $neuf,
 `DESCRIPTION`= '".$desc."',`PRIX`= $prix,`NOM`='".$nom."',`SYSTEME_D_EXPLOITATION`='".$systeme."',
 `STOCKAGE`= $stockage,`RESEAU`='".$reseau."',`DOUBLE_SIM`= $nombre_sim,`APP_PHOTO`= $app_photo,
 `TAILLE_ECRAN`= $taille_ecran,`ID_MARQUE`= $marque,`ID_COULEUR`= $couleur WHERE ID = $id_this_product" ;
@@ -31,5 +33,5 @@ echo $sql;
 
 $sql = mysqli_query($db, $sql);
 
-header('Location: http://localhost/FoneMarket/pages/admin_product.php');
+header('Location: /FoneMarket/pages/admin_product.php');
 ?>

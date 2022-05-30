@@ -26,12 +26,12 @@ $fileActualExt = strtolower(end($fileExt));
 $allowed = array('jpg', 'jpeg', 'png');
 if (in_array($fileActualExt, $allowed) == false) {
   echo "L'extension du fichier n'est pas autorisée !";
-  header("Refresh:5; url=http://localhost/pages/add_marketplace.php", true, 303);
+  header("Refresh:5; url=/pages/add_marketplace.php", true, 303);
 }
 
 if ($fileSize > 1000000) {
   echo "Votre fichier est trop volumineux !";
-  header("Refresh:5; url=http://localhost/pages/add_marketplace.php", true, 303);
+  header("Refresh:5; url=/pages/add_marketplace.php", true, 303);
 }
 
 // On le déplace à cet endroit
@@ -67,9 +67,9 @@ echo $sql;
 $sql = mysqli_query($db, $sql);
 
 if ($_GET["admin"] == true){
-  header('Location: http://localhost/FoneMarket/pages/admin_product.php');
+  header('Location: /FoneMarket/pages/admin_product.php');
 }else{
-  header('Location: http://localhost/FoneMarket/pages/home.php');
+  header('Location: /FoneMarket/pages/home.php');
 } 
 
 ?>

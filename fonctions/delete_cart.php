@@ -27,7 +27,7 @@
                     
                 mysqli_query($db, $req_del_cart);
     
-                header('location: http://localhost/FoneMarket/pages/panier.php');
+                header('location: /FoneMarket/pages/panier.php');
                 }
             
             ?>""
