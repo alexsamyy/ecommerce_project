@@ -23,6 +23,10 @@
                 const confirm_pwd = document.getElementById('confirm_input');
                 confirm_pwd.onpaste = e => e.preventDefault();
             }
+            function motdp(){
+                var mdp = document.getElementById('mdp').value;
+                mdp.search([a-z](1)[A-z](4));
+            }
         </script>
 </head>
 
@@ -36,7 +40,7 @@
             <h2>Créer un compte</h2>
 
             <label><b>Prénom</b></label><br />
-            <input type="text" placeholder="Entrer votre prénom" name="prenom" required><br /><br />
+            <input  type="text" placeholder="Entrer votre prénom" name="prenom" required><br /><br />
 
             <label><b>Nom</b></label><br />
             <input type="text" placeholder="Entrer votre nom" name="nom" required><br /><br />
@@ -49,7 +53,7 @@
             <input type="email" placeholder="Entrer votre adresse e-mail" name="mail" required><br /><br />
 
             <label><b>Mot de passe</b></label>
-            <input type="password" placeholder="Entrer votre mot de passe" name="password" required><br /><br />
+            <input id="mdp" type="password" placeholder="Entrer votre mot de passe" name="password" required><br /><br />
 
             <label><b>Confirmer votre mot de passe</b></label>
             <input id="confirm_input" type="password" placeholder="Confirmer votre mot de passe" name="password_confirm" required><br /><br />
