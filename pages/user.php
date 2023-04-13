@@ -69,6 +69,8 @@
 
                     <button onclick="window.location.href='../pages/nouveau_mdp.php';" class="modify_pwd">Modifier mon mot de passe</button>
 
+                    <button onclick="window.location.href='../pages/promotion.php';" class="promotion">Ajouter une réduction</button>
+
                     <button onclick="window.location.href='../fonctions/deconnexion.php';" class="logout">Déconnexion</button>
 
                 </div>

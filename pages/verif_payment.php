@@ -78,15 +78,13 @@
             }
 
             //-------------- DATE DE LA COMMANDE --------------
-            date_default_timezone_set('Europe/Paris');
-            $date_time = date('d-m-y h:i:s');
-            $date_order = explode(' ', $date_time);
+            $date_time = date("Y-m-d");
 
             // ------------ EXPEDITEUR ------------------
             $expediteur = "FoneMarket";
 
             $add_commande =
-                "insert into commande values($order_id, '$order_nb', $user, '$date_order[0]', '$expediteur')";
+                "insert into commande values($order_id, '$order_nb', $user, '$date_time', '$expediteur')";
 
             mysqli_query($db, $add_commande);
             //-------------------------------------------------------------------  
@@ -97,7 +95,7 @@
             
             // var_dump($total);
 
-            $add_historique = "insert into historique values(NULL, '$order_nb', '$date_order[0]', $user, $total[0])";
+            $add_historique = "insert into historique values(NULL, '$order_nb', '$date_time ', $user, $total[0])";
 
             // echo $add_historique;
 

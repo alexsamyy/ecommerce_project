@@ -30,7 +30,7 @@
         <a href="marketplace.php"><img src="../media/samsungLessWaste.jpg" class="d-block w-100" alt="less waste, buy refurbished" /></a>
       </div>
       <div class="carousel-item">
-        <img src="../media/welcome_discount.png" class="d-block w-100" alt="code -10% : WELCOME" />
+        <img src="../media/welcome_discount.png" class="d-block w-100" alt="code -10% : 10" />
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">

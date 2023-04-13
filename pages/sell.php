@@ -1,4 +1,4 @@
-head>
+<head>
 <?php
     $title = "Vendre son smartphone";
     session_start();
