@@ -19,7 +19,7 @@
 </h4>
 <br>
 <p style="text-align:center">
-    Répondez à notre <a href="../pages/questionnaire.php" style="color:black; font-weight:bold">questionnaire</a> pour savoir si votre smartphone est éligible !
+    Répondez à notre <a href="#" style="color:black; font-weight:bold">questionnaire</a> pour savoir si votre smartphone est éligible !
     <br>
     Si votre smartphone est éligible, <a href="../pages/newuser.php" style="color:black; font-weight:bold">créez-vous un compte</a> et postez votre annonce !
     <br>
