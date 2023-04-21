@@ -12,8 +12,8 @@
 if (!isset($_SESSION['iduser'])) {
     header("Location: ../pages/login.php");
 } else {
-    //CHECK IF USER IS ALREADY IN TABLE
     $promo = $_POST["promo"];
+
     $rq_add_promo = "INSERT INTO promotion VALUES(null,$promo)";
     $add_promo = mysqli_query($db, $rq_add_promo);
     header("Location: ../pages/promotion.php?success=1");

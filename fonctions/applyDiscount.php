@@ -14,7 +14,7 @@ if (isset($_GET['discount'])) {
     if ($result_promo = mysqli_query($db, $rq_check_promo)) {
         if ($row_check_promo = mysqli_fetch_array($result_promo)) {
             $discount_message = "Promotion appliquée " . $promo . " % !";
-            $total_panier = $total_panier - (($total_panier / 100) * $promo);
+            $total_panier = $total_panier - $total_panier / 100 * $promo;
             $msg_total_panier = $total_panier . ' €';
 
             $total_cost = $total_panier + 20;
