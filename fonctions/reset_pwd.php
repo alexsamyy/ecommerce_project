@@ -18,19 +18,6 @@ if (isset($_SESSION['iduser'])) {
     $check_user_email = "SELECT EMAIL FROM utilisateur WHERE EMAIL = '$mail'";
     $check_result_user = mysqli_query($db, $check_user_email);
     if ($row_check_user = mysqli_fetch_array($check_result_user)) {
-
-        $to      = '$mail';
-        $subject = 'Réinitialisation du mot de passe';
-
-        // Le message
-        $message = "Demande de réinitialisation du mot de passe.\r\n
-        Si  vous n'êtes pas à l'origine de cette demande, veuillez modifier votre mot de passe.";
-
-        $headers = 'From: no-reply@fonemarket.fr' . "\r\n" .
-
-        mail($to, $subject, $message, $headers);
-
-
         header('Location: ../pages/mdp_oublier.php?success=1');
     } else {
         header('Location: ../pages/mdp_oublier.php?erreur=1');
