@@ -45,15 +45,15 @@ if ($_GET["admin"] == 'false'){
   $neuf = $_POST["neuf"];
 }  
 
-$nom = $_POST["nom"];
+$nom = addslashes($_POST["nom"]);
 $desc = $_POST["description"];
-$prix = $_POST["prix"];
-$systeme = $_POST["systeme_d_exploitation"];
-$stockage =  $_POST["stockage"];
-$reseau = $_POST["reseau"];
+$prix = addslashes($_POST["prix"]);
+$systeme = addslashes($_POST["systeme_d_exploitation"]);
+$stockage =  addslashes($_POST["stockage"]);
+$reseau = addslashes($_POST["reseau"]);
 $nombre_sim = $_POST['dual_sim'];
-$app_photo = $_POST["app_photo"];
-$taille_ecran = $_POST["taille_ecran"];
+$app_photo = addslashes($_POST["app_photo"]);
+$taille_ecran = addslashes($_POST["taille_ecran"]);
 $marque = $_POST["marque"];
 $couleur = $_POST["couleur"];
 
