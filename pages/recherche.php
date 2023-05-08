@@ -10,8 +10,9 @@
     <?php
 $search = $_GET['Rechercher'];
 
-$requete = "SELECT * FROM smartphone WHERE SOUNDEX(NOM) = SOUNDEX('. $search .') OR 
-            SOUNDEX(SYSTEME_D_EXPLOITATION) = SOUNDEX('. $search .')";
+$search = addslashes($search);
+$requete = "SELECT * FROM smartphone WHERE SOUNDEX(NOM) = SOUNDEX('" . $search . "') OR SOUNDEX(SYSTEME_D_EXPLOITATION) = SOUNDEX('" . $search . "')";
+
 ?>
 
 <link rel="stylesheet" href="../style/produit.css" media="screen" type="text/css" />

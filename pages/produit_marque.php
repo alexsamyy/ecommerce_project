@@ -2,6 +2,7 @@
     <?php
     $title = "Produit";
     session_start();
+    ob_start();
     include "../composants/header.php";
     include "../composants/main.php";
     // connexion à la base de données
@@ -39,15 +40,19 @@
 $ID_MARQUE_request = "SELECT ID_MARQUE FROM marque WHERE '$marque' = MARQUE"; // GET ID MARQUE 
 $req_res = mysqli_query($db, $ID_MARQUE_request); 
 $row_id_marque = mysqli_fetch_array($req_res);
+
+if (!$row_id_marque){ //IF ID_MARQUE NOT FOUND, REDIRECT TO PRODUIT.PHP
+    header("Location: ../pages/produit.php");
+    die();
+}
+
 $ID_MARQUE = $row_id_marque['ID_MARQUE'];
 $requete = "SELECT * FROM smartphone WHERE ID_MARQUE = $ID_MARQUE and NEUF = true";
 
-
-
 $result = mysqli_query($db,$requete);
-
 $row = mysqli_fetch_array($result);
-if (empty($row)){ //IF NO PRODUCT, DISPLAY A MESSAGE
+
+if (empty($row)){ //IF NO PRODUCT, DISPLAY MESSAGE
     ?>
 
 <h3 style="text-align:center; margin-top:300px; margin-bottom:300px;">Aucun produit <?=$marque?> en vente pour le
@@ -80,6 +85,7 @@ else{
 
 $requete = "SELECT * FROM smartphone s WHERE s.ID_MARQUE = $ID_MARQUE and NEUF = true";
 $result = mysqli_query($db,$requete);
+
 while ($row = mysqli_fetch_array($result)){
   ?>
 

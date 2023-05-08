@@ -25,9 +25,10 @@ $marque = $_POST["marque"];
 $couleur = $_POST["couleur"];
 
 $sql = "UPDATE `smartphone` SET `NEUF`= $neuf,
-`DESCRIPTION`= '".$desc."',`PRIX`= $prix,`NOM`='".$nom."',`SYSTEME_D_EXPLOITATION`='".$systeme."',
-`STOCKAGE`= $stockage,`RESEAU`='".$reseau."',`DOUBLE_SIM`= $nombre_sim,`APP_PHOTO`= $app_photo,
-`TAILLE_ECRAN`= $taille_ecran,`ID_MARQUE`= $marque,`ID_COULEUR`= $couleur WHERE ID = $id_this_product" ;
+`DESCRIPTION`= '". trim(addslashes($desc))."',`PRIX`= $prix,`NOM`='".
+trim(addslashes($nom)) ."',`SYSTEME_D_EXPLOITATION`='". preg_replace('/[^A-Za-z0-9\-]/', '',addslashes($systeme)) ."',
+`STOCKAGE`= $stockage,`RESEAU`='". preg_replace('/[^A-Za-z0-9\-]/', '',addslashes($reseau)) ."',`DOUBLE_SIM`= $nombre_sim,`APP_PHOTO`= $app_photo,
+`TAILLE_ECRAN`= $taille_ecran,`ID_MARQUE`= $marque,`ID_COULEUR`= $couleur WHERE ID = ". preg_replace('/[^A-Za-z0-9\-]/', '', addslashes($id_this_product));
 
 echo $sql;
 

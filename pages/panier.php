@@ -116,7 +116,8 @@
                 <!-- NOMBRE ARTICLE -->
                 <div class="nb_prod">
 
-                    <?php $total = "SELECT SUM(QUANTITE) AS total_article FROM panier WHERE ID_UTILISATEUR = $user";
+                    <!-- PROCEDURE STOCKEE -->
+                    <?php $total = "CALL get_total_items_cart($user)";
                     $res = mysqli_query($db, $total);
                     $data_row = mysqli_fetch_array($res);
                     $total_article = $data_row['total_article'];

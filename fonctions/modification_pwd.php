@@ -31,7 +31,7 @@ if ($user == false) {
         header("Location: ../pages/nouveau_mdp.php?success=1");
         echo ("Votre mot de passe a bien été modifié !");
     } else {
-        header('Location: ../pages/nouveau_mdp.php?erreur=1'); // veiller enregistrer ce champs
+        header('Location: ../pages/nouveau_mdp.php?erreur=1'); // veuiller enregistrer ce champs
     }
 }
 

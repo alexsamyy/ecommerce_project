@@ -2,6 +2,7 @@
   <?php
     $title = "Produit";
     session_start();
+    ob_start();
     include "../composants/header.php";
     include "../composants/main.php"; 
     // connexion à la base de données
@@ -32,6 +33,11 @@
 $requete_info =  "SELECT * FROM smartphone WHERE '$id_this_product' = ID";
 $info = mysqli_query($db,$requete_info);  
 $row = mysqli_fetch_array($info);
+
+if (!$row):
+  header("Location: ../pages/home.php");
+  die();
+endif;
 
 //MYSQL SELECT COLOUR INFORMATION TABLE COULEUR ONLY
 $ID_COL = $row["ID_COULEUR"];

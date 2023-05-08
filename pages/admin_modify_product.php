@@ -26,6 +26,10 @@
     $info = mysqli_query($db, $requete_info);
     $row = mysqli_fetch_array($info);
 
+    if (!$row){
+        header('Location: /FoneMarket/pages/admin_product.php');
+    }
+
     //MYSQL SELECT COLOUR INFORMATION TABLE COULEUR ONLY
     $ID_COL = $row["ID_COULEUR"];
     $requete_couleur = "SELECT c.COULEUR FROM couleur c WHERE $ID_COL = c.ID_COULEUR";

@@ -7,7 +7,7 @@
 
   <?php
 
-  $search = $_GET['Rechercher'];
+  $search = addslashes($_GET['Rechercher']);
 
   $sql = "SELECT * FROM smartphone WHERE NOM LIKE '%$search%'";
   $result = mysqli_query($db, $sql);
