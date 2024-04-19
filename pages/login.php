@@ -14,6 +14,7 @@
 
 </head>
 
+<p>COUCOU</p>
 <body>
     <!-- IF YES, REDIRECT TO HOME PAGE -->
     <?php
