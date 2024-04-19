@@ -27,6 +27,7 @@ include "../composants/main.php";
 
     <!-- Section: Text -->
     <section class="mb-4">
+      <p>COUCOU</p>
       <p>
         FoneMarket est un site de vente en ligne de smartphones. Nous vendons les derniers modèles des principales marques.
         Vous voulez vendre votre smartphone ? <br> Rejoignez-nous en tant que vendeur et vendez dès que possible sur notre
